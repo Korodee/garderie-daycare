@@ -1,7 +1,6 @@
 "use client";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import Image from "next/image";
 import { FaBars } from "react-icons/fa";
 import { GiBabyBottle } from "react-icons/gi";
 
@@ -19,41 +18,75 @@ interface NavbarProps {
 }
 
 export default function Navbar({ open, setOpen, active }: NavbarProps) {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 10;
+      setScrolled(isScrolled);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <motion.nav
       initial={{ y: -60, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="fixed top-0 left-0 w-full z-50 bg-white/70 backdrop-blur-lg shadow-lg"
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+        scrolled 
+          ? 'bg-white/80 backdrop-blur-lg border-b border-slate-200 shadow-lg rounded-b-4xl' 
+          : 'bg-transparent'
+      }`}
       aria-label="Navigation principale"
     >
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-2 md:py-3">
-        <a href="#presentation" className="flex items-center gap-3 group">
-          <span className="inline-flex items-center justify-center w-12 h-12 rounded-full border-2 border-blue-200 bg-gradient-to-br from-blue-100 to-blue-50 shadow-lg mr-2">
-            <GiBabyBottle className="text-blue-500 text-2xl" />
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-2 md:py-5">
+        <a href="#presentation" className="flex items-center gap-2 group">
+          <span className="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 shadow-md">
+            <GiBabyBottle className="text-white text-xl" />
           </span>
-          <div className="flex flex-col">
-            <motion.span initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.2 }} className="font-extrabold text-xl text-blue-900 leading-tight tracking-tight">Garderie Aimée Inc.</motion.span>
-            <span className="text-xs text-blue-400 font-semibold italic tracking-wide mt-0.5">Une garderie de qualité</span>
+          <div className="flex flex-col ml-1">
+            <span className={`font-extrabold text-lg leading-tight tracking-tight transition-colors duration-300 ${
+              scrolled ? 'text-slate-900' : 'text-white drop-shadow-lg'
+            }`}>Garderie Aimée Inc.</span>
+            <span className={`text-[11px] font-semibold italic tracking-wide mt-0.5 transition-colors duration-300 ${
+              scrolled ? 'text-slate-500' : 'text-white drop-shadow-lg'
+            }`}>Une garderie de qualité</span>
           </div>
         </a>
         <button
-          className="md:hidden p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
+          className={`md:hidden p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 shadow transition-all duration-300 ${
+            scrolled ? 'bg-white/70' : 'bg-white/20 backdrop-blur-sm'
+          }`}
           aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
           onClick={() => setOpen(!open)}
         >
-          <FaBars className="text-2xl text-blue-900" />
+          <FaBars className={`text-xl transition-colors duration-300 ${
+            scrolled ? 'text-blue-900' : 'text-black/80'
+          }`} />
         </button>
         <ul className="hidden md:flex gap-4 text-base font-semibold">
           {navLinks.map((link) => (
             <li key={link.href}>
               <a
                 href={link.href}
-                className="relative px-4 py-2 transition-colors duration-200 focus:outline-none group"
+                className="relative px-3 py-1.5 transition-colors duration-200 focus:outline-none group"
                 tabIndex={0}
               >
-                <span className={`z-0 absolute left-0 top-1/2 -translate-y-1/2 h-8 w-full rounded-full transition-all duration-300 ${active === link.href ? 'bg-blue-100 shadow-md scale-100' : 'scale-0'}`}></span>
-                <span className={`relative z-10 ${active === link.href ? 'text-blue-700' : 'text-blue-900 group-hover:text-blue-700'}`}>{link.label}</span>
+                <motion.span
+                  layoutId={active === link.href ? "nav-pill" : undefined}
+                  className={`absolute left-0 top-0 h-full w-full rounded-full transition-all duration-300 ${active === link.href ? 'bg-blue-100 shadow-md' : 'group-hover:bg-blue-50 group-hover:shadow'} ${active === link.href ? 'z-0' : 'z-0'}`}
+                  style={{ zIndex: 0 }}
+                />
+                <span className={`relative z-10 transition-colors duration-300 ${
+                  active === link.href 
+                    ? 'text-blue-700' 
+                    : scrolled 
+                      ? 'text-slate-900 group-hover:text-blue-700' 
+                      : 'text-white group-hover:text-blue-200 drop-shadow-lg'
+                }`}>{link.label}</span>
               </a>
             </li>
           ))}

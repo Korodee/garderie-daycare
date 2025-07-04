@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { FaFacebookF, FaInstagram, FaLinkedinIn, FaPhoneAlt, FaMapMarkerAlt, FaEnvelope, FaFax, FaChevronRight } from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaLinkedinIn, FaPhoneAlt, FaMapMarkerAlt, FaEnvelope, FaChevronRight } from "react-icons/fa";
 
 const links = [
   { href: "#presentation", label: "Présentation" },
@@ -11,59 +11,107 @@ const links = [
 
 export default function Footer() {
   return (
-    <footer className="bg-gradient-to-br from-blue-50 to-blue-100 border-t border-blue-100 py-12 mt-16 text-gray-700 rounded-t-3xl shadow-inner animate-fade-in">
-      <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-10 items-start">
-        {/* Branding */}
-        <div className="flex flex-col items-start gap-3">
-          <span className="inline-flex items-center justify-center w-14 h-14 rounded-full border-2 border-blue-200 bg-gradient-to-br from-blue-100 to-blue-50 shadow-lg">
-            <Image src="/globe.svg" alt="Garderie logo" width={36} height={36} className="rounded-full" />
-          </span>
-          <span className="font-extrabold text-lg text-blue-900">Garderie Aimée Inc.</span>
-          <span className="text-xs text-blue-500 font-medium">Une garderie de qualité</span>
-          <p className="text-sm mt-2 text-gray-500">Depuis 1987, au service des familles de Saint-Laurent.</p>
-        </div>
-        {/* Contact */}
-        <div className="text-sm">
-          <h3 className="font-semibold mb-3 text-blue-900">Contact</h3>
-          <ul className="space-y-2">
-            <li className="flex items-center gap-2"><FaMapMarkerAlt className="text-blue-400" />1730, rue Poirier<br />Saint-Laurent (Québec) H4L 1J3</li>
-            <li className="flex items-center gap-2"><FaPhoneAlt className="text-blue-400" /><a href="tel:5147474114" className="hover:underline">514 747-4114</a></li>
-            <li className="flex items-center gap-2"><FaFax className="text-blue-400" />514 747-2695</li>
-            <li className="flex items-center gap-2"><FaEnvelope className="text-blue-400" /><a href="mailto:garderieaimee@hotmail.com" className="hover:underline">garderieaimee@hotmail.com</a></li>
-          </ul>
-        </div>
-        {/* Quick Links - Liens rapides */}
-        <div>
-          <div className="flex items-center gap-2 mb-3">
-            <h3 className="font-semibold text-blue-900">Liens rapides</h3>
+    <footer className="bg-gradient-to-br from-[#f8fafc] to-[#eaf1fb] border-t border-slate-200 pt-14 pb-8 mt-16 text-slate-700 rounded-t-4xl">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+          {/* Branding */}
+          <div className="flex flex-col gap-4">
+            <div className="flex items-center gap-3">
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center shadow-md">
+                <Image src="/globe.svg" alt="Garderie logo" width={28} height={28} />
+              </div>
+              <div>
+                <h2 className="font-bold text-xl text-slate-900">Garderie Aimée Inc.</h2>
+                <p className="text-sm text-slate-500">Une garderie de qualité</p>
+              </div>
+            </div>
+            <p className="text-sm text-slate-600 leading-relaxed">
+              Depuis 1987, nous offrons un environnement sécuritaire et stimulant pour le développement harmonieux de votre enfant.
+            </p>
           </div>
-          <div className="bg-gradient-to-br from-white/90 to-blue-50/60 border border-blue-100 rounded-2xl shadow p-4">
-            <ul className="space-y-2 text-sm">
+
+          {/* Contact Cards */}
+          <div>
+            <h3 className="font-semibold text-lg text-slate-900 mb-4">Contact</h3>
+            <div className="flex flex-col md:flex-row flex-wrap gap-4">
+              <a href="tel:5147474114" className="flex-1 min-w-[140px] bg-white rounded-xl shadow p-4 flex items-center gap-3 hover:shadow-md transition group">
+                <span className="w-10 h-10 flex items-center justify-center rounded-lg bg-blue-50 group-hover:bg-blue-100 transition">
+                  <FaPhoneAlt className="text-blue-600 text-xl" />
+                </span>
+                <div>
+                  <div className="font-semibold text-slate-900">Téléphone</div>
+                  <div className="text-sm text-slate-500">514 747-4114</div>
+                </div>
+              </a>
+              <a href="mailto:garderieaimee@hotmail.com" className="flex-1 min-w-[140px] bg-white rounded-xl shadow p-4 flex items-center gap-3 hover:shadow-md transition group">
+                <span className="w-10 h-10 flex items-center justify-center rounded-lg bg-blue-50 group-hover:bg-blue-100 transition">
+                  <FaEnvelope className="text-blue-600 text-xl" />
+                </span>
+                <div>
+                  <div className="font-semibold text-slate-900">Courriel</div>
+                  <div className="text-sm text-slate-500 truncate">garderieaimee@hotmail.com</div>
+                </div>
+              </a>
+            </div>
+            <div className="mt-4 bg-white rounded-xl shadow p-4 flex items-center gap-3">
+              <span className="w-10 h-10 flex items-center justify-center rounded-lg bg-blue-50">
+                <FaMapMarkerAlt className="text-blue-600 text-xl" />
+              </span>
+              <div>
+                <div className="font-semibold text-slate-900">Adresse</div>
+                <div className="text-sm text-slate-500 leading-tight">
+                  1730, rue Poirier<br />Saint-Laurent (Québec) H4L 1J3
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Quick Links */}
+          <div>
+            <h3 className="font-semibold text-lg text-slate-900 mb-4">Liens rapides</h3>
+            <div className="flex flex-col gap-2">
               {links.map(link => (
-                <li key={link.href}>
-                  <a
-                    href={link.href}
-                    className="flex items-center gap-2 text-blue-700 hover:text-blue-900 transition-transform duration-200 hover:scale-105 group focus:outline-none"
-                  >
-                    <FaChevronRight className="text-blue-300 group-hover:text-blue-500 transition" />
-                    <span>{link.label}</span>
-                  </a>
-                </li>
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="flex items-center gap-3 bg-white rounded-xl shadow p-3 hover:shadow-md transition group"
+                >
+                  <FaChevronRight className="text-blue-400 text-base group-hover:text-blue-600 transition" />
+                  <span className="text-slate-700 group-hover:text-blue-700 font-medium transition-colors">
+                    {link.label}
+                  </span>
+                </a>
               ))}
-            </ul>
+            </div>
+          </div>
+
+          {/* Social & Hours */}
+          <div className="flex flex-col gap-4">
+            <h3 className="font-semibold text-lg text-slate-900 mb-4">Suivez-nous</h3>
+            <div className="flex gap-3">
+              <a href="#" className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow hover:shadow-md transition group">
+                <FaFacebookF className="text-blue-600 text-2xl group-hover:scale-110 transition-transform" />
+              </a>
+              <a href="#" className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow hover:shadow-md transition group">
+                <FaInstagram className="text-pink-600 text-2xl group-hover:scale-110 transition-transform" />
+              </a>
+              <a href="#" className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow hover:shadow-md transition group">
+                <FaLinkedinIn className="text-blue-700 text-2xl group-hover:scale-110 transition-transform" />
+              </a>
+            </div>
+            <div className="bg-white rounded-xl shadow p-4 mt-2">
+              <div className="font-semibold text-slate-900 mb-1">Horaires d&apos;ouverture</div>
+              <div className="text-sm text-slate-500">Lundi - Vendredi<br />7h00 - 18h00</div>
+            </div>
           </div>
         </div>
-        {/* Social & Legal */}
-        <div className="flex flex-col gap-3">
-          <h3 className="font-semibold mb-3 text-blue-900">Suivez-nous</h3>
-          <div className="flex gap-3 mb-2">
-            <a href="#" aria-label="Facebook" className="w-9 h-9 bg-blue-200 rounded-full flex items-center justify-center hover:bg-blue-300 transition"><FaFacebookF className="text-blue-700 text-lg" /></a>
-            <a href="#" aria-label="Instagram" className="w-9 h-9 bg-pink-200 rounded-full flex items-center justify-center hover:bg-pink-300 transition"><FaInstagram className="text-pink-600 text-lg" /></a>
-            <a href="#" aria-label="LinkedIn" className="w-9 h-9 bg-blue-100 rounded-full flex items-center justify-center hover:bg-blue-200 transition"><FaLinkedinIn className="text-blue-700 text-lg" /></a>
+        {/* Bottom Bar */}
+        <div className="border-t border-slate-200 pt-8 mt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-500">
+          <div>&copy; {new Date().getFullYear()} Garderie Aimée Inc. Tous droits réservés.</div>
+          <div className="flex gap-6">
+            <a href="#" className="hover:text-slate-700 transition-colors">Politique de confidentialité</a>
+            <a href="#" className="hover:text-slate-700 transition-colors">Conditions d&apos;utilisation</a>
           </div>
-          <div className="border-t border-blue-100 my-2" />
-          <div className="text-xs text-gray-400 mt-2">&copy; {new Date().getFullYear()} Garderie Aimée Inc. Tous droits réservés.</div>
-          <div className="text-xs text-gray-400">Politique de confidentialité</div>
         </div>
       </div>
     </footer>
