@@ -37,7 +37,7 @@ export default function Navbar({ open, setOpen, active }: NavbarProps) {
       transition={{ duration: 0.6, ease: "easeOut" }}
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
         scrolled 
-          ? 'bg-white/80 backdrop-blur-lg border-b border-slate-200 shadow-lg rounded-b-4xl' 
+          ? 'bg-white/80 backdrop-blur-lg shadow-lg rounded-b-4xl' 
           : 'bg-transparent'
       }`}
       aria-label="Navigation principale"

@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { FaFacebookF, FaInstagram, FaLinkedinIn, FaPhoneAlt, FaMapMarkerAlt, FaEnvelope, FaChevronRight } from "react-icons/fa";
+import { FaPhoneAlt, FaMapMarkerAlt, FaEnvelope, FaChevronRight } from "react-icons/fa";
 
 const links = [
   { href: "#presentation", label: "Présentation" },
@@ -11,7 +11,7 @@ const links = [
 
 export default function Footer() {
   return (
-    <footer className="bg-gradient-to-br from-[#f8fafc] to-[#eaf1fb] border-t border-slate-200 pt-14 pb-8 mt-16 text-slate-700 rounded-t-4xl">
+    <footer className="bg-gradient-to-br from-[#f8fafc] to-[#eaf1fb] pt-14 pb-8 text-slate-700">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           {/* Branding */}
@@ -64,6 +64,15 @@ export default function Footer() {
                 </div>
               </div>
             </div>
+            <div className="mt-4 bg-white rounded-xl shadow p-4 flex items-center gap-3">
+              <span className="w-10 h-10 flex items-center justify-center rounded-lg bg-blue-50">
+                <FaPhoneAlt className="text-blue-600 text-xl" />
+              </span>
+              <div>
+                <div className="font-semibold text-slate-900">Télécopieur</div>
+                <div className="text-sm text-slate-500">514 747-2695</div>
+              </div>
+            </div>
           </div>
 
           {/* Quick Links */}
@@ -85,33 +94,18 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Social & Hours */}
+          {/* Hours */}
           <div className="flex flex-col gap-4">
-            <h3 className="font-semibold text-lg text-slate-900 mb-4">Suivez-nous</h3>
-            <div className="flex gap-3">
-              <a href="#" className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow hover:shadow-md transition group">
-                <FaFacebookF className="text-blue-600 text-2xl group-hover:scale-110 transition-transform" />
-              </a>
-              <a href="#" className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow hover:shadow-md transition group">
-                <FaInstagram className="text-pink-600 text-2xl group-hover:scale-110 transition-transform" />
-              </a>
-              <a href="#" className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow hover:shadow-md transition group">
-                <FaLinkedinIn className="text-blue-700 text-2xl group-hover:scale-110 transition-transform" />
-              </a>
-            </div>
-            <div className="bg-white rounded-xl shadow p-4 mt-2">
+            <h3 className="font-semibold text-lg text-slate-900 mb-4">Horaires</h3>
+            <div className="bg-white rounded-xl shadow p-4">
               <div className="font-semibold text-slate-900 mb-1">Horaires d&apos;ouverture</div>
               <div className="text-sm text-slate-500">Lundi - Vendredi<br />7h00 - 18h00</div>
             </div>
           </div>
         </div>
         {/* Bottom Bar */}
-        <div className="border-t border-slate-200 pt-8 mt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-500">
+        <div className="border-t border-slate-200 pt-8 mt-8 flex flex-col md:flex-row justify-center items-center gap-4 text-sm text-slate-500">
           <div>&copy; {new Date().getFullYear()} Garderie Aimée Inc. Tous droits réservés.</div>
-          <div className="flex gap-6">
-            <a href="#" className="hover:text-slate-700 transition-colors">Politique de confidentialité</a>
-            <a href="#" className="hover:text-slate-700 transition-colors">Conditions d&apos;utilisation</a>
-          </div>
         </div>
       </div>
     </footer>
