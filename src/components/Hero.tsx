@@ -4,9 +4,23 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FaTimes } from "react-icons/fa";
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
-import { FaBaby, FaPuzzlePiece, FaCar, FaPaintBrush, FaDice, FaBicycle } from 'react-icons/fa';
-import { GiToyMallet, GiBalloonDog, GiDuck, GiCube, GiHorseHead, GiBabyBottle } from 'react-icons/gi';
-import { MdToys, MdChildCare } from 'react-icons/md';
+import {
+  FaBaby,
+  FaPuzzlePiece,
+  FaCar,
+  FaPaintBrush,
+  FaDice,
+  FaBicycle,
+} from "react-icons/fa";
+import {
+  GiToyMallet,
+  GiBalloonDog,
+  GiDuck,
+  GiCube,
+  GiHorseHead,
+  GiBabyBottle,
+} from "react-icons/gi";
+import { MdToys, MdChildCare } from "react-icons/md";
 
 const decorVariants = {
   float: {
@@ -18,6 +32,7 @@ const decorVariants = {
 const navLinks = [
   { href: "#presentation", label: "Présentation" },
   { href: "#programme", label: "Programme" },
+  { href: "/gallery", label: "Galerie" },
   { href: "#admission", label: "Admission" },
   { href: "#contact", label: "Contact" },
 ];
@@ -29,11 +44,15 @@ export default function Hero() {
   // Active section logic
   React.useEffect(() => {
     const handleScroll = () => {
-      const offsets = navLinks.map(link => {
-        const el = document.querySelector(link.href);
-        return el ? el.getBoundingClientRect().top : Infinity;
+      const offsets = navLinks.map((link) => {
+        // Only try to query elements that are valid CSS selectors (hash links)
+        if (link.href.startsWith("#")) {
+          const el = document.querySelector(link.href);
+          return el ? el.getBoundingClientRect().top : Infinity;
+        }
+        return Infinity; // Skip non-hash links like /gallery
       });
-      const idx = offsets.findIndex(top => top > 80);
+      const idx = offsets.findIndex((top) => top > 80);
       setActive(navLinks[Math.max(0, idx - 1)].href);
     };
     window.addEventListener("scroll", handleScroll);
@@ -43,40 +62,271 @@ export default function Hero() {
 
   // Floating toys data (using icon components)
   const floatingToys = [
-    { icon: <FaBaby />, bg: 'bg-pink-200', text: 'text-pink-600', size: 'w-10 h-10', style: 'left-10 top-32', opacity: 'opacity-40', show: 'md:block' },
-    { icon: <GiBabyBottle />, bg: 'bg-yellow-200', text: 'text-yellow-600', size: 'w-8 h-8', style: 'right-16 top-40', opacity: 'opacity-40', show: 'md:block' },
-    { icon: <FaPuzzlePiece />, bg: 'bg-green-200', text: 'text-green-600', size: 'w-6 h-6', style: 'left-1/2 top-16', opacity: 'opacity-40', show: 'md:block' },
-    { icon: <GiCube />, bg: 'bg-purple-200', text: 'text-purple-600', size: 'w-8 h-8', style: 'left-20 top-60', opacity: 'opacity-30', show: 'md:block' },
-    { icon: <FaCar />, bg: 'bg-orange-200', text: 'text-orange-600', size: 'w-12 h-12', style: 'right-32 top-60', opacity: 'opacity-30', show: 'md:block' },
-    { icon: <GiToyMallet />, bg: 'bg-pink-200', text: 'text-pink-600', size: 'w-6 h-6', style: 'left-8 top-80', opacity: 'opacity-30', show: 'md:block' },
-    { icon: <FaBicycle />, bg: 'bg-blue-200', text: 'text-blue-600', size: 'w-10 h-10', style: 'right-8 top-80', opacity: 'opacity-30', show: 'md:block' },
-    { icon: <GiHorseHead />, bg: 'bg-indigo-200', text: 'text-indigo-600', size: 'w-7 h-7', style: 'left-40 top-40', opacity: 'opacity-30', show: 'md:block' },
-    { icon: <FaPaintBrush />, bg: 'bg-teal-200', text: 'text-teal-600', size: 'w-9 h-9', style: 'right-40 top-20', opacity: 'opacity-30', show: 'md:block' },
-    { icon: <MdToys />, bg: 'bg-rose-200', text: 'text-rose-600', size: 'w-5 h-5', style: 'left-1/4 top-24', opacity: 'opacity-30', show: 'md:block' },
-    { icon: <FaDice />, bg: 'bg-amber-200', text: 'text-amber-600', size: 'w-8 h-8', style: 'right-1/4 top-28', opacity: 'opacity-30', show: 'md:block' },
-    { icon: <GiBalloonDog />, bg: 'bg-cyan-200', text: 'text-cyan-600', size: 'w-6 h-6', style: 'left-16 top-96', opacity: 'opacity-30', show: 'md:block' },
-    { icon: <GiDuck />, bg: 'bg-lime-200', text: 'text-lime-600', size: 'w-9 h-9', style: 'right-24 top-96', opacity: 'opacity-30', show: 'md:block' },
+    {
+      icon: <FaBaby />,
+      bg: "bg-pink-200",
+      text: "text-pink-600",
+      size: "w-10 h-10",
+      style: "left-10 top-32",
+      opacity: "opacity-40",
+      show: "md:block",
+    },
+    {
+      icon: <GiBabyBottle />,
+      bg: "bg-yellow-200",
+      text: "text-yellow-600",
+      size: "w-8 h-8",
+      style: "right-16 top-40",
+      opacity: "opacity-40",
+      show: "md:block",
+    },
+    {
+      icon: <FaPuzzlePiece />,
+      bg: "bg-green-200",
+      text: "text-green-600",
+      size: "w-6 h-6",
+      style: "left-1/2 top-16",
+      opacity: "opacity-40",
+      show: "md:block",
+    },
+    {
+      icon: <GiCube />,
+      bg: "bg-purple-200",
+      text: "text-purple-600",
+      size: "w-8 h-8",
+      style: "left-20 top-60",
+      opacity: "opacity-30",
+      show: "md:block",
+    },
+    {
+      icon: <FaCar />,
+      bg: "bg-orange-200",
+      text: "text-orange-600",
+      size: "w-12 h-12",
+      style: "right-32 top-60",
+      opacity: "opacity-30",
+      show: "md:block",
+    },
+    {
+      icon: <GiToyMallet />,
+      bg: "bg-pink-200",
+      text: "text-pink-600",
+      size: "w-6 h-6",
+      style: "left-8 top-80",
+      opacity: "opacity-30",
+      show: "md:block",
+    },
+    {
+      icon: <FaBicycle />,
+      bg: "bg-blue-200",
+      text: "text-blue-600",
+      size: "w-10 h-10",
+      style: "right-8 top-80",
+      opacity: "opacity-30",
+      show: "md:block",
+    },
+    {
+      icon: <GiHorseHead />,
+      bg: "bg-indigo-200",
+      text: "text-indigo-600",
+      size: "w-7 h-7",
+      style: "left-40 top-40",
+      opacity: "opacity-30",
+      show: "md:block",
+    },
+    {
+      icon: <FaPaintBrush />,
+      bg: "bg-teal-200",
+      text: "text-teal-600",
+      size: "w-9 h-9",
+      style: "right-40 top-20",
+      opacity: "opacity-30",
+      show: "md:block",
+    },
+    {
+      icon: <MdToys />,
+      bg: "bg-rose-200",
+      text: "text-rose-600",
+      size: "w-5 h-5",
+      style: "left-1/4 top-24",
+      opacity: "opacity-30",
+      show: "md:block",
+    },
+    {
+      icon: <FaDice />,
+      bg: "bg-amber-200",
+      text: "text-amber-600",
+      size: "w-8 h-8",
+      style: "right-1/4 top-28",
+      opacity: "opacity-30",
+      show: "md:block",
+    },
+    {
+      icon: <GiBalloonDog />,
+      bg: "bg-cyan-200",
+      text: "text-cyan-600",
+      size: "w-6 h-6",
+      style: "left-16 top-96",
+      opacity: "opacity-30",
+      show: "md:block",
+    },
+    {
+      icon: <GiDuck />,
+      bg: "bg-lime-200",
+      text: "text-lime-600",
+      size: "w-9 h-9",
+      style: "right-24 top-96",
+      opacity: "opacity-30",
+      show: "md:block",
+    },
     // Center area toys
-    { icon: <MdChildCare />, bg: 'bg-pink-100', text: 'text-pink-500', size: 'w-8 h-8', style: 'left-1/3 top-1/2', opacity: 'opacity-25', show: 'md:block' },
-    { icon: <GiBabyBottle />, bg: 'bg-blue-100', text: 'text-blue-500', size: 'w-6 h-6', style: 'right-1/3 top-1/2', opacity: 'opacity-25', show: 'md:block' },
-    { icon: <FaPuzzlePiece />, bg: 'bg-green-100', text: 'text-green-500', size: 'w-7 h-7', style: 'left-1/2 top-1/3', opacity: 'opacity-25', show: 'md:block' },
-    { icon: <GiCube />, bg: 'bg-yellow-100', text: 'text-yellow-500', size: 'w-5 h-5', style: 'right-1/2 top-2/3', opacity: 'opacity-25', show: 'md:block' },
-    { icon: <FaBaby />, bg: 'bg-purple-100', text: 'text-purple-500', size: 'w-9 h-9', style: 'left-2/3 top-1/2', opacity: 'opacity-25', show: 'md:block' },
-    { icon: <FaCar />, bg: 'bg-orange-100', text: 'text-orange-500', size: 'w-6 h-6', style: 'right-2/3 top-1/3', opacity: 'opacity-25', show: 'md:block' },
-    { icon: <FaPaintBrush />, bg: 'bg-teal-100', text: 'text-teal-500', size: 'w-8 h-8', style: 'left-1/2 top-1/2', opacity: 'opacity-25', show: 'md:block' },
-    { icon: <GiHorseHead />, bg: 'bg-indigo-100', text: 'text-indigo-500', size: 'w-7 h-7', style: 'left-3/4 top-1/2', opacity: 'opacity-25', show: 'md:block' },
-    { icon: <MdToys />, bg: 'bg-rose-100', text: 'text-rose-500', size: 'w-5 h-5', style: 'right-1/4 top-1/2', opacity: 'opacity-25', show: 'md:block' },
-    { icon: <FaDice />, bg: 'bg-cyan-100', text: 'text-cyan-500', size: 'w-6 h-6', style: 'left-1/4 top-2/3', opacity: 'opacity-25', show: 'md:block' },
-    { icon: <GiBalloonDog />, bg: 'bg-lime-100', text: 'text-lime-500', size: 'w-8 h-8', style: 'right-3/4 top-2/3', opacity: 'opacity-25', show: 'md:block' },
+    {
+      icon: <MdChildCare />,
+      bg: "bg-pink-100",
+      text: "text-pink-500",
+      size: "w-8 h-8",
+      style: "left-1/3 top-1/2",
+      opacity: "opacity-25",
+      show: "md:block",
+    },
+    {
+      icon: <GiBabyBottle />,
+      bg: "bg-blue-100",
+      text: "text-blue-500",
+      size: "w-6 h-6",
+      style: "right-1/3 top-1/2",
+      opacity: "opacity-25",
+      show: "md:block",
+    },
+    {
+      icon: <FaPuzzlePiece />,
+      bg: "bg-green-100",
+      text: "text-green-500",
+      size: "w-7 h-7",
+      style: "left-1/2 top-1/3",
+      opacity: "opacity-25",
+      show: "md:block",
+    },
+    {
+      icon: <GiCube />,
+      bg: "bg-yellow-100",
+      text: "text-yellow-500",
+      size: "w-5 h-5",
+      style: "right-1/2 top-2/3",
+      opacity: "opacity-25",
+      show: "md:block",
+    },
+    {
+      icon: <FaBaby />,
+      bg: "bg-purple-100",
+      text: "text-purple-500",
+      size: "w-9 h-9",
+      style: "left-2/3 top-1/2",
+      opacity: "opacity-25",
+      show: "md:block",
+    },
+    {
+      icon: <FaCar />,
+      bg: "bg-orange-100",
+      text: "text-orange-500",
+      size: "w-6 h-6",
+      style: "right-2/3 top-1/3",
+      opacity: "opacity-25",
+      show: "md:block",
+    },
+    {
+      icon: <FaPaintBrush />,
+      bg: "bg-teal-100",
+      text: "text-teal-500",
+      size: "w-8 h-8",
+      style: "left-1/2 top-1/2",
+      opacity: "opacity-25",
+      show: "md:block",
+    },
+    {
+      icon: <GiHorseHead />,
+      bg: "bg-indigo-100",
+      text: "text-indigo-500",
+      size: "w-7 h-7",
+      style: "left-3/4 top-1/2",
+      opacity: "opacity-25",
+      show: "md:block",
+    },
+    {
+      icon: <MdToys />,
+      bg: "bg-rose-100",
+      text: "text-rose-500",
+      size: "w-5 h-5",
+      style: "right-1/4 top-1/2",
+      opacity: "opacity-25",
+      show: "md:block",
+    },
+    {
+      icon: <FaDice />,
+      bg: "bg-cyan-100",
+      text: "text-cyan-500",
+      size: "w-6 h-6",
+      style: "left-1/4 top-2/3",
+      opacity: "opacity-25",
+      show: "md:block",
+    },
+    {
+      icon: <GiBalloonDog />,
+      bg: "bg-lime-100",
+      text: "text-lime-500",
+      size: "w-8 h-8",
+      style: "right-3/4 top-2/3",
+      opacity: "opacity-25",
+      show: "md:block",
+    },
     // Mobile toys
-    { icon: <FaBaby />, bg: 'bg-yellow-200', text: 'text-yellow-600', size: 'w-8 h-8', style: 'left-4 top-20', opacity: 'opacity-40', show: 'md:hidden' },
-    { icon: <GiBabyBottle />, bg: 'bg-red-200', text: 'text-red-600', size: 'w-6 h-6', style: 'right-4 top-32', opacity: 'opacity-40', show: 'md:hidden' },
-    { icon: <FaPuzzlePiece />, bg: 'bg-green-200', text: 'text-green-600', size: 'w-7 h-7', style: 'left-8 top-48', opacity: 'opacity-40', show: 'md:hidden' },
-    { icon: <GiCube />, bg: 'bg-purple-200', text: 'text-purple-600', size: 'w-5 h-5', style: 'right-8 top-56', opacity: 'opacity-40', show: 'md:hidden' },
+    {
+      icon: <FaBaby />,
+      bg: "bg-yellow-200",
+      text: "text-yellow-600",
+      size: "w-8 h-8",
+      style: "left-4 top-20",
+      opacity: "opacity-40",
+      show: "md:hidden",
+    },
+    {
+      icon: <GiBabyBottle />,
+      bg: "bg-red-200",
+      text: "text-red-600",
+      size: "w-6 h-6",
+      style: "right-4 top-32",
+      opacity: "opacity-40",
+      show: "md:hidden",
+    },
+    {
+      icon: <FaPuzzlePiece />,
+      bg: "bg-green-200",
+      text: "text-green-600",
+      size: "w-7 h-7",
+      style: "left-8 top-48",
+      opacity: "opacity-40",
+      show: "md:hidden",
+    },
+    {
+      icon: <GiCube />,
+      bg: "bg-purple-200",
+      text: "text-purple-600",
+      size: "w-5 h-5",
+      style: "right-8 top-56",
+      opacity: "opacity-40",
+      show: "md:hidden",
+    },
   ];
 
   return (
-    <section className="relative overflow-hidden min-h-screen flex flex-col justify-center" style={{ backgroundImage: 'url(/daycare-1.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+    <section
+      className="relative overflow-hidden min-h-screen flex flex-col justify-center"
+      style={{
+        backgroundImage: "url(/Pouponniere-classe.jpg)",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
       {/* Background Overlay */}
       <div className="absolute inset-0 bg-black/50 backdrop-blur-xs"></div>
 
@@ -105,7 +355,10 @@ export default function Hero() {
             exit={{ x: "100%" }}
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
             className="fixed top-0 right-0 h-full w-72 bg-white/95 shadow-xl z-[100] flex flex-col pt-6 px-6 pb-8 rounded-l-3xl"
-            style={{ borderTopLeftRadius: '2rem', borderBottomLeftRadius: '2rem' }}
+            style={{
+              borderTopLeftRadius: "2rem",
+              borderBottomLeftRadius: "2rem",
+            }}
           >
             <button
               className="absolute top-4 right-4 p-2 rounded-full bg-blue-50 hover:bg-blue-100 shadow focus:outline-none"
@@ -119,7 +372,11 @@ export default function Hero() {
                 <motion.a
                   key={link.href}
                   href={link.href}
-                  className={`block text-xl font-bold px-4 py-3 rounded-lg transition-colors duration-200 ${active === link.href ? "text-blue-700 bg-blue-100" : "text-blue-900 hover:text-blue-700"}`}
+                  className={`block text-xl font-bold px-4 py-3 rounded-lg transition-colors duration-200 ${
+                    active === link.href
+                      ? "text-blue-700 bg-blue-100"
+                      : "text-blue-900 hover:text-blue-700"
+                  }`}
                   onClick={() => setMobileNavOpen(false)}
                   tabIndex={0}
                   initial={{ opacity: 0, x: 40 }}
@@ -149,8 +406,12 @@ export default function Hero() {
           animate="float"
           className={`absolute ${toy.style} hidden ${toy.show} z-20`}
         >
-          <div className={`${toy.size} ${toy.bg} rounded-full flex items-center justify-center shadow-lg ${toy.opacity}`}>
-            <span className={`${toy.text} text-xl md:text-2xl`}>{toy.icon}</span>
+          <div
+            className={`${toy.size} ${toy.bg} rounded-full flex items-center justify-center shadow-lg ${toy.opacity}`}
+          >
+            <span className={`${toy.text} text-xl md:text-2xl`}>
+              {toy.icon}
+            </span>
           </div>
         </motion.div>
       ))}
@@ -158,40 +419,83 @@ export default function Hero() {
       {/* Main Content */}
       <div className="relative z-20 max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12 px-6 w-full">
         {/* Text Content */}
-        <motion.div initial={{ opacity: 0, x: -40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, type: "spring" }} className="flex-1 text-center md:text-left">
-          <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2, duration: 0.7, type: "spring" }} className="text-4xl md:text-5xl font-extrabold text-white mb-4 leading-tight">
-            Garderie Aimée Inc.<br />
-            <span className="text-blue-400 font-bold">Une garderie de qualité</span>
+        <motion.div
+          initial={{ opacity: 0, x: -40 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, type: "spring" }}
+          className="flex-1 text-center md:text-left"
+        >
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.7, type: "spring" }}
+            className="text-4xl md:text-5xl font-extrabold text-white mb-4 leading-tight"
+          >
+            Garderie Aimée Inc.
+            <br />
+            <span className="text-blue-400 font-bold">
+              Une garderie de qualité
+            </span>
           </motion.h1>
-          <motion.p initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.35, duration: 0.7, type: "spring" }} className="text-lg md:text-xl text-slate-300 mb-6 max-w-xl mx-auto md:mx-0">
-            Depuis 1987, nous offrons un environnement sécuritaire, stimulant et bienveillant où chaque enfant peut grandir, apprendre et s&apos;épanouir à son propre rythme.
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.35, duration: 0.7, type: "spring" }}
+            className="text-lg md:text-xl text-slate-300 mb-6 max-w-xl mx-auto md:mx-0"
+          >
+            Depuis 1987, nous offrons un environnement sécuritaire, stimulant et
+            bienveillant où chaque enfant peut grandir, apprendre et
+            s&apos;épanouir à son propre rythme.
           </motion.p>
           {/* Badge/Testimonial */}
-          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.45, duration: 0.7, type: "spring" }} className="inline-flex items-center gap-2 bg-white/80 border border-blue-100 rounded-full px-4 py-2 mb-6 shadow text-blue-700 text-sm font-medium">
-            <svg width="20" height="20" fill="none" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#60A5FA" /><text x="10" y="15" textAnchor="middle" fontSize="13" fill="#fff">★</text></svg>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.45, duration: 0.7, type: "spring" }}
+            className="inline-flex items-center gap-2 bg-white/80 border border-blue-100 rounded-full px-4 py-2 mb-6 shadow text-blue-700 text-sm font-medium"
+          >
+            <svg width="20" height="20" fill="none" viewBox="0 0 20 20">
+              <circle cx="10" cy="10" r="10" fill="#60A5FA" />
+              <text x="10" y="15" textAnchor="middle" fontSize="13" fill="#fff">
+                ★
+              </text>
+            </svg>
             Recommandé par les parents depuis 35+ ans
           </motion.div>
           {/* CTAs */}
-          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.55, duration: 0.7, type: "spring" }} className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-            <a href="#admission" className="inline-block bg-blue-600 text-white font-semibold px-8 py-3 rounded-full shadow hover:bg-blue-700 transition text-lg">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.55, duration: 0.7, type: "spring" }}
+            className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start"
+          >
+            <a
+              href="#admission"
+              className="inline-block bg-blue-600 text-white font-semibold px-8 py-3 rounded-full shadow hover:bg-blue-700 transition text-lg"
+            >
               Inscrire mon enfant
             </a>
           </motion.div>
         </motion.div>
 
         {/* Hero Image with Blob Mask */}
-        <motion.div initial={{ opacity: 0, x: 40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, type: "spring" }} className="flex-1 flex justify-center md:justify-end">
-          <div className="relative w-64 h-64 md:w-80 md:h-80 flex items-center justify-center">
+        <motion.div
+          initial={{ opacity: 0, x: 40 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, type: "spring" }}
+          className="flex-1 flex justify-center md:justify-end"
+        >
+          <div className="relative hidden md:flex w-96 h-96 md:w-[600px] md:h-[600px] items-center justify-center">
             {/* Blob SVG mask */}
-            <svg viewBox="0 0 320 320" className="absolute w-full h-full z-0" style={{ filter: 'drop-shadow(0 8px 32px rgba(0,0,0,0.10))' }}>
-              <defs>
-                <clipPath id="blobClip">
-                  <path d="M60,20 Q100,0 160,20 Q220,40 260,80 Q300,120 280,180 Q260,240 200,280 Q140,320 80,280 Q20,240 20,180 Q0,120 40,80 Q80,40 60,20 Z" />
-                </clipPath>
-              </defs>
-              <rect width="320" height="320" fill="#fff" clipPath="url(#blobClip)" />
-            </svg>
-            <Image src="/globe.svg" alt="Enfants heureux" width={220} height={220} className="object-contain absolute z-10" style={{ clipPath: 'url(#blobClip)' }} />
+
+            <Image
+              src="/teddy.png"
+              alt="Enfants heureux"
+              width={1400}
+              height={1400}
+              className="object-contain absolute z-10 w-[1000px] h-[1000px]"
+              style={{ clipPath: "url(#blobClip)" }}
+            />
             {/* Decorative dots */}
             <span className="absolute bottom-6 right-6 w-6 h-6 bg-blue-100 rounded-full opacity-60" />
             <span className="absolute top-8 left-8 w-4 h-4 bg-pink-100 rounded-full opacity-60" />
@@ -200,4 +504,4 @@ export default function Hero() {
       </div>
     </section>
   );
-} 
+}

@@ -99,24 +99,32 @@ const Program = () => {
           })}
         </div>
 
+        {/* After the activities grid, add a full bullet list of activities */}
+        <div className="mt-8">
+          <h4 className="text-lg font-bold mb-2 text-slate-700 text-center">Activités éducatives et ludiques</h4>
+          <ul className="list-disc mx-auto text-left max-w-md text-slate-700">
+            <li>Activités sensorielles, motrices et artistiques</li>
+            <li>Chansons, histoires, jeux symboliques, blocs, coin lecture</li>
+            <li>Ateliers de motricité fine et globale</li>
+            <li>Jeux extérieurs quotidiennement (cour sécurisée)</li>
+            <li>Sorties éducatives et journées thématiques</li>
+            <li>Introduction aux chiffres, aux lettres, aux formes et aux couleurs</li>
+            <li>Activités bilingues quotidiennes intégrant le français et l’anglais</li>
+          </ul>
+        </div>
+
         {/* Redesigned HighScope Approach Card */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="bg-gradient-to-r from-green-500 to-blue-500 rounded-3xl p-14 text-white text-center mb-24 relative overflow-hidden"
+          className="bg-gradient-to-r from-green-500 to-blue-500 rounded-3xl px-4 py-12 text-white text-center mb-24 relative overflow-hidden flex flex-col items-center"
         >
-          {/* Playful icons/shapes */}
-          <div className="absolute -top-10 left-10 w-24 h-24 bg-white opacity-10 rounded-full animate-blob"></div>
-          <div className="absolute bottom-0 right-10 w-32 h-32 bg-yellow-200 opacity-10 rounded-full animate-blob animation-delay-2000"></div>
-          <h3 className="text-4xl md:text-5xl font-extrabold mb-8 drop-shadow-sm flex items-center justify-center gap-3">
-            <FaBook className="text-white/80" /> Approche HighScope
-          </h3>
+          <FaBook className="text-4xl mb-4" />
+          <h3 className="text-4xl md:text-5xl font-extrabold mb-8 drop-shadow-sm">Approche HighScope</h3>
           <p className="text-xl leading-relaxed max-w-4xl mx-auto mb-12 font-medium">
-            Les enfants sont encouragés à explorer, à poser des questions, à faire des choix et à apprendre à travers
-            leurs intérêts. Les éducatrices jouent un rôle actif dans l&apos;observation, le soutien et l&apos;enrichissement
-            des expériences des enfants.
+            Les enfants sont encouragés à explorer, à poser des questions, à faire des choix et à apprendre à travers leurs intérêts. Les éducatrices jouent un rôle actif dans l&apos;observation, le soutien et l&apos;enrichissement des expériences des enfants.
           </p>
           <div className="grid md:grid-cols-3 gap-8 mx-auto">
             <div className="bg-white/20 rounded-2xl p-8 flex flex-col items-center">
@@ -184,7 +192,7 @@ const Program = () => {
           <div className="relative z-10 grid md:grid-cols-2 gap-16 items-center">
             {/* Left: Headline, subtitle, and staggered cards */}
             <div>
-              <h3 className="text-5xl font-extrabold mb-6 bg-gradient-to-r from-blue-500 via-green-400 to-yellow-400 bg-clip-text text-transparent drop-shadow-lg">
+              <h3 className="text-3xl md:text-5xl font-extrabold mb-6 bg-gradient-to-r from-blue-500 via-green-400 to-yellow-400 bg-clip-text text-transparent drop-shadow-lg">
                 Environnement Bilingue HighScope
               </h3>
               <div className="inline-block mb-10 px-6 py-3 rounded-2xl bg-yellow-100 text-yellow-900 font-semibold text-lg shadow-lg">
@@ -195,9 +203,9 @@ const Program = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.1 }}
                 viewport={{ once: true }}
-                className="flex items-start mb-4 gap-5 bg-white/80 border-l-8 border-green-300 rounded-2xl p-6 shadow-xl hover:shadow-2xl hover:-rotate-2 transition-transform duration-300 group"
+                className="flex flex-col items-center mb-4 gap-5 bg-white/80 border-l-8 border-green-300 rounded-2xl p-6 shadow-xl hover:shadow-2xl hover:-rotate-2 transition-transform duration-300 group"
               >
-                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-green-300 to-blue-200 flex items-center justify-center text-3xl text-green-700 shadow group-hover:scale-110 transition">
+                <div className="w-14 h-14 mb-4 rounded-xl bg-gradient-to-br from-green-300 to-blue-200 flex items-center justify-center text-3xl text-green-700 shadow group-hover:scale-110 transition mx-auto">
                   <FaRunning />
                 </div>
                 <div>
@@ -214,9 +222,9 @@ const Program = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.2 }}
                 viewport={{ once: true }}
-                className="flex items-start mb-4 gap-5 bg-white/80 border-l-8 border-blue-300 rounded-2xl p-6 shadow-xl hover:shadow-2xl hover:rotate-2 transition-transform duration-300 group"
+                className="flex flex-col items-center mb-4 gap-5 bg-white/80 border-l-8 border-blue-300 rounded-2xl p-6 shadow-xl hover:shadow-2xl hover:rotate-2 transition-transform duration-300 group"
               >
-                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-300 to-purple-200 flex items-center justify-center text-3xl text-blue-700 shadow group-hover:scale-110 transition">
+                <div className="w-14 h-14 mb-4 rounded-xl bg-gradient-to-br from-blue-300 to-purple-200 flex items-center justify-center text-3xl text-blue-700 shadow group-hover:scale-110 transition mx-auto">
                   <FaLanguage />
                 </div>
                 <div>
@@ -231,9 +239,9 @@ const Program = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.3 }}
                 viewport={{ once: true }}
-                className="flex items-start gap-5 bg-white/80 border-l-8 border-yellow-300 rounded-2xl p-6 shadow-xl hover:shadow-2xl hover:-rotate-2 transition-transform duration-300 group"
+                className="flex flex-col items-center gap-5 bg-white/80 border-l-8 border-yellow-300 rounded-2xl p-6 shadow-xl hover:shadow-2xl hover:-rotate-2 transition-transform duration-300 group"
               >
-                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-yellow-300 to-pink-200 flex items-center justify-center text-3xl text-yellow-700 shadow group-hover:scale-110 transition">
+                <div className="w-14 h-14 mb-4 rounded-xl bg-gradient-to-br from-yellow-300 to-pink-200 flex items-center justify-center text-3xl text-yellow-700 shadow group-hover:scale-110 transition mx-auto">
                   <FaSmileBeam />
                 </div>
                 <div>
@@ -248,78 +256,57 @@ const Program = () => {
           </div>
         </section>
 
-        {/* Communication avec les Parents - DISTINCT TIMELINE REDESIGN */}
-        <div className="relative mt-32 mb-24">
-          <section className="relative py-20 px-4 md:px-16 bg-white rounded-3xl shadow-2xl overflow-visible">
-            {/* Timeline line */}
-            <div className="absolute left-1/2 top-40 bottom-40 w-1 bg-gradient-to-b from-green-300 via-blue-300 to-orange-300 rounded-full z-0 md:hidden"></div>
-            <div className="flex flex-col md:flex-row items-center md:items-stretch justify-between gap-12 md:gap-0 max-w-6xl mx-auto">
-              {/* Steps */}
-              <div className="flex-1 flex flex-col md:flex-row items-center md:items-end justify-between z-10">
-                {/* Step 1: Email */}
-                <div className="relative flex flex-col items-center md:items-start mb-12 md:mb-0 w-full md:w-1/3">
-                  <div className="bg-green-100 rounded-2xl px-6 py-6 shadow-lg relative chat-bubble-left">
-                    <div className="absolute -left-4 top-8 w-8 h-8 bg-green-100 rounded-full rotate-45"></div>
-                    <FaEnvelopeOpenText className="text-3xl mb-2 text-green-500" />
-                    <div className="font-bold text-lg text-slate-800 mb-1">Courriel Hebdomadaire</div>
-                    <div className="text-slate-700 text-base mb-2">Chaque vendredi, nous envoyons un courriel informatif aux parents, comprenant :</div>
-                    <ul className="text-slate-700 text-sm list-disc ml-5">
-                      <li>Des photos de la semaine</li>
-                      <li>Les activités thématiques préparées et animées par nos éducatrices</li>
-                      <li>Un aperçu des apprentissages vécus par les enfants</li>
-                    </ul>
-                  </div>
-                  {/* Timeline dot/connector */}
-                  <div className="hidden md:block absolute right-[-32px] top-1/2 transform -translate-y-1/2 w-8 h-8 bg-gradient-to-br from-green-300 to-blue-300 rounded-full border-4 border-white z-20"></div>
-                </div>
-                {/* Step 2: Kaymbu App */}
-                <div className="relative flex flex-col items-center md:items-center mb-12 md:mb-0 w-full md:w-1/3">
-                  <div className="bg-blue-100 rounded-2xl px-6 py-6 shadow-lg relative chat-bubble-center">
-                    <div className="absolute left-1/2 -bottom-4 w-8 h-8 bg-blue-100 rounded-full rotate-45 md:hidden"></div>
-                    <FaMobileAlt className="text-3xl mb-2 text-blue-500" />
-                    <div className="font-bold text-lg text-slate-800 mb-1">Application Kaymbu</div>
-                    <div className="text-slate-700 text-base mb-2">Plateforme sécurisée qui permet aux parents d&apos;accéder à :</div>
-                    <ul className="text-slate-700 text-sm list-disc ml-5">
-                      <li>Le rapport quotidien de leur enfant (repas, toilette, humeur, sieste, etc.)</li>
-                      <li>Des observations sur les activités du jour</li>
-                      <li>Un suivi personnalisé au quotidien</li>
-                    </ul>
-                  </div>
-                  {/* Timeline dot/connector */}
-                  <div className="hidden md:block absolute right-[-32px] top-1/2 transform -translate-y-1/2 w-8 h-8 bg-gradient-to-br from-blue-300 to-orange-300 rounded-full border-4 border-white z-20"></div>
-                </div>
-                {/* Step 3: Reports */}
-                <div className="relative flex flex-col items-center md:items-end w-full md:w-1/3">
-                  <div className="bg-orange-100 rounded-2xl px-6 py-6 shadow-lg relative chat-bubble-right">
-                    <div className="absolute -right-4 top-8 w-8 h-8 bg-orange-100 rounded-full rotate-45"></div>
-                    <FaChartLine className="text-3xl mb-2 text-orange-500" />
-                    <div className="font-bold text-lg text-slate-800 mb-1">Rapports de Développement</div>
-                    <div className="text-slate-700 text-base mb-2">Deux fois par année, nous remettons aux parents un rapport du développement global de leur enfant, comprenant :</div>
-                    <ul className="text-slate-700 text-sm list-disc ml-5">
-                      <li>Des observations précises effectuées par l&apos;éducatrice</li>
-                      <li>Des photos illustrant les progrès dans différents domaines</li>
-                      <li>Suivi motricité, langage, socialisation, etc.</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              {/* Phone mockup with Kaymbu screenshot (placeholder) */}
-              <div className="hidden md:flex flex-col items-center justify-center ml-12">
-                <div className="w-48 h-96 bg-gray-200 rounded-3xl shadow-2xl border-4 border-blue-300 flex items-center justify-center relative overflow-hidden">
-                  <div className="absolute top-2 left-1/2 -translate-x-1/2 w-16 h-2 bg-gray-300 rounded-full"></div>
-                  <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-10 h-2 bg-gray-300 rounded-full"></div>
-                  <span className="text-blue-400 font-bold text-lg">Kaymbu App</span>
-                </div>
-                <div className="mt-4 text-xs text-slate-500">Aperçu de l&apos;application parent</div>
-              </div>
-            </div>
-            {/* Parent testimonial */}
-            <div className="max-w-2xl mx-auto mt-16">
-              <div className="px-6 py-4 rounded-xl bg-green-50 text-green-900 font-semibold text-lg shadow text-center">
-                &quot;Grâce à la communication régulière de la garderie, je me sens toujours impliqué(e) dans la journée de mon enfant !&quot;
-              </div>
-            </div>
-          </section>
+        {/* Communication & Reports Section */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch mt-12">
+          {/* Rapports de Développement */}
+          <div className="bg-orange-100 rounded-2xl px-6 py-6 shadow-lg flex flex-col h-full">
+            <h3 className="font-bold text-lg mb-2 text-orange-800 flex items-center gap-2">
+              <FaChartLine className="text-2xl text-orange-500" /> Rapports de Développement
+            </h3>
+            <p className="mb-2 text-slate-700 text-base">Deux fois par année, nous remettons aux parents un rapport du développement global de leur enfant, comprenant :</p>
+            <ul className="text-slate-700 text-sm list-disc ml-5">
+              <li>Des observations précises effectuées par l&apos;éducatrice</li>
+              <li>Des photos illustrant les progrès dans différents domaines</li>
+              <li>Suivi motricité, langage, socialisation, etc.</li>
+              <li>Évaluation des compétences cognitives et socio-affectives</li>
+              <li>Recommandations pour le développement continu</li>
+            </ul>
+          </div>
+          {/* Courriel Hebdomadaire */}
+          <div className="bg-green-100 rounded-2xl px-6 py-6 shadow-lg flex flex-col h-full">
+            <h3 className="font-bold text-lg mb-2 text-green-800 flex items-center gap-2">
+              <FaEnvelopeOpenText className="text-2xl text-green-500" /> Courriel Hebdomadaire
+            </h3>
+            <p className="mb-2 text-slate-700 text-base">Chaque vendredi, nous envoyons un courriel informatif aux parents, comprenant :</p>
+            <ul className="text-slate-700 text-sm list-disc ml-5">
+              <li>Des photos de la semaine</li>
+              <li>Les activités thématiques préparées et animées par nos éducatrices</li>
+              <li>Un aperçu des apprentissages vécus par les enfants</li>
+              <li>Informations importantes pour la semaine suivante</li>
+            </ul>
+          </div>
+          {/* Application Kaymbu */}
+          <div className="bg-blue-100 rounded-2xl px-6 py-6 shadow-lg flex flex-col h-full">
+            <h3 className="font-bold text-lg mb-2 text-blue-800 flex items-center gap-2">
+              <FaMobileAlt className="text-2xl text-blue-500" /> Application Kaymbu
+            </h3>
+            <p className="mb-2 text-slate-700 text-base">Plateforme sécurisée qui permet aux parents d&apos;accéder à :</p>
+            <ul className="text-slate-700 text-sm list-disc ml-5 mb-4">
+              <li>Le rapport quotidien de leur enfant (repas, toilette, humeur, sieste, etc.)</li>
+              <li>Des observations sur les activités du jour</li>
+              <li>Un suivi personnalisé au quotidien</li>
+            </ul>
+            {/* <div className="w-full flex-1 flex items-end justify-center mt-auto">
+              <div className="w-32 h-48 bg-white border-2 border-blue-300 rounded-2xl flex items-center justify-center text-blue-400 font-bold text-lg mt-2">Kaymbu App</div>
+            </div> */}
+            <span className="text-xs text-slate-500 mt-2">Aperçu de l&apos;application parent</span>
+          </div>
+        </div>
+        {/* Parent testimonial */}
+        <div className="max-w-2xl mx-auto mt-16">
+          <div className="px-6 py-4 rounded-xl bg-green-50 text-green-900 font-semibold text-lg shadow text-center">
+            &quot;Grâce à la communication régulière de la garderie, je me sens toujours impliqué(e) dans la journée de mon enfant !&quot;
+          </div>
         </div>
       </div>
     </section>

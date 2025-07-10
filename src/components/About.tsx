@@ -1,8 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FaHeart, FaStar, FaUsers, FaGraduationCap, FaBaby, FaClock, FaShieldAlt, FaLeaf } from "react-icons/fa";
-import { GiFamilyHouse, GiTeacher } from "react-icons/gi";
+import { FaHeart, FaStar, FaUsers, FaGraduationCap, FaBaby, FaClock, FaShieldAlt, FaLeaf, FaPaintBrush } from "react-icons/fa";
+import { GiTeacher } from "react-icons/gi";
 
 const About = () => {
     const stats = [
@@ -34,6 +34,18 @@ const About = () => {
 
     const values = [
         {
+            icon: <FaGraduationCap className="text-2xl text-white" />,
+            title: "Éducation",
+            description: "Excellence éducative reconnue par le Ministère de la famille",
+            color: "from-blue-500 to-indigo-500"
+        },
+        {
+            icon: <FaHeart className="text-2xl text-white" />,
+            title: "Compassion",
+            description: "Accompagnement bienveillant et empathique de chaque enfant",
+            color: "from-pink-500 to-rose-500"
+        },
+        {
             icon: <FaHeart className="text-2xl text-white" />,
             title: "Amour",
             description: "Chaque enfant est accueilli avec affection et bienveillance",
@@ -47,15 +59,15 @@ const About = () => {
         },
         {
             icon: <FaStar className="text-2xl text-white" />,
-            title: "Excellence",
-            description: "Qualité éducative reconnue par le Ministère de la famille",
+            title: "Autonomie",
+            description: "Développement de l'indépendance et de la confiance en soi",
             color: "from-yellow-500 to-orange-500"
         },
         {
-            icon: <GiFamilyHouse className="text-2xl text-white" />,
-            title: "Famille",
-            description: "Partnership étroit avec les parents pour le développement",
-            color: "from-blue-500 to-indigo-500"
+            icon: <FaPaintBrush className="text-2xl text-white" />,
+            title: "Créativité",
+            description: "Encouragement de l'expression artistique et imaginative",
+            color: "from-purple-500 to-violet-500"
         }
     ];
 
@@ -63,22 +75,22 @@ const About = () => {
         {
             year: "1987",
             title: "Fondation",
-            description: "Création de Garderie Aimée Inc. avec une vision bilingue"
+            description: "Création de Garderie Aimée Inc. avec une vision bilingue et une approche centrée sur le développement global de l'enfant"
         },
         {
             year: "1995",
-            title: "Reconnaissance",
-            description: "Obtention de la reconnaissance du Ministère de la famille"
+            title: "Reconnaissance MFA",
+            description: "Obtention de la reconnaissance officielle du Ministère de la famille avec qualité éducative reconnue"
         },
         {
             year: "2010",
             title: "Expansion",
-            description: "Agrandissement des installations pour 80 enfants"
+            description: "Agrandissement des installations pour accueillir 80 enfants (15 poupons + 65 enfants)"
         },
         {
             year: "2025",
-            title: "Rénovation",
-            description: "Rénovation complète des espaces éducatifs"
+            title: "Rénovation Complète",
+            description: "Rénovation intérieure complète des espaces éducatifs pour offrir un environnement moderne et stimulant"
         }
     ];
 
@@ -119,7 +131,7 @@ const About = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
                     viewport={{ once: true }}
-                    className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-24"
+                    className="grid grid-cols-1 lg:grid-cols-4 gap-8 mb-24"
                 >
                     {stats.map((stat, index) => (
                         <motion.div
@@ -156,7 +168,7 @@ const About = () => {
                     viewport={{ once: true }}
                     className="grid lg:grid-cols-2 gap-12 mb-24"
                 >
-                    <div className="bg-gradient-to-br from-blue-600 to-purple-600 rounded-3xl p-12 text-white relative overflow-hidden">
+                    <div className="bg-gradient-to-br from-blue-600 to-purple-600 rounded-3xl p-6 md:p-12 text-white relative overflow-hidden">
                         <div className="absolute top-0 right-0 w-32 h-32 bg-white opacity-10 rounded-full -translate-y-16 translate-x-16"></div>
                         <div className="relative z-10">
                             <div className="flex items-center gap-3 mb-6">
@@ -173,7 +185,7 @@ const About = () => {
                         </div>
                     </div>
 
-                    <div className="bg-gradient-to-br from-green-600 to-teal-600 rounded-3xl p-12 text-white relative overflow-hidden">
+                    <div className="bg-gradient-to-br from-green-600 to-teal-600 rounded-3xl p-6 md:p-12 text-white relative overflow-hidden">
                         <div className="absolute bottom-0 left-0 w-32 h-32 bg-white opacity-10 rounded-full translate-y-16 -translate-x-16"></div>
                         <div className="relative z-10">
                             <div className="flex items-center gap-3 mb-6">
@@ -205,7 +217,7 @@ const About = () => {
                         </p>
                     </div>
 
-                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {values.map((value, index) => (
                             <motion.div
                                 key={index}
@@ -228,6 +240,17 @@ const About = () => {
                                 </div>
                             </motion.div>
                         ))}
+                    </div>
+                    <div className="mt-8">
+                        <h4 className="text-lg font-bold mb-2 text-slate-700 text-center">Valeurs fondamentales</h4>
+                        <ul className="list-disc mx-auto text-left max-w-md text-slate-700">
+                            <li>Éducation</li>
+                            <li>Compassion</li>
+                            <li>Amour</li>
+                            <li>Respect</li>
+                            <li>Autonomie</li>
+                            <li>Créativité</li>
+                        </ul>
                     </div>
                 </motion.div>
 
@@ -253,7 +276,8 @@ const About = () => {
 
                     <div className="relative z-10">
                         {/* Rainbow timeline line */}
-                        <div className="absolute left-1/2 transform -translate-x-1/2 w-2 h-full bg-gradient-to-b from-pink-300 via-yellow-200 via-green-200 to-blue-300"></div>
+                        <div className="hidden sm:block absolute left-1/2 transform -translate-x-1/2 w-2 h-full bg-gradient-to-b from-pink-300 via-yellow-200 to-blue-300"></div>
+                        <div className="block sm:hidden absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-pink-300 via-yellow-200 to-blue-300"></div>
 
                         <div className="space-y-16">
                             {timeline.map((item, index) => {
@@ -287,31 +311,77 @@ const About = () => {
                                         whileInView={{ opacity: 1, x: 0 }}
                                         transition={{ duration: 0.6, delay: index * 0.2 }}
                                         viewport={{ once: true }}
-                                        className={`flex items-center ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}
+                                        className={`flex flex-col sm:flex-row items-center sm:items-stretch ${index % 2 === 0 ? 'sm:flex-row' : 'sm:flex-row-reverse'}`}
                                     >
-                                        <div className={`w-1/2 ${index % 2 === 0 ? 'pr-12 text-right' : 'pl-12 text-left'}`}>
-                                            <div className={`relative rounded-3xl p-8 shadow-xl border-0 ${bg} transition-all duration-300 group`}> 
+                                        <div className={`w-full sm:w-1/2 px-0 sm:${index % 2 === 0 ? 'pr-12 text-right' : 'pl-12 text-left'} mb-6 sm:mb-0`}> 
+                                            <div className={`relative rounded-3xl p-6 sm:p-8 shadow-xl border-0 ${bg} transition-all duration-300 group w-full max-w-md mx-auto sm:max-w-none`}>
                                                 {/* Accent bar */}
-                                                <div className={`absolute top-0 ${index % 2 === 0 ? 'left-0' : 'right-0'} h-full w-2 ${bar} rounded-3xl`}></div>
+                                                <div className={`absolute top-0 ${index % 2 === 0 ? 'left-0' : 'right-0'} h-full w-1 sm:w-2 ${bar} rounded-3xl`}></div>
                                                 {/* Icon */}
-                                                <div className="flex items-center gap-2 mb-3">
+                                                <div className="md:flex items-center gap-2 mb-3 justify-center sm:justify-start">
                                                     <span className="text-3xl">{icon}</span>
                                                     <span className="text-3xl font-extrabold bg-gradient-to-r from-pink-400 via-yellow-400 to-blue-400 bg-clip-text text-transparent drop-shadow-sm">{item.year}</span>
                                                 </div>
-                                                <h4 className="text-2xl font-bold text-slate-800 mb-2">{item.title}</h4>
-                                                <p className="text-lg text-slate-700 font-medium">{item.description}</p>
+                                                <h4 className="text-2xl font-bold text-slate-800 mb-2 text-center sm:text-left">{item.title}</h4>
+                                                <p className="text-lg text-slate-700 font-medium text-center sm:text-left">{item.description}</p>
                                             </div>
                                         </div>
 
                                         {/* Playful timeline dot */}
-                                        <div className="relative z-10">
-                                            <div className={`w-12 h-12 ${dotColor} rounded-full border-4 border-white shadow-lg flex items-center justify-center text-2xl animate-pulse`}>{icon}</div>
+                                        <div className="relative z-10 mb-6 sm:mb-0">
+                                            <div className={`w-10 h-10 sm:w-12 sm:h-12 ${dotColor} rounded-full border-4 border-white shadow-lg flex items-center justify-center text-2xl animate-pulse mx-auto`}>{icon}</div>
                                         </div>
 
-                                        <div className="w-1/2"></div>
+                                        <div className="hidden sm:block w-1/2"></div>
                                     </motion.div>
                                 );
                             })}
+                        </div>
+                    </div>
+                </motion.div>
+
+                {/* Regulatory Compliance */}
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8 }}
+                    viewport={{ once: true }}
+                    className="mb-24"
+                >
+                    <div className="bg-gradient-to-br from-indigo-800 to-purple-800 rounded-3xl p-4 md:p-12 text-white relative overflow-hidden">
+                        <div className="absolute top-0 right-0 w-64 h-64 bg-white opacity-10 rounded-full -translate-y-32 translate-x-32"></div>
+                        <div className="absolute bottom-0 left-0 w-48 h-48 bg-pink-500 opacity-10 rounded-full translate-y-24 -translate-x-24"></div>
+
+                        <div className="relative z-10 text-center">
+                            <div className="md:flex items-center justify-center gap-3 mb-8">
+                                <div className="w-16 h-16 bg-gradient-to-r from-indigo-400 to-purple-400 bg-opacity-20 rounded-2xl flex items-center justify-center">
+                                    <FaShieldAlt className="text-3xl" />
+                                </div>
+                                <h3 className="text-4xl font-bold">Conformité Réglementaire</h3>
+                            </div>
+
+                            <p className="text-xl mb-12 max-w-4xl mx-auto leading-relaxed">
+                                Notre engagement envers l&apos;excellence éducative s&apos;accompagne d&apos;une conformité rigoureuse aux normes gouvernementales.
+                            </p>
+
+                            <div className="grid md:grid-cols-3 gap-8 items-stretch min-h-[220px]">
+                                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 flex flex-col justify-center h-full text-center">
+                                    <h4 className="text-2xl font-bold mb-3">Cadre Légal</h4>
+                                    <ul className="mx-auto text-left max-w-md">
+                                        <li>• Loi sur les services de garde éducatifs à l&apos;enfance</li>
+                                        <li>• Règlement sur les services de garde éducatifs à l&apos;enfance</li>
+                                        <li>• Règlement sur la contribution réduite</li>
+                                    </ul>
+                                </div>
+                                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 flex flex-col justify-center h-full text-center">
+                                    <h4 className="text-2xl font-bold mb-3">Reconnaissance MFA</h4>
+                                    <p className="text-center">Qualité éducative reconnue par le Ministère de la famille depuis 1995</p>
+                                </div>
+                                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 flex flex-col justify-center h-full text-center">
+                                    <h4 className="text-2xl font-bold mb-3">Comité de Parents</h4>
+                                    <p className="text-center">Conformément à l&apos;article 31, comité de 5 parents élus. Assemblée annuelle avant le 15 octobre.<br/>Un parent employé ou propriétaire ne peut pas en faire partie.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </motion.div>
@@ -323,14 +393,14 @@ const About = () => {
                     transition={{ duration: 0.8 }}
                     viewport={{ once: true }}
                 >
-                    <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-3xl p-12 text-white relative overflow-hidden">
+                    <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-3xl p-4 md:,p-12 text-white relative overflow-hidden">
                         <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500 opacity-10 rounded-full -translate-y-32 translate-x-32"></div>
                         <div className="absolute bottom-0 left-0 w-48 h-48 bg-purple-500 opacity-10 rounded-full translate-y-24 -translate-x-24"></div>
 
                         <div className="relative z-10 text-center">
-                            <div className="flex items-center justify-center gap-3 mb-8">
+                            <div className="md:flex items-center justify-center gap-3 mb-8">
                                 <div className="w-16 h-16 bg-gradient-to-r from-blue-400 to-purple-400 bg-opacity-20 rounded-2xl flex items-center justify-center">
-                                    <FaGraduationCap className="text-3xl" />
+                                    <FaGraduationCap className="items-center text-3xl" />
                                 </div>
                                 <h3 className="text-4xl font-bold">Équipe de Professionnels Spécialisés</h3>
                             </div>

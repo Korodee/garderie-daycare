@@ -1,39 +1,99 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FaShieldAlt, FaLeaf, FaGamepad, FaUtensils, FaBed, FaThermometerHalf, FaBuilding, FaStar } from "react-icons/fa";
+import {
+  FaShieldAlt,
+  FaLeaf,
+  FaGamepad,
+  FaUtensils,
+  FaBed,
+  FaThermometerHalf,
+  FaBuilding,
+  FaStar,
+  FaExclamationTriangle,
+  FaLock,
+} from "react-icons/fa";
 
 const facilities = [
   {
-    icon: <FaShieldAlt className="text-4xl text-blue-500 drop-shadow" />, title: "Sécurité maximale", description: "Système de caméras de surveillance, entrée sécurisée avec accès restreint"
+    icon: <FaShieldAlt className="text-4xl text-blue-500 drop-shadow" />,
+    title: "Sécurité maximale",
+    description:
+      "Système de caméras de surveillance, entrée sécurisée avec accès restreint",
   },
   {
-    icon: <FaLeaf className="text-4xl text-green-500 drop-shadow" />, title: "Espace extérieur sécurisé", description: "Modules de jeux adaptés à chaque âge avec surface sécuritaire"
+    icon: <FaLeaf className="text-4xl text-green-500 drop-shadow" />,
+    title: "Espace extérieur sécurisé",
+    description:
+      "Modules de jeux adaptés à chaque âge avec surface sécuritaire",
   },
   {
-    icon: <FaGamepad className="text-4xl text-purple-500 drop-shadow" />, title: "Salles rénovées 2025", description: "Salles de classe rénovées et aménagées selon chaque groupe d'âge"
+    icon: <FaGamepad className="text-4xl text-purple-500 drop-shadow" />,
+    title: "Salles rénovées 2025",
+    description:
+      "Salles de classe rénovées et aménagées selon chaque groupe d'âge",
   },
   {
-    icon: <FaUtensils className="text-4xl text-orange-500 drop-shadow" />, title: "Cuisine sur place", description: "Repas chauds, variés et entièrement frais préparés chaque jour"
+    icon: <FaUtensils className="text-4xl text-orange-500 drop-shadow" />,
+    title: "Cuisine sur place",
+    description:
+      "Repas chauds, variés et entièrement frais préparés chaque jour",
   },
   {
-    icon: <FaBed className="text-4xl text-pink-500 drop-shadow" />, title: "Zones de repos", description: "Berceaux pour poupons et petits lits pour les plus grands"
+    icon: <FaBed className="text-4xl text-pink-500 drop-shadow" />,
+    title: "Zones de repos",
+    description: "Berceaux pour poupons et petits lits pour les plus grands",
   },
   {
-    icon: <FaThermometerHalf className="text-4xl text-red-500 drop-shadow" />, title: "Hygiène rigoureuse", description: "Respect rigoureux des normes d'hygiène et de désinfection"
-  }
+    icon: <FaThermometerHalf className="text-4xl text-red-500 drop-shadow" />,
+    title: "Hygiène rigoureuse",
+    description: "Respect rigoureux des normes d'hygiène et de désinfection",
+  },
+  {
+    icon: (
+      <FaExclamationTriangle className="text-4xl text-yellow-500 drop-shadow" />
+    ),
+    title: "Plan d'évacuation",
+    description:
+      "Plan d'évacuation d'urgence affiché et pratiqué régulièrement",
+  },
+  {
+    icon: <FaLock className="text-4xl text-indigo-500 drop-shadow" />,
+    title: "Plan d'intrusion",
+    description: "Protocoles de confinement et plan d'intrusion mis en place",
+  },
 ];
 
 const features = [
-  { title: "Capacité totale", value: "80 enfants", description: "15 poupons (0-18 mois) + 65 enfants (18mo-5ans)" },
-  { title: "Rénovation 2025", value: "Complète", description: "Rénovation intérieure complète des installations" },
-  { title: "Repas quotidiens", value: "3 repas", description: "2 collations + 1 repas chaud selon recommandations ministérielles" },
-  { title: "Horaires", value: "7h-18h", description: "Lundi au vendredi, toute l'année" }
+  {
+    title: "Capacité totale",
+    value: "80 enfants",
+    description: "15 poupons (0-18 mois) + 65 enfants (18mo-5ans)",
+  },
+  {
+    title: "Rénovation 2025",
+    value: "Complète",
+    description: "Rénovation intérieure complète des installations",
+  },
+  {
+    title: "Repas quotidiens",
+    value: "3 repas",
+    description:
+      "2 collations + 1 repas chaud selon recommandations ministérielles",
+  },
+  {
+    title: "Horaires",
+    value: "7h-18h",
+    description: "Lundi au vendredi, toute l'année",
+  },
 ];
 
 export default function Facilities() {
   return (
-    <section id="installations" className="py-32 bg-gradient-to-br from-green-50 via-blue-50 to-yellow-50 relative overflow-hidden">
+    <section
+      id="installations"
+      className="py-32 bg-gradient-to-br from-green-50 via-blue-50 to-yellow-50 relative overflow-hidden"
+    >
       {/* Playful illustrated background */}
       <div className="absolute inset-0 pointer-events-none select-none z-0">
         <div className="absolute top-0 left-1/4 w-80 h-80 bg-green-200 rounded-full opacity-30 blur-2xl animate-blob"></div>
@@ -43,7 +103,7 @@ export default function Facilities() {
       </div>
 
       {/* Hero area */}
-      <div className="relative z-10 flex flex-col items-center mb-10  mx-auto max-w-6xl">
+      <div className="relative z-10 flex flex-col items-center mb-10 px-4 mx-auto max-w-6xl">
         <div className="w-24 h-24 rounded-full bg-gradient-to-br from-green-400 to-blue-400 flex items-center justify-center mb-6 shadow-2xl">
           <FaBuilding className="text-white text-5xl drop-shadow" />
         </div>
@@ -55,16 +115,33 @@ export default function Facilities() {
           Rénovation complète 2025
         </div>
         <p className="text-xl text-slate-700 max-w-2xl text-center mb-2">
-          La Garderie Aimée Inc. offre un environnement physique moderne, sécuritaire et stimulant, parfaitement adapté aux besoins des enfants de 0 à 5 ans.
+          La Garderie Aimée Inc. offre un environnement physique moderne,
+          sécuritaire et stimulant, parfaitement adapté aux besoins des enfants
+          de 0 à 5 ans.
         </p>
       </div>
 
       {/* Wavy divider */}
       <div className="-mt-10 mb-12">
-        <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-16">
-          <path fill="url(#facilities-wave)" d="M0,80 C360,160 1080,0 1440,80 L1440,120 L0,120 Z" />
+        <svg
+          viewBox="0 0 1440 120"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-full h-16"
+        >
+          <path
+            fill="url(#facilities-wave)"
+            d="M0,80 C360,160 1080,0 1440,80 L1440,120 L0,120 Z"
+          />
           <defs>
-            <linearGradient id="facilities-wave" x1="0" x2="1440" y1="0" y2="0" gradientUnits="userSpaceOnUse">
+            <linearGradient
+              id="facilities-wave"
+              x1="0"
+              x2="1440"
+              y1="0"
+              y2="0"
+              gradientUnits="userSpaceOnUse"
+            >
               <stop stopColor="#bbf7d0" />
               <stop offset="0.5" stopColor="#bae6fd" />
               <stop offset="1" stopColor="#fef9c3" />
@@ -74,8 +151,8 @@ export default function Facilities() {
       </div>
 
       {/* Facilities Grid */}
-      <div className="relative z-10 max-w-6xl mx-auto mb-10">
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12 items-stretch">
+      <div className="relative z-10 max-w-7xl mx-auto mb-10 px-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 items-stretch">
           {facilities.map((facility, index) => (
             <motion.div
               key={index}
@@ -89,7 +166,11 @@ export default function Facilities() {
                 {/* Floating icon */}
                 <motion.div
                   animate={{ y: [0, -10, 0] }}
-                  transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
                   className="mb-6 group-hover:scale-110 transition-transform duration-300"
                 >
                   {facility.icon}
@@ -110,10 +191,25 @@ export default function Facilities() {
 
       {/* Wavy divider */}
       <div className="mb-16">
-        <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-16">
-          <path fill="url(#facilities-wave2)" d="M0,40 C360,120 1080,0 1440,40 L1440,120 L0,120 Z" />
+        <svg
+          viewBox="0 0 1440 120"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-full h-16"
+        >
+          <path
+            fill="url(#facilities-wave2)"
+            d="M0,40 C360,120 1080,0 1440,40 L1440,120 L0,120 Z"
+          />
           <defs>
-            <linearGradient id="facilities-wave2" x1="0" x2="1440" y1="0" y2="0" gradientUnits="userSpaceOnUse">
+            <linearGradient
+              id="facilities-wave2"
+              x1="0"
+              x2="1440"
+              y1="0"
+              y2="0"
+              gradientUnits="userSpaceOnUse"
+            >
               <stop stopColor="#fef9c3" />
               <stop offset="0.5" stopColor="#bae6fd" />
               <stop offset="1" stopColor="#bbf7d0" />
@@ -128,7 +224,7 @@ export default function Facilities() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
-        className="relative z-10 p-12 mb-10 mx-auto max-w-7xl"
+        className="relative z-10 p-0 md:p-12 mb-10 mx-auto max-w-7xl px-4"
       >
         <div className="text-center mb-12">
           <h3 className="text-3xl font-bold mb-4 text-slate-800">
@@ -138,7 +234,60 @@ export default function Facilities() {
             En 2025, nous avons complété une rénovation intérieure complète
           </p>
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+        {/* Safety and Emergency Procedures */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="mb-16"
+        >
+          <div className="bg-gradient-to-br from-red-50 to-orange-50 rounded-3xl px-4 py-4 md:px-8 md:py-8 shadow-lg border border-red-100">
+            <div className="text-center mb-8">
+              <FaShieldAlt className="text-5xl text-red-500 mx-auto mb-4" />
+              <h4 className="text-2xl font-bold text-red-800 mb-2">
+                Sécurité et Procédures d&apos;Urgence
+              </h4>
+              <p className="text-red-700">
+                Notre équipe est formée et entraînée aux procédures
+                d&apos;évacuation et de premiers soins
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="bg-white rounded-xl p-6 shadow-sm">
+                <h5 className="font-bold text-red-700 mb-3 flex items-center gap-2">
+                  <FaExclamationTriangle className="text-red-500" />
+                  Plan d&apos;Évacuation
+                </h5>
+                <ul className="text-sm text-slate-700 space-y-1">
+                  <li>
+                    • Plan d&apos;évacuation d&apos;urgence affiché dans chaque
+                    salle
+                  </li>
+                  <li>• Pratiques régulières avec les enfants</li>
+                  <li>• Points de rassemblement identifiés</li>
+                  <li>• Équipe formée aux procédures d&apos;urgence</li>
+                </ul>
+              </div>
+
+              <div className="bg-white rounded-xl p-6 shadow-sm">
+                <h5 className="font-bold text-red-700 mb-3 flex items-center gap-2">
+                  <FaLock className="text-red-500" />
+                  Plan d&apos;Intrusion
+                </h5>
+                <ul className="text-sm text-slate-700 space-y-1">
+                  <li>• Protocoles de confinement mis en place</li>
+                  <li>• Système d&apos;alerte et de communication</li>
+                  <li>• Zones sécurisées identifiées</li>
+                  <li>• Formation continue de l&apos;équipe</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((feature, index) => (
             <motion.div
               key={index}
@@ -166,10 +315,25 @@ export default function Facilities() {
 
       {/* Wavy divider */}
       <div className="mb-16">
-        <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-16">
-          <path fill="url(#facilities-wave3)" d="M0,80 C360,0 1080,120 1440,80 L1440,120 L0,120 Z" />
+        <svg
+          viewBox="0 0 1440 120"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-full h-16"
+        >
+          <path
+            fill="url(#facilities-wave3)"
+            d="M0,80 C360,0 1080,120 1440,80 L1440,120 L0,120 Z"
+          />
           <defs>
-            <linearGradient id="facilities-wave3" x1="0" x2="1440" y1="0" y2="0" gradientUnits="userSpaceOnUse">
+            <linearGradient
+              id="facilities-wave3"
+              x1="0"
+              x2="1440"
+              y1="0"
+              y2="0"
+              gradientUnits="userSpaceOnUse"
+            >
               <stop stopColor="#bae6fd" />
               <stop offset="0.5" stopColor="#bbf7d0" />
               <stop offset="1" stopColor="#fef9c3" />
@@ -186,17 +350,21 @@ export default function Facilities() {
         viewport={{ once: true }}
         className="mb-24"
       >
-        <div className="bg-gradient-to-r from-orange-600 to-red-600 p-12 text-white shadow-2xl flex flex-col md:flex-row items-center gap-12">
+        <div className="bg-gradient-to-r from-orange-600 to-red-600 p-4 md:p-12 text-white shadow-2xl flex flex-col md:flex-row items-center gap-12">
           <div className="flex-1 max-w-4xl mx-auto">
             <h3 className="text-3xl font-bold mb-6">
               Cuisine sur place – repas frais tous les jours
             </h3>
             <p className="text-xl mb-8 max-w-2xl">
-              Une cuisinière sur place prépare chaque jour des repas chauds, variés et entièrement frais, selon les recommandations du ministère.
+              Une cuisinière sur place prépare chaque jour des repas chauds,
+              variés et entièrement frais, selon les recommandations du
+              ministère.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
               <div className="bg-white/20 rounded-2xl p-6 text-center">
-                <h4 className="text-xl font-bold mb-2">Deux collations équilibrées</h4>
+                <h4 className="text-xl font-bold mb-2">
+                  Deux collations équilibrées
+                </h4>
                 <p>Et un repas chaud sont fournis chaque jour</p>
               </div>
               <div className="bg-white/20 rounded-2xl p-6 text-center">
@@ -204,7 +372,9 @@ export default function Facilities() {
                 <p>Et adapté aux besoins nutritionnels des enfants</p>
               </div>
               <div className="bg-white/20 rounded-2xl p-6 text-center">
-                <h4 className="text-xl font-bold mb-2">Adaptations possibles</h4>
+                <h4 className="text-xl font-bold mb-2">
+                  Adaptations possibles
+                </h4>
                 <p>Pour allergies et restrictions alimentaires (sur demande)</p>
               </div>
             </div>
@@ -221,12 +391,10 @@ export default function Facilities() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
-        className="grid md:grid-cols-2 gap-12 mb-8 mx-auto max-w-7xl"
+        className="grid md:grid-cols-2 gap-12 mb-8 mx-auto max-w-7xl px-4"
       >
-        <div className="bg-gradient-to-r from-green-600 to-blue-600 rounded-3xl p-12 text-white shadow-2xl">
-          <h3 className="text-3xl font-bold mb-6">
-            Sécurité et Prévention
-          </h3>
+        <div className="bg-gradient-to-r from-green-600 to-blue-600 rounded-3xl p-6 md:p-12 text-white shadow-2xl">
+          <h3 className="text-3xl font-bold mb-6">Sécurité et Prévention</h3>
           <ul className="space-y-4 text-lg">
             <li className="flex items-center">
               <span className="w-2 h-2 bg-white rounded-full mr-3"></span>
@@ -238,7 +406,8 @@ export default function Facilities() {
             </li>
             <li className="flex items-center">
               <span className="w-2 h-2 bg-white rounded-full mr-3"></span>
-              Plan d&apos;évacuation d&apos;urgence affiché, pratiqué régulièrement
+              Plan d&apos;évacuation d&apos;urgence affiché, pratiqué
+              régulièrement
             </li>
             <li className="flex items-center">
               <span className="w-2 h-2 bg-white rounded-full mr-3"></span>
@@ -246,16 +415,18 @@ export default function Facilities() {
             </li>
             <li className="flex items-center">
               <span className="w-2 h-2 bg-white rounded-full mr-3"></span>
-              Équipe formée et entraînée aux procédures d&apos;évacuation et de premiers soins
+              Équipe formée et entraînée aux procédures d&apos;évacuation et de
+              premiers soins
             </li>
           </ul>
         </div>
-        <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl p-12 text-white shadow-2xl">
+        <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl p-6 md:p-12 text-white shadow-2xl">
           <h3 className="text-3xl font-bold mb-6">
             🛝 Espace extérieur sécurisé
           </h3>
           <p className="text-lg mb-6">
-            Un espace de jeu extérieur accueille les enfants tous les jours (selon la météo), avec :
+            Un espace de jeu extérieur accueille les enfants tous les jours
+            (selon la météo), avec :
           </p>
           <ul className="space-y-4 text-lg">
             <li className="flex items-center">
@@ -279,4 +450,4 @@ export default function Facilities() {
       </motion.div>
     </section>
   );
-} 
+}

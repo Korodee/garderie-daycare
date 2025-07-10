@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FaCheckCircle, FaEnvelopeOpenText, FaFileAlt, FaCalendarAlt, FaDollarSign, FaPhone, FaClock, FaInfoCircle } from "react-icons/fa";
+import { FaCheckCircle, FaEnvelopeOpenText, FaFileAlt, FaCalendarAlt, FaDollarSign, FaInfoCircle, FaStar, FaUsers, FaHeart } from "react-icons/fa";
 
 const requirements = [
   { icon: <FaFileAlt className="text-xl text-blue-500" />, title: "Formulaire d'inscription" },
@@ -19,7 +19,7 @@ const process = [
 
 export default function Admission() {
   return (
-    <section id="admission" className="py-32 bg-gradient-to-br from-orange-50 via-pink-50 to-yellow-50 relative overflow-hidden">
+    <section id="admission" className="py-32 px-4 bg-gradient-to-br from-orange-50 via-pink-50 to-yellow-50 relative overflow-hidden">
       {/* Hero area with animated envelope/checklist */}
       <div className="relative z-10 flex flex-col items-center mb-20">
         <motion.div
@@ -61,7 +61,7 @@ export default function Admission() {
 
       {/* Requirements Checklist */}
       <div className="relative z-10 max-w-2xl mx-auto mb-24">
-        <div className="bg-white/80 backdrop-blur-lg rounded-3xl p-10 shadow-2xl border-2 border-white/60">
+        <div className="bg-white/80 backdrop-blur-lg rounded-3xl p-4 py-8 md:p-10 shadow-2xl border-2 border-white/60">
           <h3 className="text-2xl font-bold mb-6 text-orange-700 flex items-center gap-2">
             Documents Requis
           </h3>
@@ -126,7 +126,10 @@ export default function Admission() {
             <FaDollarSign className="text-orange-400" /> Contribution réduite
           </h3>
           <p className="text-lg text-slate-700 mb-4 text-center">
-            La garderie est subventionnée, et les parents paient uniquement la contribution réduite fixée par le gouvernement du Québec. Aucun frais supplémentaire n’est exigé, sauf en cas de services occasionnels ou spéciaux.
+            La garderie est subventionnée, et les parents paient uniquement la contribution réduite fixée par le gouvernement du Québec.
+          </p>
+          <p className="text-lg text-slate-700 mb-4 text-center">
+            Aucun frais supplémentaire n’est exigé, sauf en cas de services occasionnels ou spéciaux.
           </p>
           <a href="https://www.laplace0-5.com" target="_blank" rel="noopener noreferrer" className="mt-2 bg-gradient-to-r from-orange-500 to-pink-500 text-white px-8 py-3 rounded-full font-bold shadow-lg hover:scale-105 transition-transform">
             Calculer ma contribution
@@ -136,7 +139,7 @@ export default function Admission() {
 
       {/* Contact and Info Cards */}
       <div className="relative z-10 max-w-4xl mx-auto grid md:grid-cols-2 gap-12 mb-8">
-        <div className="bg-gradient-to-r from-orange-600 to-pink-500 rounded-3xl p-10 text-white shadow-2xl flex flex-col justify-between">
+        <div className="bg-gradient-to-r from-orange-600 to-pink-500 rounded-3xl p-6 md:p-10 text-white shadow-2xl flex flex-col justify-between">
           <div>
             <h3 className="text-2xl font-bold mb-4 flex items-center gap-2">
               <FaInfoCircle className="text-white/80" /> Informations Importantes
@@ -161,29 +164,36 @@ export default function Admission() {
             </ul>
           </div>
         </div>
-        <div className="bg-gradient-to-r from-pink-500 to-orange-600 rounded-3xl p-10 text-white shadow-2xl flex flex-col justify-between">
+        <div className="bg-gradient-to-r from-green-500 to-emerald-600 rounded-3xl p-6 md:p-10 text-white shadow-2xl flex flex-col justify-between">
           <div>
             <h3 className="text-2xl font-bold mb-4 flex items-center gap-2">
-              <FaPhone className="text-white/80" /> Contact et Rendez-vous
+              <FaCheckCircle className="text-white/80" /> Avantages de Notre Garderie
             </h3>
-            <div className="space-y-6">
+            <div className="space-y-4">
               <div className="flex items-center">
-                <FaPhone className="text-xl mr-4" />
+                <FaStar className="text-xl mr-4 text-yellow-300" />
                 <div>
-                  <div className="font-semibold">Téléphone</div>
-                  <div className="text-lg">514 747-4114</div>
+                  <div className="font-semibold">35+ années d&apos;expérience</div>
+                  <div className="text-sm opacity-90">Excellence reconnue depuis 1987</div>
                 </div>
               </div>
               <div className="flex items-center">
-                <FaClock className="text-xl mr-4" />
+                <FaUsers className="text-xl mr-4 text-blue-200" />
                 <div>
-                  <div className="font-semibold">Horaires de bureau</div>
-                  <div className="text-lg">Lun-Ven: 8h-17h</div>
+                  <div className="font-semibold">Équipe qualifiée</div>
+                  <div className="text-sm opacity-90">Éducatrices diplômées et expérimentées</div>
+                </div>
+              </div>
+              <div className="flex items-center">
+                <FaHeart className="text-xl mr-4 text-pink-200" />
+                <div>
+                  <div className="font-semibold">Approche bienveillante</div>
+                  <div className="text-sm opacity-90">Développement à son propre rythme</div>
                 </div>
               </div>
               <div className="pt-4">
-                <a href="https://www.laplace0-5.com" target="_blank" rel="noopener noreferrer" className="bg-white text-pink-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors duration-300 block text-center">
-                  Accéder à La Place 0-5
+                <a href="#contact" className="bg-white text-green-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors duration-300 block text-center">
+                  Nous Contacter
                 </a>
               </div>
             </div>
