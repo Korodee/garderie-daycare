@@ -15,7 +15,7 @@ import Image from "next/image";
 const teamSections = [
   {
     title: "Direction",
-    icon: <FaCrown className="text-amber-500" />,
+    icon: <FaCrown className="text-white" />,
     color: "from-amber-400 to-orange-500",
     bgColor: "from-amber-50 to-orange-50",
     members: [
@@ -26,7 +26,7 @@ const teamSections = [
   {
     title: "Pouponnière",
     subtitle: "0-18 mois",
-    icon: <FaBaby className="text-pink-500" />,
+    icon: <FaBaby className="text-white" />,
     color: "from-pink-400 to-rose-500",
     bgColor: "from-pink-50 to-rose-50",
     members: [
@@ -38,7 +38,7 @@ const teamSections = [
   {
     title: "Trotteurs",
     subtitle: "18-36 mois",
-    icon: <FaChild className="text-blue-500" />,
+    icon: <FaChild className="text-white" />,
     color: "from-blue-400 to-indigo-500",
     bgColor: "from-blue-50 to-indigo-50",
     members: [
@@ -54,7 +54,7 @@ const teamSections = [
   {
     title: "Bambins",
     subtitle: "3-4 ans",
-    icon: <FaUserFriends className="text-green-500" />,
+    icon: <FaUserFriends className="text-white" />,
     color: "from-green-400 to-emerald-500",
     bgColor: "from-green-50 to-emerald-50",
     members: [
@@ -70,7 +70,7 @@ const teamSections = [
   {
     title: "Préscolaire",
     subtitle: "4-5 ans",
-    icon: <FaGraduationCap className="text-purple-500" />,
+    icon: <FaGraduationCap className="text-white" />,
     color: "from-purple-400 to-violet-500",
     bgColor: "from-purple-50 to-violet-50",
     members: [
@@ -80,7 +80,7 @@ const teamSections = [
   },
   {
     title: "Soutien",
-    icon: <FaHeart className="text-teal-500" />,
+    icon: <FaHeart className="text-white" />,
     color: "from-teal-400 to-cyan-500",
     bgColor: "from-teal-50 to-cyan-50",
     members: [
