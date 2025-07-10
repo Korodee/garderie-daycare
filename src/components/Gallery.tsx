@@ -132,7 +132,7 @@ export default function Gallery() {
       </div>
 
       {/* Header */}
-      <div className="relative z-10 text-center mt-10 mb-12">
+      <div className="relative z-10 text-center mt-6 md:mt-16 mb-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -203,7 +203,7 @@ export default function Gallery() {
       </div>
 
       {/* Gallery Grid */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4">
+      <div className="relative z-10 max-w-7xl mx-auto">
         <div className="space-y-12">
           {filteredCategories.map((category, index) => (
             <motion.div

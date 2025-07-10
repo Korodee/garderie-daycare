@@ -1,7 +1,15 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FaBaby, FaChild, FaUserFriends, FaGraduationCap, FaStar, FaCrown, FaHeart } from "react-icons/fa";
+import {
+  FaBaby,
+  FaChild,
+  FaUserFriends,
+  FaGraduationCap,
+  FaStar,
+  FaCrown,
+  FaHeart,
+} from "react-icons/fa";
 import Image from "next/image";
 
 const teamSections = [
@@ -13,7 +21,7 @@ const teamSections = [
     members: [
       { name: "Mayara", role: "Directrice", image: "/Mayara-Directrice.jpg" },
       { name: "Natasha", role: "Directrice", image: "/Natasha-Directrice.jpg" },
-    ]
+    ],
   },
   {
     title: "Pouponnière",
@@ -25,7 +33,7 @@ const teamSections = [
       { name: "Simranjit", role: "0-8 mois", image: "/placeholder-avatar.svg" },
       { name: "Kristin", role: "9-12 mois", image: "/Kristin-Pouponniére.jpg" },
       { name: "Carmen", role: "12-18 mois", image: "/Carmen-Pouponniere.jpg" },
-    ]
+    ],
   },
   {
     title: "Trotteurs",
@@ -34,10 +42,14 @@ const teamSections = [
     color: "from-blue-400 to-indigo-500",
     bgColor: "from-blue-50 to-indigo-50",
     members: [
-      { name: "Daphney", role: "18-24 mois", image: "/Daphney-Trotinneurs.jpg" },
+      {
+        name: "Daphney",
+        role: "18-24 mois",
+        image: "/Daphney-Trotinneurs.jpg",
+      },
       { name: "Souad", role: "24-30 mois", image: "/placeholder-avatar.svg" },
       { name: "Li", role: "30-36 mois", image: "/Li-Trotinneurs.jpg" },
-    ]
+    ],
   },
   {
     title: "Bambins",
@@ -47,9 +59,13 @@ const teamSections = [
     bgColor: "from-green-50 to-emerald-50",
     members: [
       { name: "Fiona", role: "Éducatrice", image: "/Fiona-Bambins.jpg" },
-      { name: "Stéphanie", role: "Éducatrice", image: "/Stephanie-Bambins.jpg" },
+      {
+        name: "Stéphanie",
+        role: "Éducatrice",
+        image: "/Stephanie-Bambins.jpg",
+      },
       { name: "Drissia", role: "Éducatrice", image: "/Drissia-Bambins.jpg" },
-    ]
+    ],
   },
   {
     title: "Préscolaire",
@@ -60,7 +76,7 @@ const teamSections = [
     members: [
       { name: "Popi", role: "Éducatrice", image: "/Popi-Prek.jpg" },
       { name: "Bassma", role: "Éducatrice", image: "/Bassma-Prek.jpg" },
-    ]
+    ],
   },
   {
     title: "Soutien",
@@ -69,21 +85,31 @@ const teamSections = [
     bgColor: "from-teal-50 to-cyan-50",
     members: [
       { name: "Silvie", role: "Cuisinière", image: "/Silvie-Cuisinniere.jpg" },
-      { name: "Khadidja", role: "Remplaçante", image: "/Khadidja-Éducatrice remplacante.jpg" },
+      {
+        name: "Khadidja",
+        role: "Remplaçante",
+        image: "/Khadidja-Éducatrice remplacante.jpg",
+      },
       { name: "Amani", role: "Soutien", image: "/Amani.jpg" },
-    ]
+    ],
   },
 ];
 
 export default function Team() {
   return (
-    <section id="equipe" className="relative py-20 bg-gradient-to-br from-slate-50 to-blue-50 overflow-hidden">
+    <section
+      id="equipe"
+      className="relative py-20 bg-gradient-to-br from-slate-50 to-blue-50 overflow-hidden"
+    >
       {/* Subtle Background Pattern */}
       <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `radial-gradient(circle at 25% 25%, #3b82f6 2px, transparent 2px), radial-gradient(circle at 75% 75%, #8b5cf6 2px, transparent 2px)`,
-          backgroundSize: '50px 50px'
-        }}></div>
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `radial-gradient(circle at 25% 25%, #3b82f6 2px, transparent 2px), radial-gradient(circle at 75% 75%, #8b5cf6 2px, transparent 2px)`,
+            backgroundSize: "50px 50px",
+          }}
+        ></div>
       </div>
 
       {/* Header */}
@@ -100,7 +126,7 @@ export default function Team() {
             Notre Équipe
           </div>
         </motion.div>
-        
+
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -110,7 +136,7 @@ export default function Team() {
         >
           Rencontrez Nos Étoiles
         </motion.h2>
-        
+
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -134,16 +160,24 @@ export default function Team() {
               viewport={{ once: true }}
               className="group"
             >
-              <div className={`relative rounded-2xl bg-gradient-to-br ${section.bgColor} p-6 shadow-lg hover:shadow-xl transition-all duration-300 group-hover:-translate-y-1 border border-white/50`}>
+              <div
+                className={`relative rounded-2xl bg-gradient-to-br ${section.bgColor} p-6 shadow-lg hover:shadow-xl transition-all duration-300 group-hover:-translate-y-1 border border-white/50`}
+              >
                 {/* Section Header */}
                 <div className="flex items-center gap-3 mb-4">
-                  <div className={`w-10 h-10 rounded-full bg-gradient-to-r ${section.color} flex items-center justify-center text-white shadow-md`}>
+                  <div
+                    className={`w-10 h-10 rounded-full bg-gradient-to-r ${section.color} flex items-center justify-center text-white shadow-md`}
+                  >
                     {section.icon}
                   </div>
                   <div>
-                    <h3 className="font-bold text-gray-800 text-lg">{section.title}</h3>
+                    <h3 className="font-bold text-gray-800 text-lg">
+                      {section.title}
+                    </h3>
                     {section.subtitle && (
-                      <p className="text-sm text-gray-600">{section.subtitle}</p>
+                      <p className="text-sm text-gray-600">
+                        {section.subtitle}
+                      </p>
                     )}
                   </div>
                 </div>
@@ -162,10 +196,12 @@ export default function Team() {
                       {/* Avatar */}
                       <div className="relative">
                         <div className="w-12 h-12 rounded-full overflow-hidden shadow-md border-2 border-white">
-                          {member.image.endsWith('.svg') ? (
-                            <img
+                          {member.image.endsWith(".svg") ? (
+                            <Image
                               src={member.image}
                               alt={`${member.name} - ${member.role}`}
+                              width={48}
+                              height={48}
                               className="w-full h-full object-cover"
                             />
                           ) : (
@@ -178,7 +214,9 @@ export default function Team() {
                             />
                           )}
                         </div>
-                        <div className={`absolute -bottom-1 -right-1 w-3 h-3 rounded-full bg-gradient-to-r ${section.color} border-2 border-white`}></div>
+                        <div
+                          className={`absolute -bottom-1 -right-1 w-3 h-3 rounded-full bg-gradient-to-r ${section.color} border-2 border-white`}
+                        ></div>
                       </div>
 
                       {/* Info */}
@@ -192,7 +230,9 @@ export default function Team() {
                       </div>
 
                       {/* Decorative Element */}
-                      <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${section.color} opacity-60`}></div>
+                      <div
+                        className={`w-2 h-2 rounded-full bg-gradient-to-r ${section.color} opacity-60`}
+                      ></div>
                     </motion.div>
                   ))}
                 </div>
@@ -215,9 +255,9 @@ export default function Team() {
       >
         <div className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-pink-400 to-purple-400 rounded-full text-white font-medium shadow-lg">
           <FaHeart className="text-sm" />
-          <span className="text-sm">Une équipe dédiée à l'excellence</span>
+          <span className="text-sm">Une équipe dédiée à l&apos;excellence</span>
         </div>
       </motion.div>
     </section>
   );
-} 
+}

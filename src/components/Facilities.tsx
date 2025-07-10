@@ -162,7 +162,7 @@ export default function Facilities() {
               viewport={{ once: true }}
               className="group"
             >
-              <div className="relative bg-white/70 backdrop-blur-lg rounded-3xl p-10 shadow-2xl border-2 border-white/60 flex flex-col items-center text-center overflow-hidden h-full">
+              <div className="relative bg-white/70 backdrop-blur-lg rounded-3xl px-4 py-6 shadow-2xl border-2 border-white/60 flex flex-col items-center text-center overflow-hidden h-full">
                 {/* Floating icon */}
                 <motion.div
                   animate={{ y: [0, -10, 0] }}

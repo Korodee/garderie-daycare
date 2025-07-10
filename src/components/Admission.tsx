@@ -121,7 +121,7 @@ export default function Admission() {
 
       {/* Contribution Calculator Card */}
       <div className="relative z-10 max-w-xl mx-auto mb-24">
-        <div className="bg-gradient-to-br from-orange-100 to-pink-100 rounded-3xl p-10 shadow-2xl border-2 border-white/60 flex flex-col items-center">
+        <div className="bg-gradient-to-br from-orange-100 to-pink-100 rounded-3xl p-4 py-8 md:py-10 md:p-10 shadow-2xl border-2 border-white/60 flex flex-col items-center">
           <h3 className="text-2xl font-bold mb-4 text-orange-700 flex items-center gap-2">
             <FaDollarSign className="text-orange-400" /> Contribution réduite
           </h3>

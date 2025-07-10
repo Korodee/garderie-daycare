@@ -1,40 +1,40 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FaBook, FaMusic, FaPaintBrush, FaRunning, FaLanguage, FaClock, FaChild, FaChalkboardTeacher, FaGlobeAmericas, FaSmileBeam, FaEnvelopeOpenText, FaMobileAlt, FaChartLine } from "react-icons/fa";
+import { FaBook, FaMusic, FaRunning, FaLanguage, FaClock, FaChild, FaChalkboardTeacher, FaGlobeAmericas, FaSmileBeam, FaEnvelopeOpenText, FaMobileAlt, FaChartLine } from "react-icons/fa";
 import Image from 'next/image';
 
 const Program = () => {
   const activities = [
     {
       icon: <FaBook className="text-2xl text-blue-500" />,
-      title: "Activités sensorielles",
-      description: "Exploration tactile, visuelle et auditive"
+      title: "Activités sensorielles, motrices et artistiques",
+      description: "Exploration tactile, motrice, artistique et auditive."
     },
     {
       icon: <FaMusic className="text-2xl text-purple-500" />,
-      title: "Chansons et histoires",
-      description: "Développement du langage et de l&apos;imagination"
-    },
-    {
-      icon: <FaPaintBrush className="text-2xl text-pink-500" />,
-      title: "Jeux symboliques",
-      description: "Blocs, coin lecture et activités artistiques"
+      title: "Chansons, histoires et jeux symboliques",
+      description: "Chansons, histoires, jeux de rôle, blocs, coin lecture."
     },
     {
       icon: <FaRunning className="text-2xl text-green-500" />,
       title: "Motricité fine et globale",
-      description: "Ateliers et jeux extérieurs quotidiens"
+      description: "Ateliers et jeux extérieurs quotidiens (cour sécurisée)."
     },
     {
-      icon: <FaLanguage className="text-2xl text-orange-500" />,
-      title: "Activités bilingues",
-      description: "Intégration quotidienne français et anglais"
+      icon: <FaSmileBeam className="text-2xl text-yellow-500" />,
+      title: "Sorties éducatives et journées thématiques",
+      description: "Découvertes, sorties et journées à thème."
     },
     {
       icon: <FaClock className="text-2xl text-indigo-500" />,
       title: "Apprentissages fondamentaux",
-      description: "Chiffres, lettres, formes et couleurs"
+      description: "Introduction aux chiffres, lettres, formes et couleurs."
+    },
+    {
+      icon: <FaLanguage className="text-2xl text-orange-500" />,
+      title: "Activités bilingues quotidiennes",
+      description: "Intégration du français et de l’anglais chaque jour."
     }
   ];
 
@@ -97,20 +97,6 @@ const Program = () => {
               </motion.div>
             );
           })}
-        </div>
-
-        {/* After the activities grid, add a full bullet list of activities */}
-        <div className="mt-8">
-          <h4 className="text-lg font-bold mb-2 text-slate-700 text-center">Activités éducatives et ludiques</h4>
-          <ul className="list-disc mx-auto text-left max-w-md text-slate-700">
-            <li>Activités sensorielles, motrices et artistiques</li>
-            <li>Chansons, histoires, jeux symboliques, blocs, coin lecture</li>
-            <li>Ateliers de motricité fine et globale</li>
-            <li>Jeux extérieurs quotidiennement (cour sécurisée)</li>
-            <li>Sorties éducatives et journées thématiques</li>
-            <li>Introduction aux chiffres, aux lettres, aux formes et aux couleurs</li>
-            <li>Activités bilingues quotidiennes intégrant le français et l’anglais</li>
-          </ul>
         </div>
 
         {/* Redesigned HighScope Approach Card */}
@@ -210,7 +196,7 @@ const Program = () => {
                 </div>
                 <div>
                   <div className="font-bold text-xl text-slate-800 mb-1">Organisation de l’environnement</div>
-                  <ul className="list-disc ml-6 text-slate-700 text-base">
+                  <ul className="list-disc text-slate-700 text-base">
                     <li>Coins thématiques pour chaque type d’activité</li>
                     <li>Matériel accessible et organisé par les enfants</li>
                     <li>Espaces pour activités individuelles et de groupe</li>
