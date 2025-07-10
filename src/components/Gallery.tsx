@@ -10,7 +10,7 @@ const galleryCategories = [
     id: "entrance",
     title: "Entrée & Accueil",
     subtitle: "Notre espace d'accueil chaleureux",
-    icon: <FaDoorOpen className="text-blue-500" />,
+    icon: <FaDoorOpen className="text-white" />,
     color: "from-blue-400 to-indigo-500",
     bgColor: "from-blue-50 to-indigo-50",
     images: [
@@ -23,7 +23,7 @@ const galleryCategories = [
     id: "classrooms",
     title: "Salles de Classe",
     subtitle: "Espaces d'apprentissage stimulants",
-    icon: <FaBuilding className="text-green-500" />,
+    icon: <FaBuilding className="text-white" />,
     color: "from-green-400 to-emerald-500",
     bgColor: "from-green-50 to-emerald-50",
     images: [
@@ -54,7 +54,7 @@ const galleryCategories = [
     id: "outdoor",
     title: "Espace Extérieur",
     subtitle: "Notre cour de jeux sécurisée",
-    icon: <FaTree className="text-orange-500" />,
+    icon: <FaTree className="text-white" />,
     color: "from-orange-400 to-red-500",
     bgColor: "from-orange-50 to-red-50",
     images: [
@@ -66,7 +66,7 @@ const galleryCategories = [
     id: "facilities",
     title: "Installations",
     subtitle: "Nos équipements et aménagements",
-    icon: <FaChild className="text-purple-500" />,
+    icon: <FaChild className="text-white" />,
     color: "from-purple-400 to-violet-500",
     bgColor: "from-purple-50 to-violet-50",
     images: [
@@ -81,7 +81,7 @@ const galleryCategories = [
     id: "bathrooms",
     title: "Salles de Bain",
     subtitle: "Espaces d'hygiène adaptés",
-    icon: <FaBath className="text-teal-500" />,
+    icon: <FaBath className="text-white" />,
     color: "from-teal-400 to-cyan-500",
     bgColor: "from-teal-50 to-cyan-50",
     images: [
@@ -93,7 +93,7 @@ const galleryCategories = [
     id: "kitchen",
     title: "Cuisine & Nutrition",
     subtitle: "Notre cuisine sur place",
-    icon: <FaUtensils className="text-pink-500" />,
+    icon: <FaUtensils className="text-white" />,
     color: "from-pink-400 to-rose-500",
     bgColor: "from-pink-50 to-rose-50",
     images: [
@@ -104,7 +104,7 @@ const galleryCategories = [
     id: "nursery",
     title: "Chambre de Bébé",
     subtitle: "Espace de repos pour les tout-petits",
-    icon: <FaStar className="text-yellow-500" />,
+    icon: <FaStar className="text-white" />,
     color: "from-yellow-400 to-amber-500",
     bgColor: "from-yellow-50 to-amber-50",
     images: [
