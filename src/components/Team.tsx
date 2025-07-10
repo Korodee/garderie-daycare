@@ -30,7 +30,7 @@ const teamSections = [
     color: "from-pink-400 to-rose-500",
     bgColor: "from-pink-50 to-rose-50",
     members: [
-      { name: "Simranjit", role: "0-8 mois", image: "/placeholder-avatar.svg" },
+      { name: "Simranjit", role: "0-8 mois", image: "/simranjit.jpg" },
       { name: "Kristin", role: "9-12 mois", image: "/Kristin-Pouponniére.jpg" },
       { name: "Carmen", role: "12-18 mois", image: "/Carmen-Pouponniere.jpg" },
     ],
@@ -47,7 +47,7 @@ const teamSections = [
         role: "18-24 mois",
         image: "/Daphney-Trotinneurs.jpg",
       },
-      { name: "Souad", role: "24-30 mois", image: "/placeholder-avatar.svg" },
+      { name: "Souad", role: "24-30 mois", image: "/souad.jpg" },
       { name: "Li", role: "30-36 mois", image: "/Li-Trotinneurs.jpg" },
     ],
   },
