@@ -213,9 +213,7 @@ const About = () => {
                 <h3 className="text-3xl font-bold">Notre Vision</h3>
               </div>
               <p className="text-xl leading-relaxed">
-                Devenir une référence en matière d&apos;éducation préscolaire
-                bilingue, en préparant les enfants à devenir des citoyens
-                confiants, curieux et ouverts sur le monde.
+                Faire avec excellence afin de former des citoyens autonomes, compatissants, curieux et prêts pour l’avenir.
               </p>
             </div>
           </div>

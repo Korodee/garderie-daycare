@@ -36,7 +36,7 @@ const teamSections = [
     ],
   },
   {
-    title: "Trotteurs",
+    title: "Trotinneurs",
     subtitle: "18-36 mois",
     icon: <FaChild className="text-white" />,
     color: "from-blue-400 to-indigo-500",
@@ -90,7 +90,7 @@ const teamSections = [
         role: "Remplaçante",
         image: "/Khadidja-Éducatrice remplacante.jpg",
       },
-      { name: "Amani", role: "Soutien", image: "/Amani.jpg" },
+      { name: "Amani", role: "Remplaçante", image: "/Amani.jpg" },
     ],
   },
 ];

@@ -1,5 +1,4 @@
 import React from "react";
-import { GiBabyBottle } from "react-icons/gi";
 import {
   FaPhoneAlt,
   FaMapMarkerAlt,
@@ -23,15 +22,13 @@ export default function Footer() {
           {/* Branding */}
           <div className="flex flex-col gap-4">
             <div className="flex items-center gap-3">
-              <span className="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 shadow-md">
-                <GiBabyBottle className="text-white text-xl" />
-              </span>
+              {/* Baby bottle icon removed */}
               <div>
                 <h2 className="font-bold text-xl text-slate-900">
                   Garderie Aimée Inc.
                 </h2>
                 <p className="text-sm text-slate-500">
-                  Depuis 1987, un lieu sûr et accueillant pour les enfants.
+                  Une garderie de qualité
                 </p>
               </div>
             </div>
@@ -120,7 +117,7 @@ export default function Footer() {
           </div>
 
           {/* Hours */}
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col">
             <h3 className="font-semibold text-lg text-slate-900 mb-4">
               Horaires
             </h3>

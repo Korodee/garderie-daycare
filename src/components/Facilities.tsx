@@ -241,7 +241,7 @@ export default function Facilities() {
           viewport={{ once: true }}
           className="mb-16"
         >
-          <div className="bg-gradient-to-br from-red-50 to-orange-50 rounded-3xl px-4 py-4 md:px-8 md:py-8 shadow-lg border border-red-100">
+          <div className="bg-gradient-to-br from-red-50 max-w-3xl mx-auto to-orange-50 rounded-3xl px-4 py-4 md:px-8 md:py-8 shadow-lg border border-red-100">
             <div className="text-center mb-8">
               <FaShieldAlt className="text-5xl text-red-500 mx-auto mb-4" />
               <h4 className="text-2xl font-bold text-red-800 mb-2">
@@ -254,33 +254,18 @@ export default function Facilities() {
             </div>
 
             <div className="grid md:grid-cols-2 gap-6">
-              <div className="bg-white rounded-xl p-6 shadow-sm">
-                <h5 className="font-bold text-red-700 mb-3 flex items-center gap-2">
+              <div className="bg-white rounded-xl p-4 shadow-sm">
+                <h5 className="font-bold justify-center text-red-700 mb-3 md:mb-0 flex items-center gap-2">
                   <FaExclamationTriangle className="text-red-500" />
                   Plan d&apos;Évacuation
                 </h5>
-                <ul className="text-sm text-slate-700 space-y-1">
-                  <li>
-                    • Plan d&apos;évacuation d&apos;urgence affiché dans chaque
-                    salle
-                  </li>
-                  <li>• Pratiques régulières avec les enfants</li>
-                  <li>• Points de rassemblement identifiés</li>
-                  <li>• Équipe formée aux procédures d&apos;urgence</li>
-                </ul>
               </div>
 
-              <div className="bg-white rounded-xl p-6 shadow-sm">
-                <h5 className="font-bold text-red-700 mb-3 flex items-center gap-2">
+              <div className="bg-white rounded-xl p-4 shadow-sm">
+                <h5 className="font-bold justify-center text-red-700 mb-3 md:mb-0 flex items-center gap-2">
                   <FaLock className="text-red-500" />
                   Plan d&apos;Intrusion
                 </h5>
-                <ul className="text-sm text-slate-700 space-y-1">
-                  <li>• Protocoles de confinement mis en place</li>
-                  <li>• Système d&apos;alerte et de communication</li>
-                  <li>• Zones sécurisées identifiées</li>
-                  <li>• Formation continue de l&apos;équipe</li>
-                </ul>
               </div>
             </div>
           </div>
@@ -295,7 +280,7 @@ export default function Facilities() {
               viewport={{ once: true }}
               className="text-center"
             >
-              <div className="bg-gradient-to-br from-green-100 to-blue-100 rounded-2xl p-6 shadow border border-white/60">
+              <div className="bg-gradient-to-br from-green-100 to-blue-100 rounded-2xl p-6 shadow border border-white/60 h-full">
                 <div className="text-3xl font-bold text-green-600 mb-2">
                   {feature.value}
                 </div>

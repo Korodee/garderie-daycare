@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FaCamera, FaBuilding, FaChild, FaTree, FaDoorOpen, FaBath, FaUtensils, FaStar, FaTimes } from "react-icons/fa";
+import { FaCamera, FaBuilding, FaChild, FaTree, FaDoorOpen, FaBath, FaStar, FaTimes } from "react-icons/fa";
 import Image from "next/image";
 import { useState } from "react";
 
@@ -90,17 +90,6 @@ const galleryCategories = [
     ]
   },
   {
-    id: "kitchen",
-    title: "Cuisine & Nutrition",
-    subtitle: "Notre cuisine sur place",
-    icon: <FaUtensils className="text-white" />,
-    color: "from-pink-400 to-rose-500",
-    bgColor: "from-pink-50 to-rose-50",
-    images: [
-      "/Cuisine-pouponniere.jpg"
-    ]
-  },
-  {
     id: "nursery",
     title: "Chambre de Bébé",
     subtitle: "Espace de repos pour les tout-petits",
@@ -108,7 +97,8 @@ const galleryCategories = [
     color: "from-yellow-400 to-amber-500",
     bgColor: "from-yellow-50 to-amber-50",
     images: [
-      "/chambre-de-bebe.jpg"
+      "/chambre-de-bebe.jpg",
+      "/Cuisine-pouponniere.jpg"
     ]
   }
 ];

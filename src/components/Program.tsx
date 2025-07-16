@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FaBook, FaMusic, FaRunning, FaLanguage, FaClock, FaChild, FaChalkboardTeacher, FaGlobeAmericas, FaSmileBeam, FaEnvelopeOpenText, FaMobileAlt, FaChartLine } from "react-icons/fa";
+import { FaBook, FaMusic, FaRunning, FaLanguage, FaClock, FaChild, FaChalkboardTeacher, FaSmileBeam, FaEnvelopeOpenText, FaMobileAlt, FaChartLine } from "react-icons/fa";
 import Image from 'next/image';
 
 const Program = () => {
@@ -113,20 +113,20 @@ const Program = () => {
             Les enfants sont encouragés à explorer, à poser des questions, à faire des choix et à apprendre à travers leurs intérêts. Les éducatrices jouent un rôle actif dans l&apos;observation, le soutien et l&apos;enrichissement des expériences des enfants.
           </p>
           <div className="grid md:grid-cols-3 gap-8 mx-auto">
-            <div className="bg-white/20 rounded-2xl p-8 flex flex-col items-center">
+            <div className="bg-white/20 rounded-2xl py-4 px-22 flex flex-col items-center">
               <FaChild className="text-5xl mb-2 text-pink-300 drop-shadow" />
-              <div className="text-3xl font-bold mb-1">2-5</div>
-              <div className="text-lg font-medium">Âge des enfants</div>
+              <div className="text-3xl font-bold mb-1">1:5</div>
+              <div className="text-lg font-medium">Bébés</div>
             </div>
-            <div className="bg-white/20 rounded-2xl p-8 flex flex-col items-center">
+            <div className="bg-white/20 rounded-2xl py-4 px-22 flex flex-col items-center">
               <FaChalkboardTeacher className="text-5xl mb-2 text-blue-300 drop-shadow" />
               <div className="text-3xl font-bold mb-1">1:8</div>
-              <div className="text-lg font-medium">Ratio éducateur/enfants</div>
+              <div className="text-lg font-medium">2 à 4 ans</div>
             </div>
-            <div className="bg-white/20 rounded-2xl p-8 flex flex-col items-center">
-              <FaGlobeAmericas className="text-5xl mb-2 text-green-300 drop-shadow" />
-              <div className="text-3xl font-bold mb-1">2</div>
-              <div className="text-lg font-medium">Langues d&apos;enseignement</div>
+            <div className="bg-white/20 rounded-2xl py-4 px-22 flex flex-col items-center">
+              <FaChalkboardTeacher className="text-5xl mb-2 text-green-300 drop-shadow" />
+              <div className="text-3xl font-bold mb-1">1:10</div>
+              <div className="text-lg font-medium">4 à 5 ans</div>
             </div>
           </div>
         </motion.div>
