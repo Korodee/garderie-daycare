@@ -333,7 +333,7 @@ export default function Facilities() {
         viewport={{ once: true }}
         className="mb-24"
       >
-        <div className="bg-gradient-to-r from-orange-600 to-red-600 p-4 md:p-12 text-white shadow-2xl flex flex-col md:flex-row items-center gap-12">
+        <div className="bg-gradient-to-r from-orange-600 to-red-600 p-4 pt-14 md:pt-0 md:p-12 text-white shadow-2xl flex flex-col md:flex-row items-center gap-12">
           <div className="flex-1 max-w-4xl mx-auto">
             <h3 className="text-3xl font-bold mb-6">
               Cuisine sur place – repas frais tous les jours
@@ -378,7 +378,7 @@ export default function Facilities() {
       >
         <div className="bg-gradient-to-r from-green-600 to-blue-600 rounded-3xl p-6 md:p-12 text-white shadow-2xl">
           <h3 className="text-3xl font-bold mb-6">Sécurité et Prévention</h3>
-          <ul className="space-y-4 text-lg">
+          <ul className="space-y-2 text-md">
             <li className="flex items-center">
               <span className="w-2 h-2 bg-white rounded-full mr-3"></span>
               Système de caméras de surveillance dans les zones clés
@@ -407,11 +407,11 @@ export default function Facilities() {
           <h3 className="text-3xl font-bold mb-6">
             🛝 Espace extérieur sécurisé
           </h3>
-          <p className="text-lg mb-6">
+          <p className="text-md mb-6">
             Un espace de jeu extérieur accueille les enfants tous les jours
             (selon la météo), avec :
           </p>
-          <ul className="space-y-4 text-lg">
+          <ul className="space-y-2 text-md">
             <li className="flex items-center">
               <span className="w-2 h-2 bg-white rounded-full mr-3"></span>
               Modules de jeux adaptés à chaque âge
