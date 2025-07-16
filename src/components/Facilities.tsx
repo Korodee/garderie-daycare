@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import {
   FaShieldAlt,
   FaLeaf,
@@ -20,34 +21,40 @@ const facilities = [
     title: "Sécurité maximale",
     description:
       "Système de caméras de surveillance, entrée sécurisée avec accès restreint",
+    image: "/Entree.jpg",
   },
   {
     icon: <FaLeaf className="text-4xl text-green-500 drop-shadow" />,
     title: "Espace extérieur sécurisé",
     description:
       "Modules de jeux adaptés à chaque âge avec surface sécuritaire",
+    image: "/Cour.jpg",
   },
   {
     icon: <FaGamepad className="text-4xl text-purple-500 drop-shadow" />,
     title: "Salles rénovées 2025",
     description:
       "Salles de classe rénovées et aménagées selon chaque groupe d'âge",
+    image: "/Pouponniere-classe.jpg",
   },
   {
     icon: <FaUtensils className="text-4xl text-orange-500 drop-shadow" />,
     title: "Cuisine sur place",
     description:
       "Repas chauds, variés et entièrement frais préparés chaque jour",
+    image: "/Cuisine-pouponniere.jpg",
   },
   {
     icon: <FaBed className="text-4xl text-pink-500 drop-shadow" />,
     title: "Zones de repos",
     description: "Berceaux pour poupons et petits lits pour les plus grands",
+    image: "/chambre-de-bebe.jpg",
   },
   {
     icon: <FaThermometerHalf className="text-4xl text-red-500 drop-shadow" />,
     title: "Hygiène rigoureuse",
     description: "Respect rigoureux des normes d'hygiène et de désinfection",
+    image: "/Toilette-Bambins.jpg",
   },
   {
     icon: (
@@ -56,11 +63,13 @@ const facilities = [
     title: "Plan d'évacuation",
     description:
       "Plan d'évacuation d'urgence affiché et pratiqué régulièrement",
+    image: "/Couloir1.jpg",
   },
   {
     icon: <FaLock className="text-4xl text-indigo-500 drop-shadow" />,
     title: "Plan d'intrusion",
     description: "Protocoles de confinement et plan d'intrusion mis en place",
+    image: "/Bureau.jpg",
   },
 ];
 
@@ -161,6 +170,15 @@ export default function Facilities() {
               className="group"
             >
               <div className="relative bg-white/70 backdrop-blur-lg rounded-3xl px-4 py-6 shadow-2xl border-2 border-white/60 flex flex-col items-center text-center overflow-hidden h-full">
+                {/* Facility Photo */}
+                <Image
+                  src={facility.image}
+                  alt={facility.title}
+                  width={400}
+                  height={200}
+                  className="rounded-2xl mb-4 w-full max-w-xs h-32 object-cover border border-white/70 shadow"
+                  style={{ objectPosition: 'center' }}
+                />
                 {/* Floating icon */}
                 <motion.div
                   animate={{ y: [0, -10, 0] }}
