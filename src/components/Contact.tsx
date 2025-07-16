@@ -77,15 +77,14 @@ export default function Contact() {
           <FaPaperPlane className="text-white text-5xl drop-shadow" />
         </motion.div>
         <h2 className="text-5xl md:text-6xl font-extrabold mb-4 bg-gradient-to-r from-indigo-600 via-pink-500 to-blue-500 bg-clip-text text-transparent drop-shadow-lg text-center">
-          Contactez-Nous
+          Contact
         </h2>
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-100 text-indigo-900 font-semibold text-lg shadow mb-4">
-          <FaHandPaper className="text-indigo-400 animate-wave" /> Toujours à
-          l’écoute !
+          <FaHandPaper className="text-indigo-400 animate-wave" />
+          Nous sommes à votre écoute
         </div>
         <p className="text-xl text-slate-700 max-w-2xl text-center mb-2">
-          Contactez-nous pour toute question concernant nos services et
-          l&apos;inscription de votre enfant.
+          Une question ? Écrivez-nous ou appelez-nous, nous vous répondrons rapidement.
         </p>
       </div>
 

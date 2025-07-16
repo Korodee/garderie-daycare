@@ -53,10 +53,10 @@ const Program = () => {
           className="text-center mb-16"
         >
           <h2 className="text-5xl md:text-6xl font-extrabold mb-6 bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent drop-shadow-sm">
-            Programme Éducatif : HighScope
+            Programme éducatif HighScope
           </h2>
           <p className="text-xl text-slate-700 max-w-3xl mx-auto">
-            Une approche éducative fondée sur l&apos;apprentissage actif en environnement bilingue (français et anglais).
+            Apprendre en s&apos;amusant, chaque jour, en français et en anglais.
           </p>
         </motion.div>
 
@@ -179,10 +179,10 @@ const Program = () => {
             {/* Left: Headline, subtitle, and staggered cards */}
             <div>
               <h3 className="text-3xl md:text-5xl font-extrabold mb-6 bg-gradient-to-r from-blue-500 via-green-400 to-yellow-400 bg-clip-text text-transparent drop-shadow-lg">
-                Environnement Bilingue HighScope
+                Un environnement bilingue, actif et joyeux
               </h3>
               <div className="inline-block mb-10 px-6 py-3 rounded-2xl bg-yellow-100 text-yellow-900 font-semibold text-lg shadow-lg">
-                &ldquo;Ici, chaque journée est une aventure bilingue, pleine de découvertes et de rires.&rdquo;
+                “Chaque journée est une aventure pleine de découvertes.”
               </div>
               <motion.div
                 initial={{ opacity: 0, y: 30 }}

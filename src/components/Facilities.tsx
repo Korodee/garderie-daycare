@@ -108,16 +108,14 @@ export default function Facilities() {
           <FaBuilding className="text-white text-5xl drop-shadow" />
         </div>
         <h2 className="text-5xl md:text-6xl font-extrabold mb-4 bg-gradient-to-r from-green-600 via-blue-500 to-yellow-500 bg-clip-text text-transparent drop-shadow-lg text-center">
-          Nos Installations
+          Nos installations
         </h2>
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-yellow-100 text-yellow-900 font-semibold text-lg shadow mb-4">
           <FaStar className="text-yellow-400" />
           Rénovation complète 2025
         </div>
         <p className="text-xl text-slate-700 max-w-2xl text-center mb-2">
-          La Garderie Aimée Inc. offre un environnement physique moderne,
-          sécuritaire et stimulant, parfaitement adapté aux besoins des enfants
-          de 0 à 5 ans.
+          Un espace moderne, sûr et pensé pour le bien-être des enfants de 0 à 5 ans.
         </p>
       </div>
 

@@ -134,9 +134,8 @@ export default function Team() {
           viewport={{ once: true }}
           className="text-4xl md:text-5xl font-bold text-gray-800 mb-4"
         >
-          Rencontrez Nos Étoiles
+          Notre équipe
         </motion.h2>
-
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -144,7 +143,7 @@ export default function Team() {
           viewport={{ once: true }}
           className="text-lg text-gray-600 max-w-2xl mx-auto"
         >
-          Une équipe passionnée et qualifiée pour accompagner chaque enfant
+          Des professionnelles attentionnées, engagées auprès des enfants et des familles.
         </motion.p>
       </div>
 

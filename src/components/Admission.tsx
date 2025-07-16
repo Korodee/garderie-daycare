@@ -31,14 +31,14 @@ export default function Admission() {
           <FaEnvelopeOpenText className="text-white text-5xl drop-shadow" />
         </motion.div>
         <h2 className="text-5xl md:text-6xl font-extrabold mb-4 bg-gradient-to-r from-orange-600 via-pink-500 to-yellow-500 bg-clip-text text-transparent drop-shadow-lg text-center">
-          Admission et Inscription
+          Admission & inscription
         </h2>
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-100 text-orange-900 font-semibold text-lg shadow mb-4">
           <FaInfoCircle className="text-orange-400" />
-          Saviez-vous ? La garderie est subventionnée par le gouvernement !
+          Garderie subventionnée
         </div>
         <p className="text-xl text-slate-700 max-w-2xl text-center mb-2">
-          Un processus simple et transparent pour inscrire votre enfant dans notre garderie de qualité.
+          Inscription simple et rapide via La Place 0-5.
         </p>
         <a href="https://www.laplace0-5.com" target="_blank" rel="noopener noreferrer" className="mt-6 bg-gradient-to-r from-orange-500 to-pink-500 text-white px-8 py-3 rounded-full font-bold shadow-lg hover:scale-105 transition-transform">
           Accéder à La Place 0-5
@@ -142,16 +142,16 @@ export default function Admission() {
         <div className="bg-gradient-to-r from-orange-600 to-pink-500 rounded-3xl p-6 md:p-10 text-white shadow-2xl flex flex-col justify-between">
           <div>
             <h3 className="text-2xl font-bold mb-4 flex items-center gap-2">
-              <FaInfoCircle className="text-white/80" /> Informations Importantes
+              <FaInfoCircle className="text-white/80" /> Infos clés
             </h3>
             <ul className="space-y-4 text-lg">
               <li className="flex items-start">
                 <FaCheckCircle className="text-xl mr-3 mt-1 flex-shrink-0 text-green-200" />
-                <span>Inscriptions exclusivement en ligne via La Place 0-5</span>
+                <span>Inscription en ligne via La Place 0-5</span>
               </li>
               <li className="flex items-start">
                 <FaCheckCircle className="text-xl mr-3 mt-1 flex-shrink-0 text-green-200" />
-                <span>Ouverture toute l&apos;année (sauf congés fériés)</span>
+                <span>Ouvert toute l&apos;année (sauf congés fériés)</span>
               </li>
               <li className="flex items-start">
                 <FaCheckCircle className="text-xl mr-3 mt-1 flex-shrink-0 text-green-200" />
@@ -159,7 +159,7 @@ export default function Admission() {
               </li>
               <li className="flex items-start">
                 <FaCheckCircle className="text-xl mr-3 mt-1 flex-shrink-0 text-green-200" />
-                <span>Garderie subventionnée - contribution réduite gouvernementale</span>
+                <span>Contribution réduite fixée par le gouvernement</span>
               </li>
             </ul>
           </div>

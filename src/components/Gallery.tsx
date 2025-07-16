@@ -153,9 +153,8 @@ export default function Gallery() {
           viewport={{ once: true }}
           className="text-4xl md:text-5xl font-bold text-gray-800 mb-4"
         >
-          Découvrez Nos Espaces
+          Nos espaces en images
         </motion.h2>
-        
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -163,7 +162,7 @@ export default function Gallery() {
           viewport={{ once: true }}
           className="text-lg text-gray-600 max-w-2xl mx-auto"
         >
-          Un environnement moderne, sécuritaire et stimulant pour l&apos;épanouissement de chaque enfant
+          Découvrez un cadre pensé pour le bien-être et la curiosité des enfants.
         </motion.p>
       </div>
 
@@ -305,7 +304,7 @@ export default function Gallery() {
       >
         <div className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full text-white font-medium shadow-lg">
           <FaCamera className="text-sm" />
-          <span className="text-sm">Un environnement conçu pour l&apos;épanouissement</span>
+          <span className="text-sm">Un lieu qui inspire chaque jour</span>
         </div>
       </motion.div>
     </section>

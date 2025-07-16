@@ -31,7 +31,7 @@ export default function Footer() {
                   Garderie Aimée Inc.
                 </h2>
                 <p className="text-sm text-slate-500">
-                  Une garderie de qualité
+                  Depuis 1987, un lieu sûr et accueillant pour les enfants.
                 </p>
               </div>
             </div>
