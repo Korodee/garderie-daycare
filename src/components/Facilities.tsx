@@ -333,7 +333,7 @@ export default function Facilities() {
         viewport={{ once: true }}
         className="mb-24"
       >
-        <div className="bg-gradient-to-r from-orange-600 to-red-600 p-4 pt-14 md:pt-0 md:p-12 text-white shadow-2xl flex flex-col md:flex-row items-center gap-12">
+        <div className="bg-gradient-to-r from-orange-600 to-red-600 p-4 pt-14 md:p-12 text-white shadow-2xl flex flex-col md:flex-row items-center gap-12">
           <div className="flex-1 max-w-4xl mx-auto">
             <h3 className="text-3xl font-bold mb-6">
               Cuisine sur place – repas frais tous les jours

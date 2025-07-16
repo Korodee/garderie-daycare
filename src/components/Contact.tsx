@@ -1,57 +1,47 @@
 "use client";
 
-import { motion } from "framer-motion";
-import {
-  FaMapMarkerAlt,
-  FaPhone,
-  FaFax,
-  FaEnvelope,
-  FaClock,
-  FaGlobe,
-  FaHandPaper,
-  FaPaperPlane,
-} from "react-icons/fa";
+import { FaMapMarkerAlt, FaGlobe } from "react-icons/fa";
 
-const contactInfo = [
-  {
-    icon: <FaPhone className="text-2xl text-green-500" />,
-    label: "Téléphone",
-    value: "514 747-4114",
-    sub: "Appelez-nous pour plus d'informations",
-    ping: true,
-  },
-  {
-    icon: <FaEnvelope className="text-2xl text-orange-500" />,
-    label: "Courriel",
-    value: (
-      <>
-        garderieaimee
-        <wbr />
-        @hotmail.com
-      </>
-    ),
-    sub: "Contactez-nous par email",
-    ping: true,
-  },
-  {
-    icon: <FaFax className="text-2xl text-purple-500" />,
-    label: "Télécopieur",
-    value: "514 747-2695",
-    sub: "Pour les documents administratifs",
-  },
-  {
-    icon: <FaClock className="text-2xl text-blue-500" />,
-    label: "Horaires",
-    value: "Lun-Ven: 7h00 - 18h00",
-    sub: "",
-  },
-];
+// const contactInfo = [
+//   {
+//     icon: <FaPhone className="text-2xl text-green-500" />,
+//     label: "Téléphone",
+//     value: "514 747-4114",
+//     sub: "Appelez-nous pour plus d'informations",
+//     ping: true,
+//   },
+//   {
+//     icon: <FaEnvelope className="text-2xl text-orange-500" />,
+//     label: "Courriel",
+//     value: (
+//       <>
+//         garderieaimee
+//         <wbr />
+//         @hotmail.com
+//       </>
+//     ),
+//     sub: "Contactez-nous par email",
+//     ping: true,
+//   },
+//   {
+//     icon: <FaFax className="text-2xl text-purple-500" />,
+//     label: "Télécopieur",
+//     value: "514 747-2695",
+//     sub: "Pour les documents administratifs",
+//   },
+//   {
+//     icon: <FaClock className="text-2xl text-blue-500" />,
+//     label: "Horaires",
+//     value: "Lun-Ven: 7h00 - 18h00",
+//     sub: "",
+//   },
+// ];
 
 export default function Contact() {
   return (
     <section
       id="contact"
-      className=" bg-gradient-to-br px-4 from-indigo-50 via-blue-50 to-pink-50 relative overflow-hidden"
+      className=" bg-gradient-to-br pt-18 px-4 from-indigo-50 via-blue-50 to-pink-50 relative overflow-hidden"
     >
       {/* Animated pastel background */}
       <div className="absolute inset-0 pointer-events-none select-none z-0">
@@ -62,7 +52,7 @@ export default function Contact() {
       </div>
 
       {/* Hero area with animated mailbox/chat bubble */}
-      <div className="relative z-10 flex flex-col items-center my-20">
+      {/* <div className="relative z-10 flex flex-col items-center my-20">
         <motion.div
           initial={{ scale: 0.8, rotate: -8 }}
           animate={{ scale: [0.8, 1.05, 1], rotate: [0, 8, 0] }}
@@ -86,10 +76,10 @@ export default function Contact() {
         <p className="text-xl text-slate-700 max-w-2xl text-center mb-2">
           Une question ? Écrivez-nous ou appelez-nous, nous vous répondrons rapidement.
         </p>
-      </div>
+      </div> */}
 
       {/* Wavy divider */}
-      <div className="-mt-10 mb-12">
+      {/* <div className="-mt-10 mb-12">
         <svg
           viewBox="0 0 1440 120"
           fill="none"
@@ -115,10 +105,10 @@ export default function Contact() {
             </linearGradient>
           </defs>
         </svg>
-      </div>
+      </div> */}
 
       {/* Vertical Contact Strip */}
-      <div className="relative z-10 max-w-xl mx-auto mb-24">
+      {/* <div className="relative z-10 max-w-xl mx-auto mb-24">
         <div className="bg-white/80 backdrop-blur-lg rounded-3xl p-4 py-8 md:p-10 shadow-2xl border-2 border-white/60 flex flex-col gap-8">
           {contactInfo.map((info, i) => (
             <motion.div
@@ -149,10 +139,10 @@ export default function Contact() {
             </motion.div>
           ))}
         </div>
-      </div>
+      </div> */}
 
       {/* Map/Location Card */}
-      <div className="relative z-10 max-w-4xl mx-auto mb-14">
+      <div className="relative z-10 max-w-5xl mx-auto mb-14">
         <div className="bg-white/90 backdrop-blur-lg rounded-3xl p-4 py-8 md:p-10 shadow-2xl border-2 border-white/60 flex flex-col items-center">
           <div className="w-16 h-16 rounded-full bg-gradient-to-br from-indigo-400 to-pink-400 flex items-center justify-center mb-4 shadow-lg">
             <FaMapMarkerAlt className="text-white text-3xl" />
