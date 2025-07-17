@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { FaBars } from "react-icons/fa";
 // import { GiBabyBottle } from "react-icons/gi";
 import Link from "next/link";
+import Image from "next/image";
 
 const navLinks = [
   { href: "/#presentation", label: "Présentation" },
@@ -50,9 +51,14 @@ export default function Navbar({ open, setOpen, active }: NavbarProps) {
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-2 md:py-5">
         <Link href="/" className="flex items-center gap-2 group">
-          {/* <span className="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 shadow-md">
-            <GiBabyBottle className="text-white text-xl" />
-          </span> */}
+          <Image
+            src="/logo.svg"
+            alt="Garderie Aimée Logo"
+            width={80}
+            height={80}
+            className="w-12 h-12 object-contain drop-shadow-md"
+            priority
+          />
           <div className="flex flex-col ml-1">
             <span
               className={`font-extrabold text-lg leading-tight tracking-tight transition-colors duration-300 ${

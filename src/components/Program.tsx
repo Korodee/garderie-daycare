@@ -1,50 +1,78 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FaBook, FaMusic, FaRunning, FaLanguage, FaClock, FaChild, FaChalkboardTeacher, FaSmileBeam, FaEnvelopeOpenText, FaMobileAlt, FaChartLine } from "react-icons/fa";
-import Image from 'next/image';
+import {
+  FaBook,
+  FaMusic,
+  FaRunning,
+  FaLanguage,
+  FaClock,
+  FaChild,
+  FaChalkboardTeacher,
+  FaSmileBeam,
+  FaEnvelopeOpenText,
+  FaMobileAlt,
+  FaChartLine,
+} from "react-icons/fa";
+import Image from "next/image";
 
 const Program = () => {
   const activities = [
     {
       icon: <FaBook className="text-2xl text-blue-500" />,
       title: "Activités sensorielles, motrices et artistiques",
-      description: "Exploration tactile, motrice, artistique et auditive."
+      description: "Exploration tactile, motrice, artistique et auditive.",
     },
     {
       icon: <FaMusic className="text-2xl text-purple-500" />,
       title: "Chansons, histoires et jeux symboliques",
-      description: "Chansons, histoires, jeux de rôle, blocs, coin lecture."
+      description: "Chansons, histoires, jeux de rôle, blocs, coin lecture.",
     },
     {
       icon: <FaRunning className="text-2xl text-green-500" />,
       title: "Motricité fine et globale",
-      description: "Ateliers et jeux extérieurs quotidiens (cour sécurisée)."
+      description: "Ateliers et jeux extérieurs quotidiens (cour sécurisée).",
     },
     {
       icon: <FaSmileBeam className="text-2xl text-yellow-500" />,
       title: "Sorties éducatives et journées thématiques",
-      description: "Découvertes, sorties et journées à thème."
+      description: "Découvertes, sorties et journées à thème.",
     },
     {
       icon: <FaClock className="text-2xl text-indigo-500" />,
       title: "Apprentissages fondamentaux",
-      description: "Introduction aux chiffres, lettres, formes et couleurs."
+      description: "Introduction aux chiffres, lettres, formes et couleurs.",
     },
     {
       icon: <FaLanguage className="text-2xl text-orange-500" />,
       title: "Activités bilingues quotidiennes",
-      description: "Intégration du français et de l’anglais chaque jour."
-    }
+      description: "Intégration du français et de l’anglais chaque jour.",
+    },
   ];
 
   return (
-    <section id="programme" className="py-24 bg-gradient-to-br from-green-50 via-blue-50 to-yellow-50 relative overflow-hidden">
+    <section
+      id="programme"
+      className="py-24 bg-gradient-to-br from-green-50 via-blue-50 to-yellow-50 relative overflow-hidden"
+    >
       {/* Playful floating shapes */}
       <div className="absolute -top-16 left-1/4 w-40 h-40 bg-green-100 rounded-full filter blur-2xl opacity-40 z-0 animate-blob"></div>
       <div className="absolute top-1/2 right-1/4 w-32 h-32 bg-blue-100 rounded-full filter blur-2xl opacity-40 z-0 animate-blob animation-delay-2000"></div>
       <div className="absolute bottom-0 left-1/3 w-28 h-28 bg-yellow-100 rounded-full filter blur-2xl opacity-40 z-0 animate-blob animation-delay-4000"></div>
       <div className="container mx-auto px-4 relative z-10">
+        {/* Program Photo Banner - Added */}
+        <div className="flex justify-center mb-12">
+          <div className="w-full max-w-3xl rounded-3xl overflow-hidden shadow-xl border-4 border-white">
+            <Image
+              src="/Trotinneurs-classe2.jpg"
+              alt="Enfants heureux à la garderie Aimée"
+              width={1200}
+              height={400}
+              className="w-full h-[220px] md:h-[350px] object-cover rounded-3xl"
+              priority
+            />
+          </div>
+        </div>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -64,12 +92,12 @@ const Program = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 mb-24 items-stretch">
           {activities.map((activity, index) => {
             const pastelBg = [
-              'from-green-200 to-blue-100',
-              'from-pink-200 to-yellow-100',
-              'from-blue-200 to-green-100',
-              'from-yellow-200 to-pink-100',
-              'from-purple-200 to-blue-100',
-              'from-orange-200 to-yellow-100'
+              "from-green-200 to-blue-100",
+              "from-pink-200 to-yellow-100",
+              "from-blue-200 to-green-100",
+              "from-yellow-200 to-pink-100",
+              "from-purple-200 to-blue-100",
+              "from-orange-200 to-yellow-100",
             ];
             const bg = pastelBg[index % pastelBg.length];
             return (
@@ -81,7 +109,9 @@ const Program = () => {
                 viewport={{ once: true }}
                 className="group h-full"
               >
-                <div className={`bg-gradient-to-br ${bg} rounded-3xl p-10 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-0 glassy-card text-center relative overflow-hidden h-full flex flex-col justify-between`}>
+                <div
+                  className={`bg-gradient-to-br ${bg} rounded-3xl p-10 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-0 glassy-card text-center relative overflow-hidden h-full flex flex-col justify-between`}
+                >
                   <div className="flex flex-col items-center mb-4">
                     <div className="w-16 h-14 rounded-full bg-gradient-to-r from-white/80 to-white/60 flex items-center justify-center text-4xl shadow-lg mb-4 group-hover:scale-110 transition-transform duration-300 animate-pulse">
                       {activity.icon}
@@ -108,9 +138,14 @@ const Program = () => {
           className="bg-gradient-to-r from-green-500 to-blue-500 rounded-3xl px-4 py-12 text-white text-center mb-24 relative overflow-hidden flex flex-col items-center"
         >
           <FaBook className="text-4xl mb-4" />
-          <h3 className="text-4xl md:text-5xl font-extrabold mb-8 drop-shadow-sm">Approche HighScope</h3>
+          <h3 className="text-4xl md:text-5xl font-extrabold mb-8 drop-shadow-sm">
+            Approche
+          </h3>
           <p className="text-xl leading-relaxed max-w-4xl mx-auto mb-12 font-medium">
-            Les enfants sont encouragés à explorer, à poser des questions, à faire des choix et à apprendre à travers leurs intérêts. Les éducatrices jouent un rôle actif dans l&apos;observation, le soutien et l&apos;enrichissement des expériences des enfants.
+            Les enfants sont encouragés à explorer, à poser des questions, à
+            faire des choix et à apprendre à travers leurs intérêts. Les
+            éducatrices jouent un rôle actif dans l&apos;observation, le soutien
+            et l&apos;enrichissement des expériences des enfants.
           </p>
           <div className="grid md:grid-cols-3 gap-8 mx-auto">
             <div className="bg-white/20 rounded-2xl py-4 px-22 flex flex-col items-center">
@@ -133,10 +168,25 @@ const Program = () => {
 
         {/* Dynamic wavy SVG divider at the top */}
         <div className="-mt-16 mb-[-2px]">
-          <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-20">
-            <path fill="url(#wave-gradient)" d="M0,80 C360,160 1080,0 1440,80 L1440,120 L0,120 Z" />
+          <svg
+            viewBox="0 0 1440 120"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="w-full h-20"
+          >
+            <path
+              fill="url(#wave-gradient)"
+              d="M0,80 C360,160 1080,0 1440,80 L1440,120 L0,120 Z"
+            />
             <defs>
-              <linearGradient id="wave-gradient" x1="0" x2="1440" y1="0" y2="0" gradientUnits="userSpaceOnUse">
+              <linearGradient
+                id="wave-gradient"
+                x1="0"
+                x2="1440"
+                y1="0"
+                y2="0"
+                gradientUnits="userSpaceOnUse"
+              >
                 <stop stopColor="#a7f3d0" />
                 <stop offset="0.5" stopColor="#bae6fd" />
                 <stop offset="1" stopColor="#fef9c3" />
@@ -160,19 +210,28 @@ const Program = () => {
                   <stop offset="100%" stopColor="#bae6fd" stopOpacity="0.5" />
                 </radialGradient>
               </defs>
-              <path d="M340,60Q400,120,400,240Q400,360,340,420Q240,480,140,420Q80,360,80,240Q80,120,140,60Q240,0,340,60Z" fill="url(#blob-gradient)" />
+              <path
+                d="M340,60Q400,120,400,240Q400,360,340,420Q240,480,140,420Q80,360,80,240Q80,120,140,60Q240,0,340,60Z"
+                fill="url(#blob-gradient)"
+              />
             </svg>
-            <div className="w-full h-full absolute top-0 left-0 overflow-hidden" style={{ clipPath: 'url(#blob-clip)' }}>
+            <div
+              className="w-full h-full absolute top-0 left-0 overflow-hidden"
+              style={{ clipPath: "url(#blob-clip)" }}
+            >
               <Image
                 src="/daycare-2.jpg"
                 alt="Enfants jouant à la garderie Aimée"
                 className="object-cover w-full h-full opacity-90 mix-blend-multiply animate-float-slow"
-                style={{ borderRadius: '40% 60% 60% 40% / 50% 40% 60% 50%' }}
+                style={{ borderRadius: "40% 60% 60% 40% / 50% 40% 60% 50%" }}
                 width={480}
                 height={480}
               />
               {/* Black overlay */}
-              <div className="absolute inset-0 bg-black/50 z-10 pointer-events-none" style={{ borderRadius: '40% 60% 60% 40% / 50% 40% 60% 50%' }} />
+              <div
+                className="absolute inset-0 bg-black/50 z-10 pointer-events-none"
+                style={{ borderRadius: "40% 60% 60% 40% / 50% 40% 60% 50%" }}
+              />
             </div>
           </div>
           <div className="relative z-10 grid md:grid-cols-2 gap-16 items-center">
@@ -195,7 +254,9 @@ const Program = () => {
                   <FaRunning />
                 </div>
                 <div>
-                  <div className="font-bold text-xl text-slate-800 mb-1">Organisation de l’environnement</div>
+                  <div className="font-bold text-xl text-slate-800 mb-1">
+                    Organisation de l’environnement
+                  </div>
                   <ul className="list-disc text-slate-700 text-base">
                     <li>Coins thématiques pour chaque type d’activité</li>
                     <li>Matériel accessible et organisé par les enfants</li>
@@ -214,9 +275,12 @@ const Program = () => {
                   <FaLanguage />
                 </div>
                 <div>
-                  <div className="font-bold text-xl text-slate-800 mb-1">Intégration bilingue</div>
+                  <div className="font-bold text-xl text-slate-800 mb-1">
+                    Intégration bilingue
+                  </div>
                   <div className="text-slate-700 text-base">
-                    Français et anglais intégrés dans les routines, jeux, chansons, histoires et interactions quotidiennes.
+                    Français et anglais intégrés dans les routines, jeux,
+                    chansons, histoires et interactions quotidiennes.
                   </div>
                 </div>
               </motion.div>
@@ -231,9 +295,12 @@ const Program = () => {
                   <FaSmileBeam />
                 </div>
                 <div>
-                  <div className="font-bold text-xl text-slate-800 mb-1">Épanouissement global</div>
+                  <div className="font-bold text-xl text-slate-800 mb-1">
+                    Épanouissement global
+                  </div>
                   <div className="text-slate-700 text-base">
-                    Immersion linguistique naturelle favorisant le développement cognitif, langagier et social.
+                    Immersion linguistique naturelle favorisant le développement
+                    cognitif, langagier et social.
                   </div>
                 </div>
               </motion.div>
@@ -247,12 +314,20 @@ const Program = () => {
           {/* Rapports de Développement */}
           <div className="bg-orange-100 rounded-2xl px-6 py-6 shadow-lg flex flex-col h-full">
             <h3 className="font-bold text-lg mb-2 text-orange-800 flex items-center gap-2">
-              <FaChartLine className="text-2xl text-orange-500" /> Rapports de Développement
+              <FaChartLine className="text-2xl text-orange-500" /> Rapports de
+              Développement
             </h3>
-            <p className="mb-2 text-slate-700 text-base">Deux fois par année, nous remettons aux parents un rapport du développement global de leur enfant, comprenant :</p>
+            <p className="mb-2 text-slate-700 text-base">
+              Deux fois par année, nous remettons aux parents un rapport du
+              développement global de leur enfant, comprenant :
+            </p>
             <ul className="text-slate-700 text-sm list-disc ml-5">
-              <li>Des observations précises effectuées par l&apos;éducatrice</li>
-              <li>Des photos illustrant les progrès dans différents domaines</li>
+              <li>
+                Des observations précises effectuées par l&apos;éducatrice
+              </li>
+              <li>
+                Des photos illustrant les progrès dans différents domaines
+              </li>
               <li>Suivi motricité, langage, socialisation, etc.</li>
               <li>Évaluation des compétences cognitives et socio-affectives</li>
               <li>Recommandations pour le développement continu</li>
@@ -261,12 +336,19 @@ const Program = () => {
           {/* Courriel Hebdomadaire */}
           <div className="bg-green-100 rounded-2xl px-6 py-6 shadow-lg flex flex-col h-full">
             <h3 className="font-bold text-lg mb-2 text-green-800 flex items-center gap-2">
-              <FaEnvelopeOpenText className="text-2xl text-green-500" /> Courriel Hebdomadaire
+              <FaEnvelopeOpenText className="text-2xl text-green-500" />{" "}
+              Courriel Hebdomadaire
             </h3>
-            <p className="mb-2 text-slate-700 text-base">Chaque vendredi, nous envoyons un courriel informatif aux parents, comprenant :</p>
+            <p className="mb-2 text-slate-700 text-base">
+              Chaque vendredi, nous envoyons un courriel informatif aux parents,
+              comprenant :
+            </p>
             <ul className="text-slate-700 text-sm list-disc ml-5">
               <li>Des photos de la semaine</li>
-              <li>Les activités thématiques préparées et animées par nos éducatrices</li>
+              <li>
+                Les activités thématiques préparées et animées par nos
+                éducatrices
+              </li>
               <li>Un aperçu des apprentissages vécus par les enfants</li>
               <li>Informations importantes pour la semaine suivante</li>
             </ul>
@@ -274,24 +356,33 @@ const Program = () => {
           {/* Application Kaymbu */}
           <div className="bg-blue-100 rounded-2xl px-6 py-6 shadow-lg flex flex-col h-full">
             <h3 className="font-bold text-lg mb-2 text-blue-800 flex items-center gap-2">
-              <FaMobileAlt className="text-2xl text-blue-500" /> Application Kaymbu
+              <FaMobileAlt className="text-2xl text-blue-500" /> Application
+              Kaymbu
             </h3>
-            <p className="mb-2 text-slate-700 text-base">Plateforme sécurisée qui permet aux parents d&apos;accéder à :</p>
+            <p className="mb-2 text-slate-700 text-base">
+              Plateforme sécurisée qui permet aux parents d&apos;accéder à :
+            </p>
             <ul className="text-slate-700 text-sm list-disc ml-5 mb-4">
-              <li>Le rapport quotidien de leur enfant (repas, toilette, humeur, sieste, etc.)</li>
+              <li>
+                Le rapport quotidien de leur enfant (repas, toilette, humeur,
+                sieste, etc.)
+              </li>
               <li>Des observations sur les activités du jour</li>
               <li>Un suivi personnalisé au quotidien</li>
             </ul>
             {/* <div className="w-full flex-1 flex items-end justify-center mt-auto">
               <div className="w-32 h-48 bg-white border-2 border-blue-300 rounded-2xl flex items-center justify-center text-blue-400 font-bold text-lg mt-2">Kaymbu App</div>
             </div> */}
-            <span className="text-xs text-slate-500 mt-2">Aperçu de l&apos;application parent</span>
+            <span className="text-xs text-slate-500 mt-2">
+              Aperçu de l&apos;application parent
+            </span>
           </div>
         </div>
         {/* Parent testimonial */}
         <div className="max-w-2xl mx-auto mt-16">
           <div className="px-6 py-4 rounded-xl bg-green-50 text-green-900 font-semibold text-lg shadow text-center">
-            &quot;Grâce à la communication régulière de la garderie, je me sens toujours impliqué(e) dans la journée de mon enfant !&quot;
+            &quot;Grâce à la communication régulière de la garderie, je me sens
+            toujours impliqué(e) dans la journée de mon enfant !&quot;
           </div>
         </div>
       </div>
@@ -299,4 +390,4 @@ const Program = () => {
   );
 };
 
-export default Program; 
+export default Program;

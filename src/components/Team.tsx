@@ -132,7 +132,7 @@ export default function Team() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
           viewport={{ once: true }}
-          className="text-4xl md:text-5xl font-bold text-gray-800 mb-4"
+          className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-[#36B6DF] via-[#FFD43B] via-40% to-[#F06292] text-transparent bg-clip-text drop-shadow"
         >
           Notre équipe
         </motion.h2>

@@ -5,6 +5,7 @@ import {
   FaEnvelope,
   FaChevronRight,
 } from "react-icons/fa";
+import Image from "next/image";
 
 const links = [
   { href: "#presentation", label: "Présentation" },
@@ -22,7 +23,14 @@ export default function Footer() {
           {/* Branding */}
           <div className="flex flex-col gap-4">
             <div className="flex items-center gap-3">
-              {/* Baby bottle icon removed */}
+              <Image
+                src="/logo.svg"
+                alt="Garderie Aimée Logo"
+                width={80}
+                height={80}
+                className="w-13 h-13 object-contain drop-shadow-md"
+                priority
+              />
               <div>
                 <h2 className="font-bold text-xl text-slate-900">
                   Garderie Aimée Inc.

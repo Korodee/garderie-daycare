@@ -13,6 +13,7 @@ import {
   FaPaintBrush,
 } from "react-icons/fa";
 import { GiTeacher } from "react-icons/gi";
+import Image from "next/image";
 
 const About = () => {
   const stats = [
@@ -135,7 +136,7 @@ const About = () => {
             <FaBaby className="text-lg" />
             <span>Depuis 1987</span>
           </div>
-          <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-slate-800 to-blue-600 bg-clip-text text-transparent">
+          <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-[#36B6DF] via-[#FFD43B] via-40% to-[#F06292] text-transparent bg-clip-text drop-shadow">
             Notre Histoire
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
@@ -145,38 +146,61 @@ const About = () => {
           </p>
         </motion.div>
 
-        {/* Stats Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="grid grid-cols-1 lg:grid-cols-4 gap-8 mb-24"
-        >
-          {stats.map((stat, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="text-center group"
-            >
-              <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
-                <div className="mb-4 group-hover:scale-110 transition-transform duration-300">
-                  {stat.icon}
+        {/* About Photo + Stats Side by Side */}
+        <div className="flex flex-col lg:flex-row items-center gap-12 mb-24">
+          {/* About Photo */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.7 }}
+            viewport={{ once: true }}
+            className="flex-1 w-full max-w-2xl"
+          >
+            <div className="w-full rounded-3xl overflow-hidden shadow-xl border-4 border-white">
+              <Image
+                src="/Trotinneurs-classe3.jpg"
+                alt="Enfants heureux à la garderie Aimée"
+                width={1200}
+                height={400}
+                className="w-full h-[300px] md:h-[470px] object-cover rounded-3xl"
+                priority
+              />
+            </div>
+          </motion.div>
+
+          {/* Stats Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-8 w-full"
+          >
+            {stats.map((stat, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="text-center group"
+              >
+                <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+                  <div className="mb-4 group-hover:scale-110 transition-transform duration-300">
+                    {stat.icon}
+                  </div>
+                  <div className="text-4xl font-bold text-slate-800 mb-2">
+                    {stat.number}
+                  </div>
+                  <div className="text-lg font-semibold text-slate-700 mb-2">
+                    {stat.label}
+                  </div>
+                  <div className="text-sm text-slate-500">{stat.description}</div>
                 </div>
-                <div className="text-4xl font-bold text-slate-800 mb-2">
-                  {stat.number}
-                </div>
-                <div className="text-lg font-semibold text-slate-700 mb-2">
-                  {stat.label}
-                </div>
-                <div className="text-sm text-slate-500">{stat.description}</div>
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
 
         {/* Mission & Vision */}
         <motion.div
@@ -228,7 +252,7 @@ const About = () => {
           className="mb-24"
         >
           <div className="text-center mb-16">
-            <h3 className="text-4xl font-bold text-slate-800 mb-4">
+            <h3 className="text-4xl font-bold mb-4 bg-gradient-to-r from-[#36B6DF] via-[#FFD43B] via-40% to-[#F06292] text-transparent bg-clip-text drop-shadow">
               Nos Valeurs Fondamentales
             </h3>
             <p className="text-xl text-slate-600 max-w-2xl mx-auto">
@@ -279,7 +303,7 @@ const About = () => {
           <div className="absolute bottom-0 left-1/3 w-28 h-28 bg-yellow-100 rounded-full filter blur-2xl opacity-40 z-0 animate-blob animation-delay-4000"></div>
 
           <div className="text-center mb-16 relative z-10">
-            <h3 className="text-4xl font-bold text-slate-800 mb-4">
+            <h3 className="text-4xl font-bold mb-4 bg-gradient-to-r from-[#36B6DF] via-[#FFD43B] via-40% to-[#F06292] text-transparent bg-clip-text drop-shadow">
               Notre Parcours
             </h3>
             <p className="text-xl text-slate-600 max-w-2xl mx-auto">
