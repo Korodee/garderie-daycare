@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   FaHeart,
   FaStar,
@@ -14,8 +14,56 @@ import {
 } from "react-icons/fa";
 import { GiTeacher } from "react-icons/gi";
 import Image from "next/image";
+import { useState, useEffect } from "react";
+
+// Classroom slideshow images
+const classroomImages = [
+  {
+    src: "/Trotinneurs-classe3.jpg",
+    alt: "Classe des trottineurs - Garderie Aimée"
+  },
+  {
+    src: "/Pouponniere-classe.jpg",
+    alt: "Classe des pouponnières - Garderie Aimée"
+  },
+  {
+    src: "/Trotinneurs-classe2.jpg",
+    alt: "Classe des trottineurs en activité - Garderie Aimée"
+  },
+  {
+    src: "/Bambins-classe.jpg",
+    alt: "Classe des bambins - Garderie Aimée"
+  },
+  {
+    src: "/Sale-de-prescolaire.jpg",
+    alt: "Classe préscolaire - Garderie Aimée"
+  }
+];
 
 const About = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  // Auto-advance slideshow
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % classroomImages.length);
+    }, 5000); // Change slide every 5 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % classroomImages.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + classroomImages.length) % classroomImages.length);
+  };
+
+  const goToSlide = (index: number) => {
+    setCurrentSlide(index);
+  };
+
   const stats = [
     {
       icon: <FaClock className="text-4xl text-blue-500" />,
@@ -154,19 +202,62 @@ const About = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7 }}
             viewport={{ once: true }}
-            className="flex-1 w-full max-w-2xl"
+            className="flex-1 w-full max-w-2xl relative"
           >
+            {/* Navigation Arrows */}
+            <button
+              onClick={prevSlide}
+              className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 bg-white/80 backdrop-blur-sm rounded-full shadow-lg hover:bg-white transition-all duration-200 hover:scale-110 flex items-center justify-center text-blue-600 hover:text-blue-700"
+              aria-label="Image précédente"
+            >
+              ←
+            </button>
+            
+            <button
+              onClick={nextSlide}
+              className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 bg-white/80 backdrop-blur-sm rounded-full shadow-lg hover:bg-white transition-all duration-200 hover:scale-110 flex items-center justify-center text-blue-600 hover:text-blue-700"
+              aria-label="Image suivante"
+            >
+              →
+            </button>
+
             <div className="w-full rounded-3xl overflow-hidden shadow-xl border-4 border-white">
-              <Image
-                src="/Trotinneurs-classe3.jpg"
-                alt="Enfants heureux à la garderie Aimée"
-                width={1200}
-                height={400}
-                className="w-full h-[300px] md:h-[470px] object-cover rounded-3xl"
-                priority
-              />
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={currentSlide}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <Image
+                    src={classroomImages[currentSlide].src}
+                    alt={classroomImages[currentSlide].alt}
+                    width={1200}
+                    height={400}
+                    className="w-full h-[300px] md:h-[470px] object-cover rounded-3xl"
+                    priority
+                  />
+                </motion.div>
+              </AnimatePresence>
             </div>
-        </motion.div>
+
+            {/* Slideshow Dots */}
+            <div className="flex justify-center mt-4 space-x-2">
+              {classroomImages.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => goToSlide(index)}
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                    index === currentSlide 
+                      ? "bg-blue-500 scale-125" 
+                      : "bg-blue-300 hover:bg-blue-400"
+                  }`}
+                  aria-label={`Aller à l'image ${index + 1}`}
+                />
+              ))}
+            </div>
+          </motion.div>
 
         {/* Stats Section */}
         <motion.div
