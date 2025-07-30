@@ -67,7 +67,7 @@ export default function Navbar({ open, setOpen, active }: NavbarProps) {
                   : "text-white drop-shadow-lg"
               }`}
             >
-              Garderie Aimée Inc.
+              Garderie Aimée
             </span>
             <span
               className={`text-[11px] font-semibold italic tracking-wide mt-0.5 transition-colors duration-300 ${

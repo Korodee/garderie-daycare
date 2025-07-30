@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FaCamera, FaBuilding, FaChild, FaTree, FaDoorOpen, FaBath, FaStar, FaTimes } from "react-icons/fa";
+import { FaCamera, FaBuilding, FaChild, FaTree, FaDoorOpen, FaStar, FaTimes } from "react-icons/fa";
 import Image from "next/image";
 import { useState } from "react";
 
@@ -15,8 +15,7 @@ const galleryCategories = [
     bgColor: "from-blue-50 to-indigo-50",
     images: [
       "/Entree.jpg",
-      "/Entree2.jpg",
-      "/Bureau.jpg"
+      "/Entree2.jpg"
     ]
   },
   {
@@ -71,22 +70,7 @@ const galleryCategories = [
     bgColor: "from-purple-50 to-violet-50",
     images: [
       "/Casier-des-enfants.jpg",
-      "/Casier-prescolaire.jpg",
-      "/Couloir-prescolaire.jpg",
-      "/couloir.jpg",
-      "/Couloir1.jpg"
-    ]
-  },
-  {
-    id: "bathrooms",
-    title: "Salles de Bain",
-    subtitle: "Espaces d'hygiène adaptés",
-    icon: <FaBath className="text-white" />,
-    color: "from-teal-400 to-cyan-500",
-    bgColor: "from-teal-50 to-cyan-50",
-    images: [
-      "/Toilette-Bambins.jpg",
-      "/Toilette-couloir.jpg"
+      "/Casier-prescolaire.jpg"
     ]
   },
   {

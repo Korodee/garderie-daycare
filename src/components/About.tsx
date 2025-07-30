@@ -89,7 +89,7 @@ const About = () => {
       year: "1987",
       title: "Fondation",
       description:
-        "Création de Garderie Aimée Inc. avec une vision bilingue et une approche centrée sur le développement global de l'enfant",
+        "Création de Garderie Aimée avec une vision bilingue et une approche centrée sur le développement global de l'enfant",
     },
     {
       year: "1995",
@@ -166,40 +166,40 @@ const About = () => {
                 priority
               />
             </div>
-          </motion.div>
+        </motion.div>
 
-          {/* Stats Section */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+        {/* Stats Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
             className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-8 w-full"
-          >
-            {stats.map((stat, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="text-center group"
-              >
-                <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
-                  <div className="mb-4 group-hover:scale-110 transition-transform duration-300">
-                    {stat.icon}
-                  </div>
-                  <div className="text-4xl font-bold text-slate-800 mb-2">
-                    {stat.number}
-                  </div>
-                  <div className="text-lg font-semibold text-slate-700 mb-2">
-                    {stat.label}
-                  </div>
-                  <div className="text-sm text-slate-500">{stat.description}</div>
+        >
+          {stats.map((stat, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              className="text-center group"
+            >
+              <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+                <div className="mb-4 group-hover:scale-110 transition-transform duration-300">
+                  {stat.icon}
                 </div>
-              </motion.div>
-            ))}
-          </motion.div>
+                <div className="text-4xl font-bold text-slate-800 mb-2">
+                  {stat.number}
+                </div>
+                <div className="text-lg font-semibold text-slate-700 mb-2">
+                  {stat.label}
+                </div>
+                <div className="text-sm text-slate-500">{stat.description}</div>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
         </div>
 
         {/* Mission & Vision */}

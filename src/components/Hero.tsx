@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaTimes } from "react-icons/fa";
 import Image from "next/image";
@@ -37,9 +37,47 @@ const navLinks = [
   { href: "#contact", label: "Contact" },
 ];
 
+// Slideshow images
+const slideshowImages = [
+  {
+    src: "/Pouponniere-classe.jpg",
+    alt: "Classe des pouponnières - Garderie Aimée"
+  },
+  {
+    src: "/Trotinneurs-classe2.jpg", 
+    alt: "Classe des trottineurs - Garderie Aimée"
+  },
+  {
+    src: "/Trotinneurs-classe3.jpg",
+    alt: "Classe des trottineurs en activité - Garderie Aimée"
+  },
+  {
+    src: "/Trotinneurs-classe.jpg",
+    alt: "Classe des trottineurs - Garderie Aimée"
+  },
+  {
+    src: "/Bambins-classe.jpg",
+    alt: "Classe des bambins - Garderie Aimée"
+  },
+  {
+    src: "/Sale-de-prescolaire.jpg",
+    alt: "Classe préscolaire - Garderie Aimée"
+  }
+];
+
 export default function Hero() {
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const [active, setActive] = useState(navLinks[0].href);
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  // Auto-advance slideshow
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slideshowImages.length);
+    }, 5000); // Change slide every 5 seconds
+
+    return () => clearInterval(interval);
+  }, []);
 
   // Active section logic
   React.useEffect(() => {
@@ -319,16 +357,44 @@ export default function Hero() {
   ];
 
   return (
-    <section
-      className="relative overflow-hidden min-h-screen flex flex-col justify-center"
-      style={{
-        backgroundImage: "url(/Pouponniere-classe.jpg)",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-    >
+    <section className="relative overflow-hidden min-h-screen flex flex-col justify-center">
+      {/* Animated Background Slideshow */}
+      <div className="absolute inset-0">
+        <AnimatePresence>
+          <motion.div
+            key={currentSlide}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.8, ease: "easeInOut" }}
+            className="absolute inset-0"
+            style={{
+              backgroundImage: `url(${slideshowImages[currentSlide].src})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          />
+        </AnimatePresence>
+      </div>
+
       {/* Background Overlay */}
       <div className="absolute inset-0 bg-black/50 backdrop-blur-xs"></div>
+
+      {/* Slide Indicators */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30 flex space-x-3">
+        {slideshowImages.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrentSlide(index)}
+            className={`w-3 h-3 rounded-full transition-all duration-300 ${
+              index === currentSlide 
+                ? "bg-white scale-125" 
+                : "bg-white/50 hover:bg-white/75"
+            }`}
+            aria-label={`Aller à l'image ${index + 1}`}
+          />
+        ))}
+      </div>
 
       {/* Navbar */}
       <Navbar open={mobileNavOpen} setOpen={setMobileNavOpen} active={active} />
@@ -431,7 +497,7 @@ export default function Hero() {
             transition={{ delay: 0.2, duration: 0.7, type: "spring" }}
             className="text-4xl md:text-5xl font-extrabold text-white mb-4 leading-tight"
           >
-            Garderie Aimée Inc.
+            Garderie Aimée
             <br />
             <span
               className="font-bold bg-gradient-to-r from-[#36B6DF] via-[#FFD43B] via-40% to-[#F06292] text-transparent bg-clip-text drop-shadow-[0_2px_8px_rgba(0,0,0,0.18)]"

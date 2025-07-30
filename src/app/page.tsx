@@ -1,29 +1,26 @@
 "use client";
 
-import Footer from "@/components/Footer";
-import React from "react";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Program from "@/components/Program";
 import Team from "@/components/Team";
-import Facilities from "@/components/Facilities";
+import Testimonials from "@/components/Testimonials";
 import Admission from "@/components/Admission";
 import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <>
-      <main>
-        <Hero />
-        <About />
-        <Program />
-        <Team />
-        <Facilities />
-        <Admission />
-        <Contact />
-      </main>
+    <main className="min-h-screen">
+      <Hero />
+      <About />
+      <Program />
+      <Team />
+      <Testimonials />
+      <Admission />
+      <Contact />
       <Footer />
-    </>
+    </main>
   );
 }
  

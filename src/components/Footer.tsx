@@ -33,7 +33,7 @@ export default function Footer() {
               />
               <div>
                 <h2 className="font-bold text-xl text-slate-900">
-                  Garderie Aimée Inc.
+                  Garderie Aimée
                 </h2>
                 <p className="text-sm text-slate-500">
                   Une garderie de qualité
@@ -144,7 +144,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-slate-200 pt-8 mt-8 flex flex-col md:flex-row justify-center items-center gap-4 text-sm text-slate-500">
           <div>
-            &copy; {new Date().getFullYear()} Garderie Aimée Inc. Tous droits
+            &copy; {new Date().getFullYear()} Garderie Aimée. Tous droits
             réservés.
           </div>
         </div>

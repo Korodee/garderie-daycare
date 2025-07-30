@@ -165,7 +165,7 @@ export default function Contact() {
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Carte de la Garderie Aimée Inc."
+              title="Carte de la Garderie Aimée"
               className="w-full h-full"
             ></iframe>
           </div>

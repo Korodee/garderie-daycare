@@ -147,6 +147,22 @@ const Program = () => {
             éducatrices jouent un rôle actif dans l&apos;observation, le soutien
             et l&apos;enrichissement des expériences des enfants.
           </p>
+          
+          {/* Capacity Information */}
+          <div className="bg-white/20 rounded-2xl py-6 px-8 mb-12 max-w-2xl mx-auto">
+            <div className="text-2xl font-bold mb-2">Capacité de 80 enfants</div>
+            <div className="flex justify-center gap-8 text-lg">
+              <div className="flex items-center gap-2">
+                <FaChild className="text-pink-300" />
+                <span>15 bébés</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <FaChalkboardTeacher className="text-blue-300" />
+                <span>65 enfants</span>
+              </div>
+            </div>
+          </div>
+          
           <div className="grid md:grid-cols-3 gap-8 mx-auto">
             <div className="bg-white/20 rounded-2xl py-4 px-22 flex flex-col items-center">
               <FaChild className="text-5xl mb-2 text-pink-300 drop-shadow" />
