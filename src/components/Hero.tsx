@@ -540,11 +540,11 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.55, duration: 0.7, type: "spring" }}
-            className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start"
+            className="flex flex-col items-center sm:flex-row gap-4 justify-center"
           >
             <a
               href="#admission"
-              className="inline-block font-semibold px-8 py-3 rounded-full shadow text-white text-lg bg-gradient-to-r from-[#36B6DF] via-[#7B3FA0] via-60% to-[#F06292] hover:brightness-110 hover:scale-105 transition-all duration-200"
+              className="inline-block font-semibold px-8 py-3 rounded-full shadow text-white text-lg bg-gradient-to-r from-[#36B6DF] via-[#7B3FA0] via-60% to-[#F06292] hover:brightness-110 hover:scale-105 transition-all duration-200 w-fit"
             >
               {t("hero.cta")}
             </a>
