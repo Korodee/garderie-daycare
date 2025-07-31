@@ -30,14 +30,6 @@ const decorVariants = {
   },
 };
 
-const navLinks = [
-  { href: "#presentation", label: "nav.presentation" },
-  { href: "#programme", label: "nav.program" },
-  { href: "/gallery", label: "nav.gallery" },
-  { href: "#admission", label: "nav.admission" },
-  { href: "#contact", label: "nav.contact" },
-];
-
 // Slideshow images
 const slideshowImages = [
   {
@@ -69,6 +61,15 @@ const slideshowImages = [
 export default function Hero() {
   const { t } = useLanguage();
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
+  
+  const navLinks = React.useMemo(() => [
+    { href: "#presentation", label: t("nav.presentation") },
+    { href: "#programme", label: t("nav.program") },
+    { href: "/gallery", label: t("nav.gallery") },
+    { href: "#admission", label: t("nav.admission") },
+    { href: "#contact", label: t("nav.contact") },
+  ], [t]);
+  
   const [active, setActive] = useState(navLinks[0].href);
   const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -98,7 +99,7 @@ export default function Hero() {
     window.addEventListener("scroll", handleScroll);
     handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [navLinks]);
 
   // Floating toys data (using icon components)
   const floatingToys = [

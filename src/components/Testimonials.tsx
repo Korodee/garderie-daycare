@@ -194,7 +194,7 @@ export default function Testimonials() {
           {/* Navigation Arrows */}
           <button
             onClick={prevSlide}
-            className="absolute -left-10 top-1/2 -translate-y-1/2 z-20 w-10 h-10 bg-white/80 backdrop-blur-sm rounded-full shadow-lg hover:bg-white transition-all duration-200 hover:scale-110 flex items-center justify-center text-pink-600 hover:text-pink-700"
+            className="absolute -left-10 top-1/2 -translate-y-1/2 z-20 w-10 h-10 bg-white/80 backdrop-blur-sm rounded-full shadow-lg hover:bg-white transition-all duration-200 hover:scale-110 items-center justify-center text-pink-600 hover:text-pink-700 hidden md:flex"
             aria-label="Témoignage précédent"
           >
             <FaChevronLeft className="text-lg" />
@@ -202,7 +202,7 @@ export default function Testimonials() {
 
           <button
             onClick={nextSlide}
-            className="absolute -right-10 top-1/2 -translate-y-1/2 z-20 w-10 h-10 bg-white/80 backdrop-blur-sm rounded-full shadow-lg hover:bg-white transition-all duration-200 hover:scale-110 flex items-center justify-center text-pink-600 hover:text-pink-700"
+            className="absolute -right-10 top-1/2 -translate-y-1/2 z-20 w-10 h-10 bg-white/80 backdrop-blur-sm rounded-full shadow-lg hover:bg-white transition-all duration-200 hover:scale-110 items-center justify-center text-pink-600 hover:text-pink-700 hidden md:flex"
             aria-label="Témoignage suivant"
           >
             <FaChevronRight className="text-lg" />

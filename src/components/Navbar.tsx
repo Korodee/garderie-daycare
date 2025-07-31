@@ -8,14 +8,6 @@ import Image from "next/image";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { useLanguage } from "@/contexts/LanguageContext";
 
-const navLinks = [
-  { href: "/#presentation", label: "nav.presentation" },
-  { href: "/#programme", label: "nav.program" },
-  { href: "/#admission", label: "nav.admission" },
-  { href: "/gallery", label: "nav.gallery" },
-  { href: "/#contact", label: "nav.contact" },
-];
-
 interface NavbarProps {
   open: boolean;
   setOpen: (open: boolean) => void;
@@ -26,6 +18,14 @@ export default function Navbar({ open, setOpen, active }: NavbarProps) {
   const { t } = useLanguage();
   const [scrolled, setScrolled] = useState(false);
   const [isGalleryPage, setIsGalleryPage] = useState(false);
+
+  const navLinks = [
+    { href: "/#presentation", label: t("nav.presentation") },
+    { href: "/#programme", label: t("nav.program") },
+    { href: "/#admission", label: t("nav.admission") },
+    { href: "/gallery", label: t("nav.gallery") },
+    { href: "/#contact", label: t("nav.contact") },
+  ];
 
   useEffect(() => {
     // Check if we're on the gallery page after component mounts
@@ -83,19 +83,25 @@ export default function Navbar({ open, setOpen, active }: NavbarProps) {
             </span>
           </div>
         </Link>
-        <button
-          className={`md:hidden p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 shadow transition-all duration-300 ${
-            scrolled ? "bg-white/70" : "bg-white/20 backdrop-blur-sm"
-          }`}
-          aria-label={open ? t("nav.close_menu") : t("nav.open_menu")}
-          onClick={() => setOpen(!open)}
-        >
-          <FaBars
-            className={`text-xl transition-colors duration-300 ${
-              scrolled || isGalleryPage ? "text-black" : "text-black/80"
-            }`}
+        <div className="flex items-center gap-2">
+          <LanguageSwitcher
+            scrolled={scrolled}
+            isGalleryPage={isGalleryPage}
           />
-        </button>
+          <button
+            className={`md:hidden p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 shadow transition-all duration-300 ${
+              scrolled ? "bg-white/70" : "bg-white/20 backdrop-blur-sm"
+            }`}
+            aria-label={open ? t("nav.close_menu") : t("nav.open_menu")}
+            onClick={() => setOpen(!open)}
+          >
+            <FaBars
+              className={`text-xl transition-colors duration-300 ${
+                scrolled || isGalleryPage ? "text-black" : "text-black/80"
+              }`}
+            />
+          </button>
+        </div>
         {/* Desktop Navigation */}
         <ul className="hidden md:flex gap-4 items-center text-base font-semibold">
           {navLinks.map((link) => (
@@ -123,17 +129,11 @@ export default function Navbar({ open, setOpen, active }: NavbarProps) {
                       : "text-white group-hover:text-gray-800 drop-shadow-lg"
                   }`}
                 >
-                  {t(link.label)}
+                  {link.label}
                 </span>
               </a>
             </li>
           ))}
-          <li>
-            <LanguageSwitcher
-              scrolled={scrolled}
-              isGalleryPage={isGalleryPage}
-            />
-          </li>
         </ul>
       </div>
     </motion.nav>
