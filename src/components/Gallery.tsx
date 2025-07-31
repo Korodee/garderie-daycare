@@ -108,7 +108,7 @@ const Gallery = () => {
       </div>
 
       {/* Header */}
-      <div className="relative z-10 text-center mt-6 md:mt-16 mb-12">
+      <div className="relative z-10 px-6 md:px-0 text-center mt-6 md:mt-16 mb-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
