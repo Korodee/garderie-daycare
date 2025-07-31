@@ -381,7 +381,7 @@ export default function Hero() {
       </div>
 
       {/* Background Overlay */}
-      <div className="absolute inset-0 bg-black/50 backdrop-blur-xs"></div>
+      <div className="absolute inset-0 bg-black/70 backdrop-blur-xs"></div>
 
       {/* Slide Indicators */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30 flex space-x-3">
