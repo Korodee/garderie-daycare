@@ -15,38 +15,41 @@ import {
   FaChartLine,
 } from "react-icons/fa";
 import Image from "next/image";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Program = () => {
+  const { t } = useLanguage();
+
   const activities = [
     {
       icon: <FaBook className="text-2xl text-blue-500" />,
-      title: "Activités sensorielles, motrices et artistiques",
-      description: "Exploration tactile, motrice, artistique et auditive.",
+      title: t("activities.sensory"),
+      description: t("activities.sensory.desc"),
     },
     {
       icon: <FaMusic className="text-2xl text-purple-500" />,
-      title: "Chansons, histoires et jeux symboliques",
-      description: "Chansons, histoires, jeux de rôle, blocs, coin lecture.",
+      title: t("activities.music"),
+      description: t("activities.music.desc"),
     },
     {
       icon: <FaRunning className="text-2xl text-green-500" />,
-      title: "Motricité fine et globale",
-      description: "Ateliers et jeux extérieurs quotidiens (cour sécurisée).",
+      title: t("activities.motor"),
+      description: t("activities.motor.desc"),
     },
     {
       icon: <FaSmileBeam className="text-2xl text-yellow-500" />,
-      title: "Sorties éducatives et journées thématiques",
-      description: "Découvertes, sorties et journées à thème.",
+      title: t("activities.outings"),
+      description: t("activities.outings.desc"),
     },
     {
       icon: <FaClock className="text-2xl text-indigo-500" />,
-      title: "Apprentissages fondamentaux",
-      description: "Introduction aux chiffres, lettres, formes et couleurs.",
+      title: t("activities.fundamentals"),
+      description: t("activities.fundamentals.desc"),
     },
     {
       icon: <FaLanguage className="text-2xl text-orange-500" />,
-      title: "Activités bilingues quotidiennes",
-      description: "Intégration du français et de l’anglais chaque jour.",
+      title: t("activities.bilingual"),
+      description: t("activities.bilingual.desc"),
     },
   ];
 
@@ -81,10 +84,10 @@ const Program = () => {
           className="text-center mb-16"
         >
           <h2 className="text-5xl md:text-6xl font-extrabold mb-6 bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent drop-shadow-sm">
-            Programme éducatif HighScope
+            {t("program.title")}
           </h2>
           <p className="text-xl text-slate-700 max-w-3xl mx-auto">
-            Apprendre en s&apos;amusant, chaque jour, en français et en anglais.
+            {t("program.subtitle")}
           </p>
         </motion.div>
 
@@ -139,45 +142,50 @@ const Program = () => {
         >
           <FaBook className="text-4xl mb-4" />
           <h3 className="text-4xl md:text-5xl font-extrabold mb-8 drop-shadow-sm">
-            Approche
+            {t("program.approach")}
           </h3>
           <p className="text-xl leading-relaxed max-w-4xl mx-auto mb-12 font-medium">
-            Les enfants sont encouragés à explorer, à poser des questions, à
-            faire des choix et à apprendre à travers leurs intérêts. Les
-            éducatrices jouent un rôle actif dans l&apos;observation, le soutien
-            et l&apos;enrichissement des expériences des enfants.
+            {t("program.approach.description")}
           </p>
-          
+
           {/* Capacity Information */}
           <div className="bg-white/20 rounded-2xl py-6 px-8 mb-12 max-w-2xl mx-auto">
-            <div className="text-2xl font-bold mb-2">Capacité de 80 enfants</div>
+            <div className="text-2xl font-bold mb-2">
+              {t("program.capacity")}
+            </div>
             <div className="flex justify-center gap-8 text-lg">
               <div className="flex items-center gap-2">
                 <FaChild className="text-pink-300" />
-                <span>15 bébés</span>
+                <span>{t("program.babies")}</span>
               </div>
               <div className="flex items-center gap-2">
                 <FaChalkboardTeacher className="text-blue-300" />
-                <span>65 enfants</span>
+                <span>{t("program.children")}</span>
               </div>
             </div>
           </div>
-          
+
           <div className="grid md:grid-cols-3 gap-8 mx-auto">
             <div className="bg-white/20 rounded-2xl py-4 px-22 flex flex-col items-center">
               <FaChild className="text-5xl mb-2 text-pink-300 drop-shadow" />
               <div className="text-3xl font-bold mb-1">1:5</div>
-              <div className="text-lg font-medium">Bébés</div>
+              <div className="text-lg font-medium">
+                {t("program.ratios.babies")}
+              </div>
             </div>
             <div className="bg-white/20 rounded-2xl py-4 px-22 flex flex-col items-center">
               <FaChalkboardTeacher className="text-5xl mb-2 text-blue-300 drop-shadow" />
               <div className="text-3xl font-bold mb-1">1:8</div>
-              <div className="text-lg font-medium">2 à 4 ans</div>
+              <div className="text-lg font-medium">
+                {t("program.ratios.toddlers")}
+              </div>
             </div>
             <div className="bg-white/20 rounded-2xl py-4 px-22 flex flex-col items-center">
               <FaChalkboardTeacher className="text-5xl mb-2 text-green-300 drop-shadow" />
               <div className="text-3xl font-bold mb-1">1:10</div>
-              <div className="text-lg font-medium">4 à 5 ans</div>
+              <div className="text-lg font-medium">
+                {t("program.ratios.preschool")}
+              </div>
             </div>
           </div>
         </motion.div>
@@ -254,10 +262,10 @@ const Program = () => {
             {/* Left: Headline, subtitle, and staggered cards */}
             <div>
               <h3 className="text-3xl md:text-5xl font-extrabold mb-6 bg-gradient-to-r from-blue-500 via-green-400 to-yellow-400 bg-clip-text text-transparent drop-shadow-lg">
-                Un environnement bilingue, actif et joyeux
+                {t("environment.title")}
               </h3>
               <div className="inline-block mb-10 px-6 py-3 rounded-2xl bg-yellow-100 text-yellow-900 font-semibold text-lg shadow-lg">
-                “Chaque journée est une aventure pleine de découvertes.”
+                &ldquo;{t("environment.quote")}&rdquo;
               </div>
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
@@ -271,12 +279,12 @@ const Program = () => {
                 </div>
                 <div>
                   <div className="font-bold text-xl text-slate-800 mb-1">
-                    Organisation de l’environnement
+                    {t("environment.organization.title")}
                   </div>
                   <ul className="list-disc text-slate-700 text-base">
-                    <li>Coins thématiques pour chaque type d’activité</li>
-                    <li>Matériel accessible et organisé par les enfants</li>
-                    <li>Espaces pour activités individuelles et de groupe</li>
+                    <li>{t("environment.organization.list1")}</li>
+                    <li>{t("environment.organization.list2")}</li>
+                    <li>{t("environment.organization.list3")}</li>
                   </ul>
                 </div>
               </motion.div>
@@ -292,11 +300,10 @@ const Program = () => {
                 </div>
                 <div>
                   <div className="font-bold text-xl text-slate-800 mb-1">
-                    Intégration bilingue
+                    {t("environment.bilingual.title")}
                   </div>
                   <div className="text-slate-700 text-base">
-                    Français et anglais intégrés dans les routines, jeux,
-                    chansons, histoires et interactions quotidiennes.
+                    {t("environment.bilingual.description")}
                   </div>
                 </div>
               </motion.div>
@@ -312,11 +319,10 @@ const Program = () => {
                 </div>
                 <div>
                   <div className="font-bold text-xl text-slate-800 mb-1">
-                    Épanouissement global
+                    {t("environment.growth.title")}
                   </div>
                   <div className="text-slate-700 text-base">
-                    Immersion linguistique naturelle favorisant le développement
-                    cognitif, langagier et social.
+                    {t("environment.growth.description")}
                   </div>
                 </div>
               </motion.div>
@@ -330,75 +336,59 @@ const Program = () => {
           {/* Rapports de Développement */}
           <div className="bg-orange-100 rounded-2xl px-6 py-6 shadow-lg flex flex-col h-full">
             <h3 className="font-bold text-lg mb-2 text-orange-800 flex items-center gap-2">
-              <FaChartLine className="text-2xl text-orange-500" /> Rapports de
-              Développement
+              <FaChartLine className="text-2xl text-orange-500" />{" "}
+              {t("communication.reports.title")}
             </h3>
             <p className="mb-2 text-slate-700 text-base">
-              Deux fois par année, nous remettons aux parents un rapport du
-              développement global de leur enfant, comprenant :
+              {t("communication.reports.description")}
             </p>
             <ul className="text-slate-700 text-sm list-disc ml-5">
-              <li>
-                Des observations précises effectuées par l&apos;éducatrice
-              </li>
-              <li>
-                Des photos illustrant les progrès dans différents domaines
-              </li>
-              <li>Suivi motricité, langage, socialisation, etc.</li>
-              <li>Évaluation des compétences cognitives et socio-affectives</li>
-              <li>Recommandations pour le développement continu</li>
+              <li>{t("communication.reports.list1")}</li>
+              <li>{t("communication.reports.list2")}</li>
+              <li>{t("communication.reports.list3")}</li>
+              <li>{t("communication.reports.list4")}</li>
+              <li>{t("communication.reports.list5")}</li>
             </ul>
           </div>
           {/* Courriel Hebdomadaire */}
           <div className="bg-green-100 rounded-2xl px-6 py-6 shadow-lg flex flex-col h-full">
             <h3 className="font-bold text-lg mb-2 text-green-800 flex items-center gap-2">
               <FaEnvelopeOpenText className="text-2xl text-green-500" />{" "}
-              Courriel Hebdomadaire
+              {t("communication.email.title")}
             </h3>
             <p className="mb-2 text-slate-700 text-base">
-              Chaque vendredi, nous envoyons un courriel informatif aux parents,
-              comprenant :
+              {t("communication.email.description")}
             </p>
             <ul className="text-slate-700 text-sm list-disc ml-5">
-              <li>Des photos de la semaine</li>
-              <li>
-                Les activités thématiques préparées et animées par nos
-                éducatrices
-              </li>
-              <li>Un aperçu des apprentissages vécus par les enfants</li>
-              <li>Informations importantes pour la semaine suivante</li>
+              <li>{t("communication.email.list1")}</li>
+              <li>{t("communication.email.list2")}</li>
+              <li>{t("communication.email.list3")}</li>
+              <li>{t("communication.email.list4")}</li>
             </ul>
           </div>
           {/* Application Kaymbu */}
           <div className="bg-blue-100 rounded-2xl px-6 py-6 shadow-lg flex flex-col h-full">
             <h3 className="font-bold text-lg mb-2 text-blue-800 flex items-center gap-2">
-              <FaMobileAlt className="text-2xl text-blue-500" /> Application
-              Kaymbu
+              <FaMobileAlt className="text-2xl text-blue-500" />{" "}
+              {t("communication.kaymbu.title")}
             </h3>
             <p className="mb-2 text-slate-700 text-base">
-              Plateforme sécurisée qui permet aux parents d&apos;accéder à :
+              {t("communication.kaymbu.description")}
             </p>
             <ul className="text-slate-700 text-sm list-disc ml-5 mb-4">
-              <li>
-                Le rapport quotidien de leur enfant (repas, toilette, humeur,
-                sieste, etc.)
-              </li>
-              <li>Des observations sur les activités du jour</li>
-              <li>Un suivi personnalisé au quotidien</li>
+              <li>{t("communication.kaymbu.list1")}</li>
+              <li>{t("communication.kaymbu.list2")}</li>
+              <li>{t("communication.kaymbu.list3")}</li>
             </ul>
-            {/* <div className="w-full flex-1 flex items-end justify-center mt-auto">
-              <div className="w-32 h-48 bg-white border-2 border-blue-300 rounded-2xl flex items-center justify-center text-blue-400 font-bold text-lg mt-2">Kaymbu App</div>
-            </div> */}
             <span className="text-xs text-slate-500 mt-2">
-              Aperçu de l&apos;application parent
+              {t("communication.kaymbu.preview")}
             </span>
           </div>
         </div>
         {/* Parent testimonial */}
         <div className="max-w-2xl mx-auto mt-16">
           <div className="px-6 py-4 rounded-xl bg-green-50 text-green-900 font-semibold text-lg shadow text-center">
-            &quot;Grâce à la communication régulière de la garderie, je me sens
-            toujours impliqué(e) dans la journée de mon enfant !&quot;
+            &ldquo;{t("communication.testimonial")}&rdquo;
           </div>
         </div>
       </div>

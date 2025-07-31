@@ -1,43 +1,11 @@
 "use client";
 
 import { FaMapMarkerAlt, FaGlobe } from "react-icons/fa";
+import { useLanguage } from "@/contexts/LanguageContext";
 
-// const contactInfo = [
-//   {
-//     icon: <FaPhone className="text-2xl text-green-500" />,
-//     label: "Téléphone",
-//     value: "514 747-4114",
-//     sub: "Appelez-nous pour plus d'informations",
-//     ping: true,
-//   },
-//   {
-//     icon: <FaEnvelope className="text-2xl text-orange-500" />,
-//     label: "Courriel",
-//     value: (
-//       <>
-//         garderieaimee
-//         <wbr />
-//         @hotmail.com
-//       </>
-//     ),
-//     sub: "Contactez-nous par email",
-//     ping: true,
-//   },
-//   {
-//     icon: <FaFax className="text-2xl text-purple-500" />,
-//     label: "Télécopieur",
-//     value: "514 747-2695",
-//     sub: "Pour les documents administratifs",
-//   },
-//   {
-//     icon: <FaClock className="text-2xl text-blue-500" />,
-//     label: "Horaires",
-//     value: "Lun-Ven: 7h00 - 18h00",
-//     sub: "",
-//   },
-// ];
+const Contact = () => {
+  const { t } = useLanguage();
 
-export default function Contact() {
   return (
     <section
       id="contact"
@@ -51,96 +19,6 @@ export default function Contact() {
         <div className="absolute top-1/3 left-10 w-32 h-32 bg-purple-200 rounded-full opacity-20 blur-2xl animate-blob animation-delay-1000"></div>
       </div>
 
-      {/* Hero area with animated mailbox/chat bubble */}
-      {/* <div className="relative z-10 flex flex-col items-center my-20">
-        <motion.div
-          initial={{ scale: 0.8, rotate: -8 }}
-          animate={{ scale: [0.8, 1.05, 1], rotate: [0, 8, 0] }}
-          transition={{
-            duration: 1.2,
-            repeat: Infinity,
-            repeatType: "reverse",
-            ease: "easeInOut",
-          }}
-          className="w-28 h-28 rounded-2xl bg-gradient-to-br from-indigo-400 to-pink-400 flex items-center justify-center mb-6 shadow-2xl"
-        >
-          <FaPaperPlane className="text-white text-5xl drop-shadow" />
-        </motion.div>
-        <h2 className="text-5xl md:text-6xl font-extrabold mb-4 bg-gradient-to-r from-indigo-600 via-pink-500 to-blue-500 bg-clip-text text-transparent drop-shadow-lg text-center">
-          Contact
-        </h2>
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-100 text-indigo-900 font-semibold text-lg shadow mb-4">
-          <FaHandPaper className="text-indigo-400 animate-wave" />
-          Nous sommes à votre écoute
-        </div>
-        <p className="text-xl text-slate-700 max-w-2xl text-center mb-2">
-          Une question ? Écrivez-nous ou appelez-nous, nous vous répondrons rapidement.
-        </p>
-      </div> */}
-
-      {/* Wavy divider */}
-      {/* <div className="-mt-10 mb-12">
-        <svg
-          viewBox="0 0 1440 120"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-full h-16"
-        >
-          <path
-            fill="url(#contact-wave)"
-            d="M0,80 C360,160 1080,0 1440,80 L1440,120 L0,120 Z"
-          />
-          <defs>
-            <linearGradient
-              id="contact-wave"
-              x1="0"
-              x2="1440"
-              y1="0"
-              y2="0"
-              gradientUnits="userSpaceOnUse"
-            >
-              <stop stopColor="#c7d2fe" />
-              <stop offset="0.5" stopColor="#fbcfe8" />
-              <stop offset="1" stopColor="#a5b4fc" />
-            </linearGradient>
-          </defs>
-        </svg>
-      </div> */}
-
-      {/* Vertical Contact Strip */}
-      {/* <div className="relative z-10 max-w-xl mx-auto mb-24">
-        <div className="bg-white/80 backdrop-blur-lg rounded-3xl p-4 py-8 md:p-10 shadow-2xl border-2 border-white/60 flex flex-col gap-8">
-          {contactInfo.map((info, i) => (
-            <motion.div
-              key={info.label}
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: i * 0.1 }}
-              viewport={{ once: true }}
-              className="flex items-center gap-6 relative"
-            >
-              <div className="relative">
-                <span className="w-14 h-14 rounded-full bg-gradient-to-br from-indigo-100 to-pink-100 flex items-center justify-center shadow text-2xl">
-                  {info.icon}
-                </span>
-                {info.ping && (
-                  <span className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-green-400 animate-ping"></span>
-                )}
-              </div>
-              <div className="flex-1">
-                <div className="text-lg font-bold text-slate-800">
-                  {info.label}
-                </div>
-                <div className="text-xl font-extrabold text-indigo-600 mb-1">
-                  {info.value}
-                </div>
-                <div className="text-slate-600 text-base">{info.sub}</div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </div> */}
-
       {/* Map/Location Card */}
       <div className="relative z-10 max-w-5xl mx-auto mb-14">
         <div className="bg-white/90 backdrop-blur-lg rounded-3xl p-4 py-8 md:p-10 shadow-2xl border-2 border-white/60 flex flex-col items-center">
@@ -148,13 +26,13 @@ export default function Contact() {
             <FaMapMarkerAlt className="text-white text-3xl" />
           </div>
           <h3 className="text-2xl font-bold mb-2 text-indigo-700">
-            Notre Adresse
+            {t("contact.address_title")}
           </h3>
           <div className="text-lg font-semibold text-slate-800 mb-1">
-            1730, rue Poirier
+            {t("contact.street")}
           </div>
           <div className="text-base text-slate-600 mb-2">
-            Saint-Laurent (Québec) H4L 1J3
+            {t("contact.city")}
           </div>
           <div className="rounded-2xl h-64 w-full overflow-hidden mt-4 shadow-lg border-2 border-white/60">
             <iframe
@@ -165,7 +43,7 @@ export default function Contact() {
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Carte de la Garderie Aimée"
+              title={t("contact.map_title")}
               className="w-full h-full"
             ></iframe>
           </div>
@@ -183,9 +61,11 @@ export default function Contact() {
           <span className="text-2xl">
             <FaGlobe />
           </span>
-          Inscription en ligne
+          {t("contact.online_registration")}
         </a>
       </div>
     </section>
   );
-}
+};
+
+export default Contact;

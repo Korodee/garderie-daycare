@@ -5,13 +5,15 @@ import { FaBars } from "react-icons/fa";
 // import { GiBabyBottle } from "react-icons/gi";
 import Link from "next/link";
 import Image from "next/image";
+import LanguageSwitcher from "./LanguageSwitcher";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const navLinks = [
-  { href: "/#presentation", label: "Présentation" },
-  { href: "/#programme", label: "Programme" },
-  { href: "/#admission", label: "Admission" },
-  { href: "/gallery", label: "Galerie" },
-  { href: "/#contact", label: "Contact" },
+  { href: "/#presentation", label: "nav.presentation" },
+  { href: "/#programme", label: "nav.program" },
+  { href: "/#admission", label: "nav.admission" },
+  { href: "/gallery", label: "nav.gallery" },
+  { href: "/#contact", label: "nav.contact" },
 ];
 
 interface NavbarProps {
@@ -21,6 +23,7 @@ interface NavbarProps {
 }
 
 export default function Navbar({ open, setOpen, active }: NavbarProps) {
+  const { t } = useLanguage();
   const [scrolled, setScrolled] = useState(false);
   const [isGalleryPage, setIsGalleryPage] = useState(false);
 
@@ -47,9 +50,9 @@ export default function Navbar({ open, setOpen, active }: NavbarProps) {
           ? "bg-white/80 backdrop-blur-lg shadow-lg rounded-b-4xl"
           : "bg-transparent"
       }`}
-      aria-label="Navigation principale"
+      aria-label={t("nav.main_navigation")}
     >
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-2 md:py-5">
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-2 md:py-4">
         <Link href="/" className="flex items-center gap-2 group">
           <Image
             src="/logo.svg"
@@ -67,7 +70,7 @@ export default function Navbar({ open, setOpen, active }: NavbarProps) {
                   : "text-white drop-shadow-lg"
               }`}
             >
-              Garderie Aimée
+              {t("footer.brand")}
             </span>
             <span
               className={`text-[11px] font-semibold italic tracking-wide mt-0.5 transition-colors duration-300 ${
@@ -76,7 +79,7 @@ export default function Navbar({ open, setOpen, active }: NavbarProps) {
                   : "text-white drop-shadow-lg"
               }`}
             >
-              Une garderie de qualité
+              {t("footer.tagline")}
             </span>
           </div>
         </Link>
@@ -84,7 +87,7 @@ export default function Navbar({ open, setOpen, active }: NavbarProps) {
           className={`md:hidden p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 shadow transition-all duration-300 ${
             scrolled ? "bg-white/70" : "bg-white/20 backdrop-blur-sm"
           }`}
-          aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
+          aria-label={open ? t("nav.close_menu") : t("nav.open_menu")}
           onClick={() => setOpen(!open)}
         >
           <FaBars
@@ -93,7 +96,8 @@ export default function Navbar({ open, setOpen, active }: NavbarProps) {
             }`}
           />
         </button>
-        <ul className="hidden md:flex gap-4 text-base font-semibold">
+        {/* Desktop Navigation */}
+        <ul className="hidden md:flex gap-4 items-center text-base font-semibold">
           {navLinks.map((link) => (
             <li key={link.href}>
               <a
@@ -119,11 +123,17 @@ export default function Navbar({ open, setOpen, active }: NavbarProps) {
                       : "text-white group-hover:text-gray-800 drop-shadow-lg"
                   }`}
                 >
-                  {link.label}
+                  {t(link.label)}
                 </span>
               </a>
             </li>
           ))}
+          <li>
+            <LanguageSwitcher
+              scrolled={scrolled}
+              isGalleryPage={isGalleryPage}
+            />
+          </li>
         </ul>
       </div>
     </motion.nav>

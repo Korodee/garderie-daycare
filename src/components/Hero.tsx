@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FaTimes } from "react-icons/fa";
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
+import { useLanguage } from "@/contexts/LanguageContext";
 import {
   FaBaby,
   FaPuzzlePiece,
@@ -30,42 +31,43 @@ const decorVariants = {
 };
 
 const navLinks = [
-  { href: "#presentation", label: "Présentation" },
-  { href: "#programme", label: "Programme" },
-  { href: "/gallery", label: "Galerie" },
-  { href: "#admission", label: "Admission" },
-  { href: "#contact", label: "Contact" },
+  { href: "#presentation", label: "nav.presentation" },
+  { href: "#programme", label: "nav.program" },
+  { href: "/gallery", label: "nav.gallery" },
+  { href: "#admission", label: "nav.admission" },
+  { href: "#contact", label: "nav.contact" },
 ];
 
 // Slideshow images
 const slideshowImages = [
   {
     src: "/Pouponniere-classe.jpg",
-    alt: "Classe des pouponnières - Garderie Aimée"
+    alt: "Classe des pouponnières - Garderie Aimée",
   },
   {
-    src: "/Trotinneurs-classe2.jpg", 
-    alt: "Classe des trottineurs - Garderie Aimée"
+    src: "/Trotinneurs-classe2.jpg",
+    alt: "Classe des trottineurs - Garderie Aimée",
   },
   {
     src: "/Trotinneurs-classe3.jpg",
-    alt: "Classe des trottineurs en activité - Garderie Aimée"
+    alt: "Classe des trottineurs en activité - Garderie Aimée",
   },
   {
     src: "/Trotinneurs-classe.jpg",
-    alt: "Classe des trottineurs - Garderie Aimée"
+    alt: "Classe des trottineurs - Garderie Aimée",
   },
   {
     src: "/Bambins-classe.jpg",
-    alt: "Classe des bambins - Garderie Aimée"
+    alt: "Classe des bambins - Garderie Aimée",
   },
   {
     src: "/Sale-de-prescolaire.jpg",
-    alt: "Classe préscolaire - Garderie Aimée"
-  }
+    alt: "Classe préscolaire - Garderie Aimée",
+  },
 ];
 
 export default function Hero() {
+  const { t } = useLanguage();
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const [active, setActive] = useState(navLinks[0].href);
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -387,8 +389,8 @@ export default function Hero() {
             key={index}
             onClick={() => setCurrentSlide(index)}
             className={`w-3 h-3 rounded-full transition-all duration-300 ${
-              index === currentSlide 
-                ? "bg-white scale-125" 
+              index === currentSlide
+                ? "bg-white scale-125"
                 : "bg-white/50 hover:bg-white/75"
             }`}
             aria-label={`Aller à l'image ${index + 1}`}
@@ -497,13 +499,16 @@ export default function Hero() {
             transition={{ delay: 0.2, duration: 0.7, type: "spring" }}
             className="text-4xl md:text-5xl font-extrabold text-white mb-4 leading-tight"
           >
-            Garderie Aimée
+            {t("hero.title")}
             <br />
             <span
               className="font-bold bg-gradient-to-r from-[#36B6DF] via-[#FFD43B] via-40% to-[#F06292] text-transparent bg-clip-text drop-shadow-[0_2px_8px_rgba(0,0,0,0.18)]"
-              style={{ backgroundImage: 'linear-gradient(100deg, #36B6DF 0%, #FFD43B 40%, #7B3FA0 60%, #F06292 100%)' }}
+              style={{
+                backgroundImage:
+                  "linear-gradient(100deg, #36B6DF 0%, #FFD43B 40%, #7B3FA0 60%, #F06292 100%)",
+              }}
             >
-              Une garderie de qualité
+              {t("hero.subtitle")}
             </span>
           </motion.h1>
           <motion.p
@@ -512,9 +517,7 @@ export default function Hero() {
             transition={{ delay: 0.35, duration: 0.7, type: "spring" }}
             className="text-lg md:text-xl text-slate-300 mb-6 max-w-xl mx-auto md:mx-0"
           >
-            Depuis 1987, nous offrons un environnement sécuritaire, stimulant et
-            bienveillant où chaque enfant peut grandir, apprendre et
-            s&apos;épanouir à son propre rythme.
+            {t("hero.description")}
           </motion.p>
           {/* Badge/Testimonial */}
           <motion.div
@@ -529,7 +532,7 @@ export default function Hero() {
                 ★
               </text>
             </svg>
-            Recommandé par les parents depuis 35+ ans
+            {t("hero.recommended")}
           </motion.div>
           {/* CTAs */}
           <motion.div
@@ -542,7 +545,7 @@ export default function Hero() {
               href="#admission"
               className="inline-block font-semibold px-8 py-3 rounded-full shadow text-white text-lg bg-gradient-to-r from-[#36B6DF] via-[#7B3FA0] via-60% to-[#F06292] hover:brightness-110 hover:scale-105 transition-all duration-200"
             >
-              Inscrire mon enfant
+              {t("hero.cta")}
             </a>
           </motion.div>
         </motion.div>
@@ -562,7 +565,7 @@ export default function Hero() {
               alt="Enfants heureux"
               width={1400}
               height={1400}
-              className="object-contain absolute z-10 w-[1000px] h-[1000px]"
+              className="object-contain absolute z-10 w-[1000px] h-[1000px] opacity-50 brightness-110"
               style={{ clipPath: "url(#blobClip)" }}
             />
             {/* Decorative dots */}

@@ -15,32 +15,34 @@ import {
 import { GiTeacher } from "react-icons/gi";
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 // Classroom slideshow images
 const classroomImages = [
   {
     src: "/Trotinneurs-classe3.jpg",
-    alt: "Classe des trottineurs - Garderie Aimée"
+    alt: "Classe des trottineurs - Garderie Aimée",
   },
   {
     src: "/Pouponniere-classe.jpg",
-    alt: "Classe des pouponnières - Garderie Aimée"
+    alt: "Classe des pouponnières - Garderie Aimée",
   },
   {
     src: "/Trotinneurs-classe2.jpg",
-    alt: "Classe des trottineurs en activité - Garderie Aimée"
+    alt: "Classe des trottineurs en activité - Garderie Aimée",
   },
   {
     src: "/Bambins-classe.jpg",
-    alt: "Classe des bambins - Garderie Aimée"
+    alt: "Classe des bambins - Garderie Aimée",
   },
   {
     src: "/Sale-de-prescolaire.jpg",
-    alt: "Classe préscolaire - Garderie Aimée"
-  }
+    alt: "Classe préscolaire - Garderie Aimée",
+  },
 ];
 
 const About = () => {
+  const { t } = useLanguage();
   const [currentSlide, setCurrentSlide] = useState(0);
 
   // Auto-advance slideshow
@@ -57,7 +59,9 @@ const About = () => {
   };
 
   const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + classroomImages.length) % classroomImages.length);
+    setCurrentSlide(
+      (prev) => (prev - 1 + classroomImages.length) % classroomImages.length
+    );
   };
 
   const goToSlide = (index: number) => {
@@ -68,66 +72,64 @@ const About = () => {
     {
       icon: <FaClock className="text-4xl text-blue-500" />,
       number: "35+",
-      label: "Années d'expérience",
-      description: "Depuis notre fondation en 1987",
+      label: t("stats.experience"),
+      description: t("about.since"),
     },
     {
       icon: <FaUsers className="text-4xl text-green-500" />,
       number: "80",
-      label: "Enfants accueillis",
+      label: t("stats.children"),
       description: "15 poupons + 65 enfants",
     },
     {
       icon: <GiTeacher className="text-4xl text-purple-500" />,
       number: "11",
-      label: "Éducatrices qualifiées",
-      description: "Équipe stable et expérimentée",
+      label: t("stats.educators"),
+      description: t("stats.team"),
     },
     {
       icon: <FaShieldAlt className="text-4xl text-orange-500" />,
       number: "100%",
-      label: "Sécurisé",
-      description: "Environnement protégé",
+      label: t("stats.security"),
+      description: t("stats.environment"),
     },
   ];
 
   const values = [
     {
       icon: <FaGraduationCap className="text-2xl text-white" />,
-      title: "Éducation",
-      description:
-        "Excellence éducative reconnue par le Ministère de la famille",
+      title: t("values.education.title"),
+      description: t("values.education.description"),
       color: "from-blue-500 to-indigo-500",
     },
     {
       icon: <FaHeart className="text-2xl text-white" />,
-      title: "Compassion",
-      description: "Accompagnement bienveillant et empathique de chaque enfant",
+      title: t("values.compassion.title"),
+      description: t("values.compassion.description"),
       color: "from-pink-500 to-rose-500",
     },
     {
       icon: <FaHeart className="text-2xl text-white" />,
-      title: "Amour",
-      description:
-        "Chaque enfant est accueilli avec affection et bienveillance",
+      title: t("values.love.title"),
+      description: t("values.love.description"),
       color: "from-red-500 to-pink-500",
     },
     {
       icon: <FaLeaf className="text-2xl text-white" />,
-      title: "Respect",
-      description: "Respect de l'individualité et du rythme de chaque enfant",
+      title: t("values.respect.title"),
+      description: t("values.respect.description"),
       color: "from-green-500 to-emerald-500",
     },
     {
       icon: <FaStar className="text-2xl text-white" />,
-      title: "Autonomie",
-      description: "Développement de l'indépendance et de la confiance en soi",
+      title: t("values.autonomy.title"),
+      description: t("values.autonomy.description"),
       color: "from-yellow-500 to-orange-500",
     },
     {
       icon: <FaPaintBrush className="text-2xl text-white" />,
-      title: "Créativité",
-      description: "Encouragement de l'expression artistique et imaginative",
+      title: t("values.creativity.title"),
+      description: t("values.creativity.description"),
       color: "from-purple-500 to-violet-500",
     },
   ];
@@ -135,27 +137,23 @@ const About = () => {
   const timeline = [
     {
       year: "1987",
-      title: "Fondation",
-      description:
-        "Création de Garderie Aimée avec une vision bilingue et une approche centrée sur le développement global de l'enfant",
+      title: t("timeline.1987.title"),
+      description: t("timeline.1987.description"),
     },
     {
       year: "1995",
-      title: "Reconnaissance MFA",
-      description:
-        "Obtention de la reconnaissance officielle du Ministère de la famille avec qualité éducative reconnue",
+      title: t("timeline.1995.title"),
+      description: t("timeline.1995.description"),
     },
     {
       year: "2010",
-      title: "Expansion",
-      description:
-        "Agrandissement des installations pour accueillir 80 enfants (15 poupons + 65 enfants)",
+      title: t("timeline.2010.title"),
+      description: t("timeline.2010.description"),
     },
     {
       year: "2025",
-      title: "Rénovation Complète",
-      description:
-        "Rénovation intérieure complète des espaces éducatifs pour offrir un environnement moderne et stimulant",
+      title: t("timeline.2025.title"),
+      description: t("timeline.2025.description"),
     },
   ];
 
@@ -182,15 +180,13 @@ const About = () => {
         >
           <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
             <FaBaby className="text-lg" />
-            <span>Depuis 1987</span>
+            <span>{t("about.since")}</span>
           </div>
           <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-[#36B6DF] via-[#FFD43B] via-40% to-[#F06292] text-transparent bg-clip-text drop-shadow">
-            Notre Histoire
+            {t("about.history")}
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-            Plus de trois décennies d&apos;excellence éducative, de passion et
-            d&apos;engagement envers le développement harmonieux de chaque
-            enfant.
+            {t("about.history.description")}
           </p>
         </motion.div>
 
@@ -212,7 +208,7 @@ const About = () => {
             >
               ←
             </button>
-            
+
             <button
               onClick={nextSlide}
               className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 bg-white/80 backdrop-blur-sm rounded-full shadow-lg hover:bg-white transition-all duration-200 hover:scale-110 flex items-center justify-center text-blue-600 hover:text-blue-700"
@@ -249,8 +245,8 @@ const About = () => {
                   key={index}
                   onClick={() => goToSlide(index)}
                   className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                    index === currentSlide 
-                      ? "bg-blue-500 scale-125" 
+                    index === currentSlide
+                      ? "bg-blue-500 scale-125"
                       : "bg-blue-300 hover:bg-blue-400"
                   }`}
                   aria-label={`Aller à l'image ${index + 1}`}
@@ -259,38 +255,40 @@ const About = () => {
             </div>
           </motion.div>
 
-        {/* Stats Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
+          {/* Stats Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
             className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-8 w-full"
-        >
-          {stats.map((stat, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="text-center group"
-            >
-              <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
-                <div className="mb-4 group-hover:scale-110 transition-transform duration-300">
-                  {stat.icon}
+          >
+            {stats.map((stat, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="text-center group"
+              >
+                <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+                  <div className="mb-4 group-hover:scale-110 transition-transform duration-300">
+                    {stat.icon}
+                  </div>
+                  <div className="text-4xl font-bold text-slate-800 mb-2">
+                    {stat.number}
+                  </div>
+                  <div className="text-lg font-semibold text-slate-700 mb-2">
+                    {stat.label}
+                  </div>
+                  <div className="text-sm text-slate-500">
+                    {stat.description}
+                  </div>
                 </div>
-                <div className="text-4xl font-bold text-slate-800 mb-2">
-                  {stat.number}
-                </div>
-                <div className="text-lg font-semibold text-slate-700 mb-2">
-                  {stat.label}
-                </div>
-                <div className="text-sm text-slate-500">{stat.description}</div>
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
 
         {/* Mission & Vision */}
@@ -308,12 +306,10 @@ const About = () => {
                 <div className="w-12 h-12 bg-gradient-to-r from-red-400 to-pink-400 bg-opacity-20 rounded-xl flex items-center justify-center">
                   <FaHeart className="text-2xl" />
                 </div>
-                <h3 className="text-3xl font-bold">Notre Mission</h3>
+                <h3 className="text-3xl font-bold">{t("about.mission")}</h3>
               </div>
               <p className="text-xl leading-relaxed">
-                Offrir un environnement sécuritaire, stimulant et bienveillant
-                où chaque enfant peut grandir, apprendre, s&apos;épanouir à son
-                propre rythme et développer chaque jour davantage son autonomie.
+                {t("about.mission.description")}
               </p>
             </div>
           </div>
@@ -325,10 +321,10 @@ const About = () => {
                 <div className="w-12 h-12 bg-gradient-to-r from-yellow-400 to-orange-400 bg-opacity-20 rounded-xl flex items-center justify-center">
                   <FaStar className="text-2xl" />
                 </div>
-                <h3 className="text-3xl font-bold">Notre Vision</h3>
+                <h3 className="text-3xl font-bold">{t("about.vision")}</h3>
               </div>
               <p className="text-xl leading-relaxed">
-                Faire avec excellence afin de former des citoyens autonomes, compatissants, curieux et prêts pour l’avenir.
+                {t("about.vision.description")}
               </p>
             </div>
           </div>
@@ -344,11 +340,10 @@ const About = () => {
         >
           <div className="text-center mb-16">
             <h3 className="text-4xl font-bold mb-4 bg-gradient-to-r from-[#36B6DF] via-[#FFD43B] via-40% to-[#F06292] text-transparent bg-clip-text drop-shadow">
-              Nos Valeurs Fondamentales
+              {t("about.values")}
             </h3>
             <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-              Les principes qui guident chacune de nos actions et interactions
-              quotidiennes
+              {t("about.values.description")}
             </p>
           </div>
 
@@ -395,11 +390,10 @@ const About = () => {
 
           <div className="text-center mb-16 relative z-10">
             <h3 className="text-4xl font-bold mb-4 bg-gradient-to-r from-[#36B6DF] via-[#FFD43B] via-40% to-[#F06292] text-transparent bg-clip-text drop-shadow">
-              Notre Parcours
+              {t("about.journey")}
             </h3>
             <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-              Plus de 35 ans d&apos;évolution et d&apos;engagement envers
-              l&apos;excellence éducative
+              {t("about.journey.description")}
             </p>
           </div>
 
@@ -508,46 +502,40 @@ const About = () => {
                 <div className="w-16 h-16 bg-gradient-to-r from-indigo-400 to-purple-400 bg-opacity-20 rounded-2xl flex items-center justify-center mb-4 mx-auto">
                   <FaShieldAlt className="text-3xl" />
                 </div>
-                <h3 className="text-4xl font-bold">Conformité Réglementaire</h3>
+                <h3 className="text-4xl font-bold">
+                  {t("about.regulatory.title")}
+                </h3>
               </div>
 
               <p className="text-xl mb-12 max-w-4xl mx-auto leading-relaxed">
-                Notre engagement envers l&apos;excellence éducative
-                s&apos;accompagne d&apos;une conformité rigoureuse aux normes
-                gouvernementales.
+                {t("about.regulatory.description")}
               </p>
 
               <div className="grid md:grid-cols-3 gap-8 items-stretch min-h-[220px]">
                 <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 flex flex-col justify-center h-full text-center">
-                  <h4 className="text-2xl font-bold mb-3">Cadre Légal</h4>
+                  <h4 className="text-2xl font-bold mb-3">
+                    {t("about.regulatory.legal.title")}
+                  </h4>
                   <ul className="mx-auto text-left max-w-md">
-                    <li>
-                      • Loi sur les services de garde éducatifs à l&apos;enfance
-                    </li>
-                    <li>
-                      • Règlement sur les services de garde éducatifs à
-                      l&apos;enfance
-                    </li>
-                    <li>• Règlement sur la contribution réduite</li>
+                    <li>• {t("about.regulatory.legal.law")}</li>
+                    <li>• {t("about.regulatory.legal.regulation")}</li>
+                    <li>• {t("about.regulatory.legal.reducedContribution")}</li>
                   </ul>
                 </div>
                 <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 flex flex-col justify-center h-full text-center">
                   <h4 className="text-2xl font-bold mb-3">
-                    Reconnaissance MFA
+                    {t("about.regulatory.mfa.title")}
                   </h4>
                   <p className="text-center">
-                    Qualité éducative reconnue par le Ministère de la famille
-                    depuis 1995
+                    {t("about.regulatory.mfa.description")}
                   </p>
                 </div>
                 <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 flex flex-col justify-center h-full text-center">
-                  <h4 className="text-2xl font-bold mb-3">Comité de Parents</h4>
+                  <h4 className="text-2xl font-bold mb-3">
+                    {t("about.regulatory.parentsCommittee.title")}
+                  </h4>
                   <p className="text-center">
-                    Conformément à l&apos;article 31, comité de 5 parents élus.
-                    Assemblée annuelle avant le 15 octobre.
-                    <br />
-                    Un parent employé ou propriétaire ne peut pas en faire
-                    partie.
+                    {t("about.regulatory.parentsCommittee.description")}
                   </p>
                 </div>
               </div>
@@ -572,33 +560,31 @@ const About = () => {
                   <FaGraduationCap className="text-3xl" />
                 </div>
                 <h3 className="text-4xl font-bold">
-                  Équipe de Professionnels Spécialisés
+                  {t("about.professionalSupport.title")}
                 </h3>
               </div>
 
               <p className="text-xl mb-12 max-w-4xl mx-auto leading-relaxed">
-                Afin d&apos;assurer un développement complet et harmonieux, la
-                garderie collabore avec une équipe multidisciplinaire de
-                professionnels qui interviennent au besoin.
+                {t("about.professionalSupport.description")}
               </p>
 
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {[
                   {
-                    name: "Psychoéducatrice",
-                    desc: "Soutien au développement socio-affectif",
+                    name: t("about.professionalSupport.psychopedagogue.name"),
+                    desc: t("about.professionalSupport.psychopedagogue.desc"),
                   },
                   {
-                    name: "Ergothérapeute",
-                    desc: "Développement des habiletés motrices",
+                    name: t("about.professionalSupport.ergotherapist.name"),
+                    desc: t("about.professionalSupport.ergotherapist.desc"),
                   },
                   {
-                    name: "Orthophoniste",
-                    desc: "Développement du langage et communication",
+                    name: t("about.professionalSupport.orthophonist.name"),
+                    desc: t("about.professionalSupport.orthophonist.desc"),
                   },
                   {
-                    name: "Physiothérapeute",
-                    desc: "Développement moteur et postural",
+                    name: t("about.professionalSupport.physiotherapist.name"),
+                    desc: t("about.professionalSupport.physiotherapist.desc"),
                   },
                 ].map((specialist, index) => (
                   <motion.div

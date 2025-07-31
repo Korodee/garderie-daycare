@@ -6,16 +6,19 @@ import {
   FaChevronRight,
 } from "react-icons/fa";
 import Image from "next/image";
+import { useLanguage } from "@/contexts/LanguageContext";
 
-const links = [
-  { href: "#presentation", label: "Présentation" },
-  { href: "#programme", label: "Programme" },
-  { href: "#admission", label: "Admission" },
-  { href: "/gallery", label: "Galerie" },
-  { href: "#contact", label: "Contact" },
-];
+const Footer = () => {
+  const { t } = useLanguage();
 
-export default function Footer() {
+  const links = [
+    { href: "#presentation", label: t("footer.links.presentation") },
+    { href: "#programme", label: t("footer.links.program") },
+    { href: "#admission", label: t("footer.links.admission") },
+    { href: "/gallery", label: t("footer.links.gallery") },
+    { href: "#contact", label: t("footer.links.contact") },
+  ];
+
   return (
     <footer className="bg-gradient-to-br from-[#f8fafc] to-[#eaf1fb] pt-14 pb-8 text-slate-700">
       <div className="max-w-7xl mx-auto px-6">
@@ -33,23 +36,22 @@ export default function Footer() {
               />
               <div>
                 <h2 className="font-bold text-xl text-slate-900">
-                  Garderie Aimée
+                  {t("footer.brand")}
                 </h2>
                 <p className="text-sm text-slate-500">
-                  Une garderie de qualité
+                  {t("footer.branding.tagline")}
                 </p>
               </div>
             </div>
             <p className="text-sm text-slate-600 leading-relaxed">
-              Depuis 1987, nous offrons un environnement sécuritaire et
-              stimulant pour le développement harmonieux de votre enfant.
+              {t("footer.branding.description")}
             </p>
           </div>
 
           {/* Contact Cards */}
           <div>
             <h3 className="font-semibold text-lg text-slate-900 mb-4">
-              Contact
+              {t("footer.contact.title")}
             </h3>
             <div className="flex flex-col md:flex-row flex-wrap gap-4">
               <a
@@ -60,7 +62,9 @@ export default function Footer() {
                   <FaPhoneAlt className="text-blue-600 text-xl" />
                 </span>
                 <div>
-                  <div className="font-semibold text-slate-900">Téléphone</div>
+                  <div className="font-semibold text-slate-900">
+                    {t("footer.contact.phone")}
+                  </div>
                   <div className="text-sm text-slate-500">514 747-4114</div>
                 </div>
               </a>
@@ -72,7 +76,9 @@ export default function Footer() {
                   <FaEnvelope className="text-blue-600 text-xl" />
                 </span>
                 <div>
-                  <div className="font-semibold text-slate-900">Courriel</div>
+                  <div className="font-semibold text-slate-900">
+                    {t("footer.contact.email")}
+                  </div>
                   <div className="text-sm text-slate-500 truncate">
                     garderieaimee@hotmail.com
                   </div>
@@ -84,7 +90,9 @@ export default function Footer() {
                 <FaMapMarkerAlt className="text-blue-600 text-xl" />
               </span>
               <div>
-                <div className="font-semibold text-slate-900">Adresse</div>
+                <div className="font-semibold text-slate-900">
+                  {t("footer.contact.address")}
+                </div>
                 <div className="text-sm text-slate-500 leading-tight">
                   1730, rue Poirier
                   <br />
@@ -97,7 +105,9 @@ export default function Footer() {
                 <FaPhoneAlt className="text-blue-600 text-xl" />
               </span>
               <div>
-                <div className="font-semibold text-slate-900">Télécopieur</div>
+                <div className="font-semibold text-slate-900">
+                  {t("footer.contact.fax")}
+                </div>
                 <div className="text-sm text-slate-500">514 747-2695</div>
               </div>
             </div>
@@ -106,7 +116,7 @@ export default function Footer() {
           {/* Quick Links */}
           <div>
             <h3 className="font-semibold text-lg text-slate-900 mb-4">
-              Liens rapides
+              {t("footer.quick_links")}
             </h3>
             <div className="flex flex-col gap-2">
               {links.map((link) => (
@@ -127,16 +137,16 @@ export default function Footer() {
           {/* Hours */}
           <div className="flex flex-col">
             <h3 className="font-semibold text-lg text-slate-900 mb-4">
-              Horaires
+              {t("footer.hours.title")}
             </h3>
             <div className="bg-white rounded-xl shadow p-4">
               <div className="font-semibold text-slate-900 mb-1">
-                Horaires d&apos;ouverture
+                {t("footer.hours.opening_hours")}
               </div>
               <div className="text-sm text-slate-500">
-                Lundi - Vendredi
+                {t("footer.hours.schedule")}
                 <br />
-                7h00 - 18h00
+                {t("footer.hours.time")}
               </div>
             </div>
           </div>
@@ -144,11 +154,13 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-slate-200 pt-8 mt-8 flex flex-col md:flex-row justify-center items-center gap-4 text-sm text-slate-500">
           <div>
-            &copy; {new Date().getFullYear()} Garderie Aimée. Tous droits
-            réservés.
+            &copy; {new Date().getFullYear()} {t("footer.brand")}.{" "}
+            {t("footer.rights")}
           </div>
         </div>
       </div>
     </footer>
   );
-}
+};
+
+export default Footer;

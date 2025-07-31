@@ -4,92 +4,94 @@ import { motion } from "framer-motion";
 import { FaCamera, FaBuilding, FaChild, FaTree, FaDoorOpen, FaStar, FaTimes } from "react-icons/fa";
 import Image from "next/image";
 import { useState } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
-const galleryCategories = [
-  {
-    id: "entrance",
-    title: "Entrée & Accueil",
-    subtitle: "Notre espace d'accueil chaleureux",
-    icon: <FaDoorOpen className="text-white" />,
-    color: "from-blue-400 to-indigo-500",
-    bgColor: "from-blue-50 to-indigo-50",
-    images: [
-      "/Entree.jpg",
-      "/Entree2.jpg"
-    ]
-  },
-  {
-    id: "classrooms",
-    title: "Salles de Classe",
-    subtitle: "Espaces d'apprentissage stimulants",
-    icon: <FaBuilding className="text-white" />,
-    color: "from-green-400 to-emerald-500",
-    bgColor: "from-green-50 to-emerald-50",
-    images: [
-      "/Pouponniere-classe.jpg",
-      "/Pouponniere-classe1.jpg",
-      "/Pouponniere-classe2.jpg",
-      "/Pouponniere-classe3.jpg",
-      "/Trotinneurs-classe.jpg",
-      "/Trotinneurs-classe2.jpg",
-      "/Trotinneurs-classe3.jpg",
-      "/Trotinneurs-classe4.jpg",
-      "/Trotinneurs-classe5.jpg",
-      "/Trotinneurs-classe6.jpg",
-      "/Trotinneurs-classe7.jpg",
-      "/Trotinneurs-classe8.jpg",
-      "/Bambins-classe.jpg",
-      "/Bambins-classe2.jpg",
-      "/Bambins-classe3.jpg",
-      "/Bambins-classe4.jpg",
-      "/Bambins-classe6.jpg",
-      "/Sale-de-prescolaire.jpg",
-      "/Sale-de-prescolaire1.jpg",
-      "/Sale-de-prescolaire2.jpg",
-      "/Sale-de-prescolaire3.jpg"
-    ]
-  },
-  {
-    id: "outdoor",
-    title: "Espace Extérieur",
-    subtitle: "Notre cour de jeux sécurisée",
-    icon: <FaTree className="text-white" />,
-    color: "from-orange-400 to-red-500",
-    bgColor: "from-orange-50 to-red-50",
-    images: [
-      "/Cour.jpg",
-      "/cour2.jpg"
-    ]
-  },
-  {
-    id: "facilities",
-    title: "Installations",
-    subtitle: "Nos équipements et aménagements",
-    icon: <FaChild className="text-white" />,
-    color: "from-purple-400 to-violet-500",
-    bgColor: "from-purple-50 to-violet-50",
-    images: [
-      "/Casier-des-enfants.jpg",
-      "/Casier-prescolaire.jpg"
-    ]
-  },
-  {
-    id: "nursery",
-    title: "Chambre de Bébé",
-    subtitle: "Espace de repos pour les tout-petits",
-    icon: <FaStar className="text-white" />,
-    color: "from-yellow-400 to-amber-500",
-    bgColor: "from-yellow-50 to-amber-50",
-    images: [
-      "/chambre-de-bebe.jpg",
-      "/Cuisine-pouponniere.jpg"
-    ]
-  }
-];
-
-export default function Gallery() {
+const Gallery = () => {
+  const { t } = useLanguage();
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
+  const galleryCategories = [
+    {
+      id: "entrance",
+      title: t('gallery.categories.entrance.title'),
+      subtitle: t('gallery.categories.entrance.subtitle'),
+      icon: <FaDoorOpen className="text-white" />,
+      color: "from-blue-400 to-indigo-500",
+      bgColor: "from-blue-50 to-indigo-50",
+      images: [
+        "/Entree.jpg",
+        "/Entree2.jpg"
+      ]
+    },
+    {
+      id: "classrooms",
+      title: t('gallery.categories.classrooms.title'),
+      subtitle: t('gallery.categories.classrooms.subtitle'),
+      icon: <FaBuilding className="text-white" />,
+      color: "from-green-400 to-emerald-500",
+      bgColor: "from-green-50 to-emerald-50",
+      images: [
+        "/Pouponniere-classe.jpg",
+        "/Pouponniere-classe1.jpg",
+        "/Pouponniere-classe2.jpg",
+        "/Pouponniere-classe3.jpg",
+        "/Trotinneurs-classe.jpg",
+        "/Trotinneurs-classe2.jpg",
+        "/Trotinneurs-classe3.jpg",
+        "/Trotinneurs-classe4.jpg",
+        "/Trotinneurs-classe5.jpg",
+        "/Trotinneurs-classe6.jpg",
+        "/Trotinneurs-classe7.jpg",
+        "/Trotinneurs-classe8.jpg",
+        "/Bambins-classe.jpg",
+        "/Bambins-classe2.jpg",
+        "/Bambins-classe3.jpg",
+        "/Bambins-classe4.jpg",
+        "/Bambins-classe6.jpg",
+        "/Sale-de-prescolaire.jpg",
+        "/Sale-de-prescolaire1.jpg",
+        "/Sale-de-prescolaire2.jpg",
+        "/Sale-de-prescolaire3.jpg"
+      ]
+    },
+    {
+      id: "outdoor",
+      title: t('gallery.categories.outdoor.title'),
+      subtitle: t('gallery.categories.outdoor.subtitle'),
+      icon: <FaTree className="text-white" />,
+      color: "from-orange-400 to-red-500",
+      bgColor: "from-orange-50 to-red-50",
+      images: [
+        "/Cour.jpg",
+        "/cour2.jpg"
+      ]
+    },
+    {
+      id: "facilities",
+      title: t('gallery.categories.facilities.title'),
+      subtitle: t('gallery.categories.facilities.subtitle'),
+      icon: <FaChild className="text-white" />,
+      color: "from-purple-400 to-violet-500",
+      bgColor: "from-purple-50 to-violet-50",
+      images: [
+        "/Casier-des-enfants.jpg",
+        "/Casier-prescolaire.jpg"
+      ]
+    },
+    {
+      id: "nursery",
+      title: t('gallery.categories.nursery.title'),
+      subtitle: t('gallery.categories.nursery.subtitle'),
+      icon: <FaStar className="text-white" />,
+      color: "from-yellow-400 to-amber-500",
+      bgColor: "from-yellow-50 to-amber-50",
+      images: [
+        "/chambre-de-bebe.jpg",
+        "/Cuisine-pouponniere.jpg"
+      ]
+    }
+  ];
 
   const filteredCategories = selectedCategory === "all" 
     ? galleryCategories 
@@ -116,7 +118,7 @@ export default function Gallery() {
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full text-white text-sm font-medium shadow-lg">
             <FaCamera className="text-xs" />
-            Notre Garderie
+            {t('gallery.header.badge')}
           </div>
         </motion.div>
         
@@ -127,7 +129,7 @@ export default function Gallery() {
           viewport={{ once: true }}
           className="text-4xl md:text-5xl font-bold text-gray-800 mb-4"
         >
-          Nos espaces en images
+          {t('gallery.title')}
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -136,7 +138,7 @@ export default function Gallery() {
           viewport={{ once: true }}
           className="text-lg text-gray-600 max-w-2xl mx-auto"
         >
-          Découvrez un cadre pensé pour le bien-être et la curiosité des enfants.
+          {t('gallery.subtitle')}
         </motion.p>
       </div>
 
@@ -157,7 +159,7 @@ export default function Gallery() {
                 : "bg-white text-gray-600 hover:bg-gray-50 shadow-md"
             }`}
           >
-            Tout Voir
+            {t('gallery.filter.all')}
           </button>
           {galleryCategories.map((category) => (
             <button
@@ -278,9 +280,11 @@ export default function Gallery() {
       >
         <div className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full text-white font-medium shadow-lg">
           <FaCamera className="text-sm" />
-          <span className="text-sm">Un lieu qui inspire chaque jour</span>
+          <span className="text-sm">{t('gallery.bottom_accent')}</span>
         </div>
       </motion.div>
     </section>
   );
-} 
+};
+
+export default Gallery; 

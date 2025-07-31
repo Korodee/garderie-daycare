@@ -9,69 +9,119 @@ import {
   FaChevronRight,
 } from "react-icons/fa";
 import { useState, useEffect } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
-const testimonials = [
-  {
-    name: "Marie-Claude Tremblay",
-    child: "Emma, 3 ans",
-    rating: 5,
-    photo: "/Trotinneurs-classe2.jpg",
-    text: "Ma fille Emma adore aller à la garderie Aimée ! L'équipe est exceptionnelle et la communication est excellente. Je reçois des photos chaque semaine et je vois vraiment les progrès de ma fille. L'approche bilingue est un vrai plus.",
-    highlight: "Communication exceptionnelle",
-  },
-  {
-    name: "David Chen",
-    child: "Lucas, 2 ans",
-    rating: 5,
-    photo: "/Pouponniere-classe.jpg",
-    text: "En tant que parent, la sécurité est ma priorité. La garderie Aimée dépasse mes attentes avec leur système de surveillance et leur équipe formée. Lucas s'épanouit vraiment ici et apprend tellement chaque jour.",
-    highlight: "Sécurité et confiance",
-  },
-  {
-    name: "Sophie Dubois",
-    child: "Chloé, 4 ans",
-    rating: 5,
-    photo: "/Trotinneurs-classe3.jpg",
-    text: "Depuis que Chloé fréquente la garderie Aimée, elle a fait des progrès incroyables ! L'approche HighScope est fantastique et les activités sont toujours stimulantes. L'équipe est attentionnée et professionnelle.",
-    highlight: "Progrès remarquables",
-  },
-  {
-    name: "Marc-André Bouchard",
-    child: "Thomas, 18 mois",
-    rating: 5,
-    photo: "/daycare-1.jpg",
-    text: "La transition pour Thomas a été parfaite. L'équipe a su créer un environnement rassurant et chaleureux. Les repas sont délicieux et variés, et je vois que mon fils est heureux d'y aller chaque matin.",
-    highlight: "Transition en douceur",
-  },
-  {
-    name: "Isabelle Moreau",
-    child: "Léa, 5 ans",
-    rating: 5,
-    photo: "/daycare-3.jpg",
-    text: "Léa termine sa dernière année à la garderie Aimée et je suis tellement reconnaissante pour tout ce qu'elle y a appris. L'immersion bilingue l'a préparée parfaitement pour l'école. Une équipe dévouée et un environnement exceptionnel !",
-    highlight: "Préparation scolaire",
-  },
-];
+const testimonials = {
+  fr: [
+    {
+      name: "Marie-Claude Tremblay",
+      child: "Emma, 3 ans",
+      rating: 5,
+      photo: "/Trotinneurs-classe2.jpg",
+      text: "Ma fille Emma adore aller à la garderie Aimée ! L'équipe est exceptionnelle et la communication est excellente. Je reçois des photos chaque semaine et je vois vraiment les progrès de ma fille. L'approche bilingue est un vrai plus.",
+      highlight: "Communication exceptionnelle",
+    },
+    {
+      name: "David Chen",
+      child: "Lucas, 2 ans",
+      rating: 5,
+      photo: "/Pouponniere-classe.jpg",
+      text: "En tant que parent, la sécurité est ma priorité. La garderie Aimée dépasse mes attentes avec leur système de surveillance et leur équipe formée. Lucas s'épanouit vraiment ici et apprend tellement chaque jour.",
+      highlight: "Sécurité et confiance",
+    },
+    {
+      name: "Sophie Dubois",
+      child: "Chloé, 4 ans",
+      rating: 5,
+      photo: "/Trotinneurs-classe3.jpg",
+      text: "Depuis que Chloé fréquente la garderie Aimée, elle a fait des progrès incroyables ! L'approche HighScope est fantastique et les activités sont toujours stimulantes. L'équipe est attentionnée et professionnelle.",
+      highlight: "Progrès remarquables",
+    },
+    {
+      name: "Marc-André Bouchard",
+      child: "Thomas, 18 mois",
+      rating: 5,
+      photo: "/daycare-1.jpg",
+      text: "La transition pour Thomas a été parfaite. L'équipe a su créer un environnement rassurant et chaleureux. Les repas sont délicieux et variés, et je vois que mon fils est heureux d'y aller chaque matin.",
+      highlight: "Transition en douceur",
+    },
+    {
+      name: "Isabelle Moreau",
+      child: "Léa, 5 ans",
+      rating: 5,
+      photo: "/daycare-3.jpg",
+      text: "Léa termine sa dernière année à la garderie Aimée et je suis tellement reconnaissante pour tout ce qu'elle y a appris. L'immersion bilingue l'a préparée parfaitement pour l'école. Une équipe dévouée et un environnement exceptionnel !",
+      highlight: "Préparation scolaire",
+    },
+  ],
+  en: [
+    {
+      name: "Marie-Claude Tremblay",
+      child: "Emma, 3 years",
+      rating: 5,
+      photo: "/Trotinneurs-classe2.jpg",
+      text: "My daughter Emma loves going to Aimée Daycare! The team is exceptional and communication is excellent. I receive photos every week and I can really see my daughter's progress. The bilingual approach is a real plus.",
+      highlight: "Exceptional communication",
+    },
+    {
+      name: "David Chen",
+      child: "Lucas, 2 years",
+      rating: 5,
+      photo: "/Pouponniere-classe.jpg",
+      text: "As a parent, security is my priority. Aimée Daycare exceeds my expectations with their surveillance system and trained team. Lucas really thrives here and learns so much every day.",
+      highlight: "Security and trust",
+    },
+    {
+      name: "Sophie Dubois",
+      child: "Chloé, 4 years",
+      rating: 5,
+      photo: "/Trotinneurs-classe3.jpg",
+      text: "Since Chloé has been attending Aimée Daycare, she has made incredible progress! The HighScope approach is fantastic and the activities are always stimulating. The team is caring and professional.",
+      highlight: "Remarkable progress",
+    },
+    {
+      name: "Marc-André Bouchard",
+      child: "Thomas, 18 months",
+      rating: 5,
+      photo: "/daycare-1.jpg",
+      text: "The transition for Thomas has been perfect. The team has managed to create a reassuring and warm environment. The meals are delicious and varied, and I can see that my son is happy to go there every morning.",
+      highlight: "Smooth transition",
+    },
+    {
+      name: "Isabelle Moreau",
+      child: "Léa, 5 years",
+      rating: 5,
+      photo: "/daycare-3.jpg",
+      text: "Léa is finishing her last year at Aimée Daycare and I am so grateful for everything she has learned there. The bilingual immersion has prepared her perfectly for school. A dedicated team and an exceptional environment!",
+      highlight: "School preparation",
+    },
+  ],
+};
 
 export default function Testimonials() {
+  const { t, language } = useLanguage();
   const [currentSlide, setCurrentSlide] = useState(0);
+
+  const currentTestimonials =
+    testimonials[language as keyof typeof testimonials];
 
   // Auto-advance carousel
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % testimonials.length);
+      setCurrentSlide((prev) => (prev + 1) % currentTestimonials.length);
     }, 6000); // Change slide every 6 seconds
 
     return () => clearInterval(interval);
-  }, []);
+  }, [currentTestimonials.length]);
 
   const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % testimonials.length);
+    setCurrentSlide((prev) => (prev + 1) % currentTestimonials.length);
   };
 
   const prevSlide = () => {
     setCurrentSlide(
-      (prev) => (prev - 1 + testimonials.length) % testimonials.length
+      (prev) =>
+        (prev - 1 + currentTestimonials.length) % currentTestimonials.length
     );
   };
 
@@ -98,15 +148,14 @@ export default function Testimonials() {
           <FaHeart className="text-white text-3xl drop-shadow" />
         </div>
         <h2 className="text-2xl md:text-3xl font-extrabold mb-4 bg-gradient-to-r from-pink-600 via-purple-500 to-blue-500 bg-clip-text text-transparent drop-shadow-lg text-center">
-          Témoignages des parents
+          {t("testimonials.title")}
         </h2>
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-pink-100 text-pink-900 font-semibold text-lg shadow mb-4">
           <FaStar className="text-pink-400" />
-          Recommandé par les familles
+          {t("testimonials.subtitle")}
         </div>
         <p className="text-xl text-slate-700 max-w-2xl text-center mb-2">
-          Découvrez ce que les parents disent de leur expérience à la garderie
-          Aimée.
+          {t("testimonials.description")}
         </p>
       </div>
 
@@ -178,7 +227,7 @@ export default function Testimonials() {
 
                   {/* Rating */}
                   <div className="flex items-center justify-center gap-1 mb-4">
-                    {[...Array(testimonials[currentSlide].rating)].map(
+                    {[...Array(currentTestimonials[currentSlide].rating)].map(
                       (_, i) => (
                         <FaStar key={i} className="text-yellow-400 text-lg" />
                       )
@@ -187,23 +236,24 @@ export default function Testimonials() {
 
                   {/* Testimonial Text */}
                   <blockquote className="text-slate-700 leading-relaxed text-base md:text-lg mb-4 italic">
-                    &quot;{testimonials[currentSlide].text}&quot;
+                    &quot;{currentTestimonials[currentSlide].text}&quot;
                   </blockquote>
 
                   {/* Highlight */}
                   <div className="mb-4">
                     <span className="inline-block bg-gradient-to-r from-pink-100 to-purple-100 text-pink-800 px-3 py-1 rounded-full text-sm font-semibold">
-                      {testimonials[currentSlide].highlight}
+                      {currentTestimonials[currentSlide].highlight}
                     </span>
                   </div>
 
                   {/* Author Info */}
                   <div className="border-t border-slate-200 pt-3">
                     <div className="font-bold text-slate-800 text-lg">
-                      {testimonials[currentSlide].name}
+                      {currentTestimonials[currentSlide].name}
                     </div>
                     <div className="text-slate-600 text-sm">
-                      Parent de {testimonials[currentSlide].child}
+                      {t("testimonials.parent_of")}{" "}
+                      {currentTestimonials[currentSlide].child}
                     </div>
                   </div>
                 </div>
@@ -213,7 +263,7 @@ export default function Testimonials() {
 
           {/* Carousel Dots */}
           <div className="flex justify-center mt-6 space-x-2">
-            {testimonials.map((_, index) => (
+            {currentTestimonials.map((_, index) => (
               <button
                 key={index}
                 onClick={() => goToSlide(index)}

@@ -11,91 +11,146 @@ import {
   FaHeart,
 } from "react-icons/fa";
 import Image from "next/image";
+import { useLanguage } from "@/contexts/LanguageContext";
 
-const teamSections = [
-  {
-    title: "Direction",
-    icon: <FaCrown className="text-white" />,
-    color: "from-amber-400 to-orange-500",
-    bgColor: "from-amber-50 to-orange-50",
-    members: [
-      { name: "Mayara", role: "Directrice", image: "/Mayara-Directrice.jpg" },
-      { name: "Natasha", role: "Directrice", image: "/Natasha-Directrice.jpg" },
-    ],
-  },
-  {
-    title: "Pouponnière",
-    subtitle: "0-18 mois",
-    icon: <FaBaby className="text-white" />,
-    color: "from-pink-400 to-rose-500",
-    bgColor: "from-pink-50 to-rose-50",
-    members: [
-      { name: "Simranjit", role: "0-8 mois", image: "/simranjit.jpg" },
-      { name: "Kristin", role: "9-12 mois", image: "/Kristin-Pouponniére.jpg" },
-      { name: "Carmen", role: "12-18 mois", image: "/Carmen-Pouponniere.jpg" },
-    ],
-  },
-  {
-    title: "Trotinneurs",
-    subtitle: "18-36 mois",
-    icon: <FaChild className="text-white" />,
-    color: "from-blue-400 to-indigo-500",
-    bgColor: "from-blue-50 to-indigo-50",
-    members: [
-      {
-        name: "Daphney",
-        role: "18-24 mois",
-        image: "/Daphney-Trotinneurs.jpg",
-      },
-      { name: "Souad", role: "24-30 mois", image: "/souad.jpg" },
-      { name: "Li", role: "30-36 mois", image: "/Li-Trotinneurs.jpg" },
-    ],
-  },
-  {
-    title: "Bambins",
-    subtitle: "3-4 ans",
-    icon: <FaUserFriends className="text-white" />,
-    color: "from-green-400 to-emerald-500",
-    bgColor: "from-green-50 to-emerald-50",
-    members: [
-      { name: "Fiona", role: "Éducatrice", image: "/Fiona-Bambins.jpg" },
-      {
-        name: "Stéphanie",
-        role: "Éducatrice",
-        image: "/Stephanie-Bambins.jpg",
-      },
-      { name: "Drissia", role: "Éducatrice", image: "/Drissia-Bambins.jpg" },
-    ],
-  },
-  {
-    title: "Préscolaire",
-    subtitle: "4-5 ans",
-    icon: <FaGraduationCap className="text-white" />,
-    color: "from-purple-400 to-violet-500",
-    bgColor: "from-purple-50 to-violet-50",
-    members: [
-      { name: "Popi", role: "Éducatrice", image: "/Popi-Prek.jpg" },
-      { name: "Bassma", role: "Éducatrice", image: "/Bassma-Prek.jpg" },
-    ],
-  },
-  {
-    title: "Soutien",
-    icon: <FaHeart className="text-white" />,
-    color: "from-teal-400 to-cyan-500",
-    bgColor: "from-teal-50 to-cyan-50",
-    members: [
-      { name: "Silvie", role: "Cuisinière", image: "/Silvie-Cuisinniere.jpg" },
-      {
-        name: "Khadidja",
-        role: "Remplaçante",
-        image: "/Khadidja-Éducatrice remplacante.jpg",
-      },
-      { name: "Amani", role: "Remplaçante", image: "/Amani.jpg" },
-    ],
-  },
-];
+const Team = () => {
+  const { t } = useLanguage();
 
-export default function Team() {
+  const teamSections = [
+    {
+      title: t("team.sections.direction.title"),
+      icon: <FaCrown className="text-white" />,
+      color: "from-amber-400 to-orange-500",
+      bgColor: "from-amber-50 to-orange-50",
+      members: [
+        {
+          name: "Mayara",
+          role: t("team.roles.directrice"),
+          image: "/Mayara-Directrice.jpg",
+        },
+        {
+          name: "Natasha",
+          role: t("team.roles.directrice"),
+          image: "/Natasha-Directrice.jpg",
+        },
+      ],
+    },
+    {
+      title: t("team.sections.pouponniere.title"),
+      subtitle: t("team.sections.pouponniere.subtitle"),
+      icon: <FaBaby className="text-white" />,
+      color: "from-pink-400 to-rose-500",
+      bgColor: "from-pink-50 to-rose-50",
+      members: [
+        {
+          name: "Simranjit",
+          role: t("team.roles.pouponniere.0_8"),
+          image: "/simranjit.jpg",
+        },
+        {
+          name: "Kristin",
+          role: t("team.roles.pouponniere.9_12"),
+          image: "/Kristin-Pouponniére.jpg",
+        },
+        {
+          name: "Carmen",
+          role: t("team.roles.pouponniere.12_18"),
+          image: "/Carmen-Pouponniere.jpg",
+        },
+      ],
+    },
+    {
+      title: t("team.sections.trottineurs.title"),
+      subtitle: t("team.sections.trottineurs.subtitle"),
+      icon: <FaChild className="text-white" />,
+      color: "from-blue-400 to-indigo-500",
+      bgColor: "from-blue-50 to-indigo-50",
+      members: [
+        {
+          name: "Daphney",
+          role: t("team.roles.trottineurs.18_24"),
+          image: "/Daphney-Trotinneurs.jpg",
+        },
+        {
+          name: "Souad",
+          role: t("team.roles.trottineurs.24_30"),
+          image: "/souad.jpg",
+        },
+        {
+          name: "Li",
+          role: t("team.roles.trottineurs.30_36"),
+          image: "/Li-Trotinneurs.jpg",
+        },
+      ],
+    },
+    {
+      title: t("team.sections.bambins.title"),
+      subtitle: t("team.sections.bambins.subtitle"),
+      icon: <FaUserFriends className="text-white" />,
+      color: "from-green-400 to-emerald-500",
+      bgColor: "from-green-50 to-emerald-50",
+      members: [
+        {
+          name: "Fiona",
+          role: t("team.roles.educatrice"),
+          image: "/Fiona-Bambins.jpg",
+        },
+        {
+          name: "Stéphanie",
+          role: t("team.roles.educatrice"),
+          image: "/Stephanie-Bambins.jpg",
+        },
+        {
+          name: "Drissia",
+          role: t("team.roles.educatrice"),
+          image: "/Drissia-Bambins.jpg",
+        },
+      ],
+    },
+    {
+      title: t("team.sections.prescolaire.title"),
+      subtitle: t("team.sections.prescolaire.subtitle"),
+      icon: <FaGraduationCap className="text-white" />,
+      color: "from-purple-400 to-violet-500",
+      bgColor: "from-purple-50 to-violet-50",
+      members: [
+        {
+          name: "Popi",
+          role: t("team.roles.educatrice"),
+          image: "/Popi-Prek.jpg",
+        },
+        {
+          name: "Bassma",
+          role: t("team.roles.educatrice"),
+          image: "/Bassma-Prek.jpg",
+        },
+      ],
+    },
+    {
+      title: t("team.sections.soutien.title"),
+      icon: <FaHeart className="text-white" />,
+      color: "from-teal-400 to-cyan-500",
+      bgColor: "from-teal-50 to-cyan-50",
+      members: [
+        {
+          name: "Silvie",
+          role: t("team.roles.cuisiniere"),
+          image: "/Silvie-Cuisinniere.jpg",
+        },
+        {
+          name: "Khadidja",
+          role: t("team.roles.remplacante"),
+          image: "/Khadidja-Éducatrice remplacante.jpg",
+        },
+        {
+          name: "Amani",
+          role: t("team.roles.remplacante"),
+          image: "/Amani.jpg",
+        },
+      ],
+    },
+  ];
+
   return (
     <section
       id="equipe"
@@ -123,7 +178,7 @@ export default function Team() {
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-pink-400 to-purple-400 rounded-full text-white text-sm font-medium shadow-lg">
             <FaStar className="text-xs" />
-            Notre Équipe
+            {t("team.title")}
           </div>
         </motion.div>
 
@@ -134,7 +189,7 @@ export default function Team() {
           viewport={{ once: true }}
           className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-[#36B6DF] via-[#FFD43B] via-40% to-[#F06292] text-transparent bg-clip-text drop-shadow"
         >
-          Notre équipe
+          {t("team.title")}
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -143,7 +198,7 @@ export default function Team() {
           viewport={{ once: true }}
           className="text-lg text-gray-600 max-w-2xl mx-auto"
         >
-          Des professionnelles attentionnées, engagées auprès des enfants et des familles.
+          {t("team.subtitle")}
         </motion.p>
       </div>
 
@@ -254,9 +309,11 @@ export default function Team() {
       >
         <div className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-pink-400 to-purple-400 rounded-full text-white font-medium shadow-lg">
           <FaHeart className="text-sm" />
-          <span className="text-sm">Une équipe dédiée à l&apos;excellence</span>
+          <span className="text-sm">{t("team.excellence")}</span>
         </div>
       </motion.div>
     </section>
   );
-}
+};
+
+export default Team;
