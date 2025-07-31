@@ -84,10 +84,12 @@ export default function Navbar({ open, setOpen, active }: NavbarProps) {
           </div>
         </Link>
         <div className="flex items-center gap-2">
-          <LanguageSwitcher
-            scrolled={scrolled}
-            isGalleryPage={isGalleryPage}
-          />
+          <div className="md:hidden">
+            <LanguageSwitcher
+              scrolled={scrolled}
+              isGalleryPage={isGalleryPage}
+            />
+          </div>
           <button
             className={`md:hidden p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 shadow transition-all duration-300 ${
               scrolled ? "bg-white/70" : "bg-white/20 backdrop-blur-sm"
@@ -134,6 +136,12 @@ export default function Navbar({ open, setOpen, active }: NavbarProps) {
               </a>
             </li>
           ))}
+          <li>
+            <LanguageSwitcher
+              scrolled={scrolled}
+              isGalleryPage={isGalleryPage}
+            />
+          </li>
         </ul>
       </div>
     </motion.nav>

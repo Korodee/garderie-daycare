@@ -540,7 +540,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.55, duration: 0.7, type: "spring" }}
-            className="flex flex-col items-center sm:flex-row gap-4 justify-center"
+            className="flex flex-col md:items-start items-center sm:flex-row gap-4 justify-center md:justify-start"
           >
             <a
               href="#admission"
