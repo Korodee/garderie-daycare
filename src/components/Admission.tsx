@@ -65,7 +65,7 @@ const Admission = () => {
           {t("admission.description")}
         </p>
         <a
-          href="https://www.laplace0-5.com"
+          href="https://www.quebec.ca/famille-et-soutien-aux-personnes/enfance/garderies-et-services-de-garde/portail-inscription/parents/acceder-parents"
           target="_blank"
           rel="noopener noreferrer"
           className="mt-6 bg-gradient-to-r from-orange-500 to-pink-500 text-white px-8 py-3 rounded-full font-bold shadow-lg hover:scale-105 transition-transform"
@@ -155,7 +155,7 @@ const Admission = () => {
             {t("admission.calculator_description_2")}
           </p>
           <a
-            href="https://www.laplace0-5.com"
+            href="https://www.quebec.ca/famille-et-soutien-aux-personnes/enfance/garderies-et-services-de-garde/portail-inscription/parents/acceder-parents"
             target="_blank"
             rel="noopener noreferrer"
             className="mt-2 bg-gradient-to-r from-orange-500 to-pink-500 text-white px-8 py-3 rounded-full font-bold shadow-lg hover:scale-105 transition-transform"

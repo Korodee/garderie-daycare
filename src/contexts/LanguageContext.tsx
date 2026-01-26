@@ -313,8 +313,8 @@ const translations = {
     // Admission Section
     "admission.title": "Admission & inscription",
     "admission.subtitle": "Garderie subventionnée",
-    "admission.description": "Inscription simple et rapide via La Place 0-5.",
-    "admission.cta_button": "Accéder à La Place 0-5",
+    "admission.description": "Inscription simple et rapide via le portail gouvernemental.",
+    "admission.cta_button": "Accéder au portail d'inscription",
     "admission.process_title": "Processus d'Inscription",
     "admission.calculator_title": "Contribution réduite",
     "admission.calculator_description_1":
@@ -328,10 +328,10 @@ const translations = {
     // Admission Process Steps
     "admission.process.step1.title": "Inscription en ligne",
     "admission.process.step1.description":
-      "Inscriptions exclusivement via www.laplace0-5.com",
+      "Inscriptions exclusivement via le portail gouvernemental",
     "admission.process.step2.title": "Demande enregistrée",
     "admission.process.step2.description":
-      "Votre demande est enregistrée sur La Place 0-5",
+      "Votre demande est enregistrée sur le portail d'inscription",
     "admission.process.step3.title": "Liste d'attente",
     "admission.process.step3.description":
       "Placement selon l'ordre de la liste d'attente",
@@ -341,7 +341,7 @@ const translations = {
 
     // Admission Info Items
     "admission.info.online_registration":
-      "Inscription en ligne via La Place 0-5",
+      "Inscription en ligne via le portail gouvernemental",
     "admission.info.open_year_round":
       "Ouvert toute l'année (sauf congés fériés)",
     "admission.info.children_0_5": "Accueil des enfants de 0 à 5 ans",
@@ -668,8 +668,8 @@ const translations = {
     // Admission Section
     "admission.title": "Admission & Registration",
     "admission.subtitle": "Subsidized Daycare",
-    "admission.description": "Simple and fast registration via La Place 0-5.",
-    "admission.cta_button": "Access La Place 0-5",
+    "admission.description": "Simple and fast registration via the government portal.",
+    "admission.cta_button": "Access the registration portal",
     "admission.process_title": "Registration Process",
     "admission.calculator_title": "Reduced Contribution",
     "admission.calculator_description_1":
@@ -683,10 +683,10 @@ const translations = {
     // Admission Process Steps
     "admission.process.step1.title": "Online Registration",
     "admission.process.step1.description":
-      "Registration exclusively via www.laplace0-5.com",
+      "Registration exclusively via the government portal",
     "admission.process.step2.title": "Request Registered",
     "admission.process.step2.description":
-      "Your request is registered on La Place 0-5",
+      "Your request is registered on the registration portal",
     "admission.process.step3.title": "Waiting List",
     "admission.process.step3.description":
       "Placement according to waiting list order",
@@ -696,7 +696,7 @@ const translations = {
 
     // Admission Info Items
     "admission.info.online_registration":
-      "Online registration via La Place 0-5",
+      "Online registration via the government portal",
     "admission.info.open_year_round": "Open year-round (except holidays)",
     "admission.info.children_0_5": "Welcoming children from 0 to 5 years old",
     "admission.info.reduced_contribution":

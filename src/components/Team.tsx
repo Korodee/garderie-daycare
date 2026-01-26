@@ -24,14 +24,9 @@ const Team = () => {
       bgColor: "from-amber-50 to-orange-50",
       members: [
         {
-          name: "Mayara",
-          role: t("team.roles.directrice"),
-          image: "/Mayara-Directrice.jpg",
-        },
-        {
           name: "Natasha",
           role: t("team.roles.directrice"),
-          image: "/Natasha-Directrice.jpg",
+          image: "/natasha-new.jpg",
         },
       ],
     },
@@ -257,6 +252,7 @@ const Team = () => {
                               width={48}
                               height={48}
                               className="w-full h-full object-cover"
+                              style={{ objectPosition: 'center 30%' }}
                             />
                           ) : (
                             <Image
@@ -265,6 +261,7 @@ const Team = () => {
                               width={48}
                               height={48}
                               className="w-full h-full object-cover"
+                              style={{ objectPosition: 'center 30%' }}
                             />
                           )}
                         </div>
